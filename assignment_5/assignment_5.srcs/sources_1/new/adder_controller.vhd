@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company    :  NTNU
--- Engineer   : Øystein Gjermundnes
+-- Engineer   : ï¿½ystein Gjermundnes
 -- 
 -- Create Date: 09/11/2016 04:21:16 PM
 -- Module Name: mega_adder_controller
@@ -71,7 +71,7 @@ begin
     elsif(clk'event and clk='1') then
       output_reg_load_r <= '0';    
       if(input_reg_en_i = '1') then
-        if(input_shift_counter_r = 7) then
+        if(input_shift_counter_r >= 4) then
           output_reg_load_r <= '1';
         end if;
       end if;

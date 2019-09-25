@@ -39,11 +39,15 @@ else
 ISE_HOST=$HOST     #csh
 fi
 ISE_USER=$USER
+
+ISE_HOSTCORE=$(awk '/^processor/{print $3}' /proc/cpuinfo | wc -l)
+ISE_MEMTOTAL=$(awk '/MemTotal/ {print $2}' /proc/meminfo)
+
 ISE_BEGINFILE=.$ISE_STEP.begin.rst
 /bin/touch $ISE_BEGINFILE
 echo "<?xml version=\"1.0\"?>"                                                                     >> $ISE_BEGINFILE
 echo "<ProcessHandle Version=\"1\" Minor=\"0\">"                                                   >> $ISE_BEGINFILE
-echo "    <Process Command=\"$ISE_STEP\" Owner=\"$ISE_USER\" Host=\"$ISE_HOST\" Pid=\"$ISE_PID\">" >> $ISE_BEGINFILE
+echo "    <Process Command=\"$ISE_STEP\" Owner=\"$ISE_USER\" Host=\"$ISE_HOST\" Pid=\"$ISE_PID\" HostCore=\"$ISE_HOSTCORE\" HostMemory=\"$ISE_MEMTOTAL\">" >> $ISE_BEGINFILE
 echo "    </Process>"                                                                              >> $ISE_BEGINFILE
 echo "</ProcessHandle>"                                                                            >> $ISE_BEGINFILE
 
@@ -61,4 +65,3 @@ fi
 
 exit $RETVAL
 
-# XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
