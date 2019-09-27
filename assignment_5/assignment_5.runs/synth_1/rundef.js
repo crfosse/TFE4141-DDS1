@@ -1,16 +1,20 @@
 //
 // Vivado(TM)
 // rundef.js: a Vivado-generated Runs Script for WSH 5.1/5.6
-// Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //
+
+echo "This script was generated under a different operating system."
+echo "Please update the PATH variable below, before executing this script"
+exit
 
 var WshShell = new ActiveXObject( "WScript.Shell" );
 var ProcEnv = WshShell.Environment( "Process" );
 var PathVal = ProcEnv("PATH");
 if ( PathVal.length == 0 ) {
-  PathVal = "C:/Xilinx/Vivado/2016.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2016.2/ids_lite/ISE/lib/nt64;C:/Xilinx/Vivado/2016.2/bin;";
+  PathVal = "/tools/Xilinx/SDK/2019.1/bin:/tools/Xilinx/Vivado/2019.1/ids_lite/ISE/bin/lin64;/tools/Xilinx/Vivado/2019.1/bin;";
 } else {
-  PathVal = "C:/Xilinx/Vivado/2016.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2016.2/ids_lite/ISE/lib/nt64;C:/Xilinx/Vivado/2016.2/bin;" + PathVal;
+  PathVal = "/tools/Xilinx/SDK/2019.1/bin:/tools/Xilinx/Vivado/2019.1/ids_lite/ISE/bin/lin64;/tools/Xilinx/Vivado/2019.1/bin;" + PathVal;
 }
 
 ProcEnv("PATH") = PathVal;
@@ -23,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log mega_adder.vds -m64 -mode batch -messageDb vivado.pb -notrace -source mega_adder.tcl" );
+         "-log mega_adder.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mega_adder.tcl" );
 
 
 

@@ -44,7 +44,7 @@ architecture rtl of adder_datapath is
   signal b_r, b_nxt: std_logic_vector(127 downto 0);
   
   -- Signals associated with the output registers
-  signal y_r, y_nxt: std_logic_vector(127 downto 0);
+  signal y_r, y_nxt: std_logic_vector(31 downto 0);
     
 begin
 
@@ -85,9 +85,9 @@ begin
   
   process (y_r, a_r, b_r, output_reg_load) begin
     if(output_reg_load = '1') then
-      y_nxt <= std_logic_vector(unsigned(a_r) + unsigned(b_r));
+      y_nxt <= std_logic_vector(unsigned(a_r(127 downto 96)) + unsigned(b_r(127 downto 96)));
     else
-      y_nxt <= x"00000000" & y_r(127 downto 32);
+      y_nxt <= x"00000000";
     end if;
   end process;
   

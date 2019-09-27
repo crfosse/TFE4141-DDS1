@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
-# Vivado v2016.2 (64-bit)
-# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
-# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Mon Sep 19 12:20:23 2016
-# Process ID: 7380
-# Current directory: Z:/KS/TFE4141 Design av digitale system 1/2016/assignments/Assignment5/vivado_assignment_5/assignment_5/assignment_5.runs/synth_1
-# Command line: vivado.exe -log mega_adder.vds -mode batch -messageDb vivado.pb -notrace -source mega_adder.tcl
-# Log file: Z:/KS/TFE4141 Design av digitale system 1/2016/assignments/Assignment5/vivado_assignment_5/assignment_5/assignment_5.runs/synth_1/mega_adder.vds
-# Journal file: Z:/KS/TFE4141 Design av digitale system 1/2016/assignments/Assignment5/vivado_assignment_5/assignment_5/assignment_5.runs/synth_1\vivado.jou
+# Vivado v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Wed Sep 25 13:21:33 2019
+# Process ID: 3461
+# Current directory: /home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.runs/synth_1
+# Command line: vivado -log mega_adder.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mega_adder.tcl
+# Log file: /home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.runs/synth_1/mega_adder.vds
+# Journal file: /home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source mega_adder.tcl -notrace
