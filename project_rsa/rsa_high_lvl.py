@@ -20,7 +20,7 @@ k_m=256
 
 def binary_method(M, e, n, k_e):
     # Modular exponentiation function using the RL binary method
-    # Calulates the ciphertext C = M^e mod n 
+    # Calculates the ciphertext C = M^e mod n 
     if e >> (k_e - 1) & 1: # If MSB of e is 1:
         C = M
     else:
@@ -28,14 +28,16 @@ def binary_method(M, e, n, k_e):
     for i in range(k_e - 2, -1, -1): # Move through e bitwise from left to right
         C = (C * C) % n
         if (e >> i) & 1:        # If the current bit is 1
-            C = blakley(C,M,n)  # Calculate C = C * M mod n using Blakley's algorithm 
+            C = blakley(C,M,n)  # Calculate C = C * M mod n using Blakley's 
+                                # algorithm 
     return C
 
 def blakley(a,b,n):
     # Blakley's algorithm for modular multiplication
     R = 0
     for i in range(0,k_m): # Iterating through all bits of a
-        R = 2*R + (a >> (k_m-1-i) & 1) * b #Accesing a at the "k_m-1-j"th bit and performs 2*R + a(k_m-1-i)*b
+        R = 2*R + (a >> (k_m-1-i) & 1) * b # Accessing a at the "k_m-1-j"th 
+                                           # bit and performs 2*R + a(k_m-1-i)*b
 
         R = R%n
         if R >= n:
