@@ -58,17 +58,24 @@ begin
       a_r <= (others => '0');
       b_r <= (others => '0');      
     elsif(clk'event and clk='1') then
-      if(input_reg_en ='1') then
+      --if(input_reg_en ='1') then
         a_r <= a_nxt;
         b_r <= b_nxt;        
-      end if;
+      --end if;
     end if;
   end process;
   
-   process (data_in, a_r, b_r) begin
-    a_nxt <= data_in;
-    b_nxt <= a_r;
+   process (data_a_in,data_b_in, a_r, b_r) begin
+    a_nxt <= data_a_in;
+    b_nxt <= data_b_in;
   end process; 
+  -- ***
+  -- Out register 
+  -- 
+  --
+  -- ***
+  
+  process (clk, reset_n) begin
   
   process (data_a_in, data_b_in, data_n_in, data_ex_in)
   
