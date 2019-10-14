@@ -1,0 +1,3 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/crfosse/dds1/TFE4141-DDS1/rsa/rsa.sim/sim_1/synth/timing/xsim/tester_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder_datapath
+INFO: [VRFC 10-311] analyzing module glbl

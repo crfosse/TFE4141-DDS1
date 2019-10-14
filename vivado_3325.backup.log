@@ -1,0 +1,143 @@
+#-----------------------------------------------------------
+# Vivado v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Mon Oct  7 21:49:47 2019
+# Process ID: 3325
+# Current directory: /home/crfosse/dds1/TFE4141-DDS1
+# Command line: vivado
+# Log file: /home/crfosse/dds1/TFE4141-DDS1/vivado.log
+# Journal file: /home/crfosse/dds1/TFE4141-DDS1/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 6260.191 ; gain = 91.828 ; free physical = 4554 ; free virtual = 8655
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z020clg484-1
+Top: mega_adder
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 6649.523 ; gain = 168.590 ; free physical = 4116 ; free virtual = 8262
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mega_adder' [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/sources_1/new/mega_adder.vhd:75]
+INFO: [Synth 8-638] synthesizing module 'adder_datapath' [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/sources_1/new/adder_datapath.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'adder_datapath' (1#1) [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/sources_1/new/adder_datapath.vhd:40]
+INFO: [Synth 8-638] synthesizing module 'adder_controller' [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/sources_1/new/adder_controller.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'adder_controller' (2#1) [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/sources_1/new/adder_controller.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'mega_adder' (3#1) [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/sources_1/new/mega_adder.vhd:75]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 6679.461 ; gain = 198.527 ; free physical = 4161 ; free virtual = 8308
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 6694.305 ; gain = 213.371 ; free physical = 4144 ; free virtual = 8292
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 6694.305 ; gain = 213.371 ; free physical = 4144 ; free virtual = 8292
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 1 OBUFs to IO ports without IO buffers.
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/constrs_1/new/mega_adder_constraints.xdc]
+Finished Parsing XDC File [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/constrs_1/new/mega_adder_constraints.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6814.965 ; gain = 0.000 ; free physical = 4036 ; free virtual = 8200
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 6840.598 ; gain = 359.664 ; free physical = 3951 ; free virtual = 8122
+12 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 6840.598 ; gain = 557.391 ; free physical = 3951 ; free virtual = 8122
+update_compile_order -fileset sources_1
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z020clg484-1
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/constrs_1/new/mega_adder_constraints.xdc]
+Finished Parsing XDC File [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/constrs_1/new/mega_adder_constraints.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6846.598 ; gain = 0.000 ; free physical = 3621 ; free virtual = 7976
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+close_design
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z020clg484-1
+Top: mega_adder
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 7296.957 ; gain = 0.000 ; free physical = 3236 ; free virtual = 7620
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mega_adder' [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/sources_1/new/mega_adder.vhd:75]
+INFO: [Synth 8-638] synthesizing module 'adder_datapath' [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/sources_1/new/adder_datapath.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'adder_datapath' (1#1) [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/sources_1/new/adder_datapath.vhd:40]
+INFO: [Synth 8-638] synthesizing module 'adder_controller' [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/sources_1/new/adder_controller.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'adder_controller' (2#1) [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/sources_1/new/adder_controller.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'mega_adder' (3#1) [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/sources_1/new/mega_adder.vhd:75]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 7296.957 ; gain = 0.000 ; free physical = 3262 ; free virtual = 7647
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 7296.957 ; gain = 0.000 ; free physical = 3262 ; free virtual = 7647
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 7296.957 ; gain = 0.000 ; free physical = 3262 ; free virtual = 7647
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 1 OBUFs to IO ports without IO buffers.
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/constrs_1/new/mega_adder_constraints.xdc]
+Finished Parsing XDC File [/home/crfosse/dds1/TFE4141-DDS1/assignment_5/assignment_5.srcs/constrs_1/new/mega_adder_constraints.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 7366.770 ; gain = 0.000 ; free physical = 3190 ; free virtual = 7575
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 7374.773 ; gain = 77.816 ; free physical = 3130 ; free virtual = 7515
+11 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 7374.773 ; gain = 77.816 ; free physical = 3130 ; free virtual = 7515
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Oct  8 10:45:35 2019...

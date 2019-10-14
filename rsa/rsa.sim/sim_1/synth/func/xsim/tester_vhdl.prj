@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"tester_func_synth.vhd" \
+"../../../../../rsa.srcs/sim_1/new/tester.vhd" \
+
+# Do not sort compile order
+nosort

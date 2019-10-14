@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# Vivado v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Tue Oct  8 14:14:50 2019
+# Process ID: 1618
+# Current directory: /home/crfosse/dds1/TFE4141-DDS1
+# Command line: vivado
+# Log file: /home/crfosse/dds1/TFE4141-DDS1/vivado.log
+# Journal file: /home/crfosse/dds1/TFE4141-DDS1/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project rsa /home/crfosse/dds1/TFE4141-DDS1/rsa -part xc7z020clg400-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.1/data/ip'.
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 6267.859 ; gain = 62.641 ; free physical = 5083 ; free virtual = 8539
+set_property simulator_language Verilog [current_project]
+file mkdir /home/crfosse/dds1/TFE4141-DDS1/rsa/rsa.srcs/sources_1/new
+close [ open /home/crfosse/dds1/TFE4141-DDS1/rsa/rsa.srcs/sources_1/new/blakley.v w ]
+add_files /home/crfosse/dds1/TFE4141-DDS1/rsa/rsa.srcs/sources_1/new/blakley.v
+update_compile_order -fileset sources_1
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property target_language VHDL [current_project]
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+export_ip_user_files -of_objects  [get_files /home/crfosse/dds1/TFE4141-DDS1/rsa/rsa.srcs/sources_1/new/blakley.v] -no_script -reset -force -quiet
+remove_files  /home/crfosse/dds1/TFE4141-DDS1/rsa/rsa.srcs/sources_1/new/blakley.v
+file delete -force /home/crfosse/dds1/TFE4141-DDS1/rsa/rsa.srcs/sources_1/new/blakley.v
+close [ open /home/crfosse/dds1/TFE4141-DDS1/rsa/rsa.srcs/sources_1/new/blakeley.vhd w ]
+add_files /home/crfosse/dds1/TFE4141-DDS1/rsa/rsa.srcs/sources_1/new/blakeley.vhd
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Oct  8 15:22:59 2019...

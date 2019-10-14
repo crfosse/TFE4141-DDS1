@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Tue Oct  8 22:39:13 2019
+# Process ID: 3249
+# Current directory: /home/crfosse/dds1/TFE4141-DDS1/rsa/rsa.runs/synth_1
+# Command line: vivado -log adder_datapath.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source adder_datapath.tcl
+# Log file: /home/crfosse/dds1/TFE4141-DDS1/rsa/rsa.runs/synth_1/adder_datapath.vds
+# Journal file: /home/crfosse/dds1/TFE4141-DDS1/rsa/rsa.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source adder_datapath.tcl -notrace
