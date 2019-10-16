@@ -69,7 +69,8 @@
 #########
 #Journal - files
 #########
-!*.jou
+*.jou
+*.log
 #########
 #Reports
 #########
