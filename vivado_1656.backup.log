@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Wed Oct 16 15:15:01 2019
+# Process ID: 1656
+# Current directory: /home/crfosse/dds1/TFE4141-DDS1
+# Command line: vivado
+# Log file: /home/crfosse/dds1/TFE4141-DDS1/vivado.log
+# Journal file: /home/crfosse/dds1/TFE4141-DDS1/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/crfosse/dds1/TFE4141-DDS1/rsa/rsa.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 6243.750 ; gain = 67.785 ; free physical = 5467 ; free virtual = 8724
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 17 12:56:44 2019...
