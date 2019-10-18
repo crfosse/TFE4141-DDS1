@@ -24,7 +24,7 @@ use ieee.numeric_std.all;
 
 entity mod_mult is
   generic (
-    COUNTER_WIDTH : natural := 8);  
+    COUNTER_WIDTH : natural := 256);  
   port (
     -- Clocks and resets
     clk             : in std_logic;
@@ -33,6 +33,7 @@ entity mod_mult is
     -- Ctrl signals
     cnt_en  : in  std_logic;
     cnt_up  : in  std_logic;
+    reg_load : in std_logic;
     
     
     -- Data in interface       
@@ -64,6 +65,8 @@ begin
     port map(
         clk => clk,
         reset_n => reset_n,
+        reg_load => reg_load,
+        
         data_a_in => data_a_in,
         data_b_in => data_b_in,
         data_n_in => data_n_in,
@@ -71,5 +74,6 @@ begin
         data_out => data_out
     
     );
+
 
 end rtl;
