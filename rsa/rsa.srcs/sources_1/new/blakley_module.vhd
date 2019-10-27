@@ -37,7 +37,9 @@ entity blakley_module is
     -- Clocks and resets
     clk             : in std_logic;
     reset_n         : in std_logic;
-    reg_load        : in std_logic;
+    start           : in std_logic;
+    
+    modmult_finished : out std_logic;
     
     -- Data in interface       
     data_a_in         : in std_logic_vector (255 downto 0);
@@ -56,59 +58,66 @@ architecture Behavioral of blakley_module is
   signal a_r, a_nxt: std_logic_vector(255 downto 0);
   signal b_r, b_nxt: std_logic_vector(255 downto 0);
   
+  signal a_test: std_logic;
+  
   -- Signals associated with the output registers
   signal y_r, y_nxt: std_logic_vector(255 downto 0);
+  
+  signal sum: std_logic_vector(255 downto 0);
+  
+  signal shift_counter: unsigned(7 downto 0); --256 bit counter register
+  
+  type state_type is (INIT, MODCALC, MODCOMP, MODFIN, MODDONE);
+  signal PS : state_type;
 
 begin
 
-    --Input registers
-
-    process (clk, reset_n) begin
-        if(reset_n = '0') then
-          a_r <= (others => '0');
-          b_r <= (others => '0');      
-        elsif(clk'event and clk='1') then
-            if(reg_load='1') then
-                a_r <= data_a_in;
-                b_r <= data_b_in;
-            else 
-                a_r <= a_r(254 downto 0) & '0';
-            end if;        
-          end if;
-      end process;
-      
-    --Output register
-      
-  process (clk, reset_n) begin
-    if(reset_n = '0') then
-      y_r <= (others => '0');     
-    elsif(clk'event and clk='1') then
-        y_r <= y_nxt;       
-      end if;
-  end process;
-      
-      
-      process (y_r, a_r, b_r) 
-      
-       variable a_tmp: std_logic_vector(255 downto 0);
-
-      
-      begin
-      
-      a_tmp := ((others => a_r(255)));
-      
-      
-      
-      y_nxt <= std_logic_vector(shift_left(unsigned(y_r),2) + unsigned(a_tmp and data_b_in));
+    process (clk, reset_n) 
     
-      if (y_nxt >= data_n_in) then
-        y_nxt <= std_logic_vector(unsigned(y_nxt) - unsigned(data_n_in));
-        if(y_nxt >= (data_n_in)) then
-            y_nxt <= std_logic_vector(unsigned(y_nxt) - unsigned(data_n_in));
+    variable a_tmp: std_logic_vector(255 downto 0);
+    
+    begin
+        modmult_finished <= '0';
+        
+        if(reset_n = '0') then
+          a_r <= (others => '0'); 
+          y_r <= (others => '0');         
+          shift_counter <= (others => '0');
+        elsif(clk'event and clk='1') then
+            case PS is
+                when INIT =>
+                    y_r <= (others => '0'); --resetting result register
+                    a_r <= data_a_in;                    
+                    if (start = '1') then
+                        PS <= MODCALC;
+                    end if;
+                when MODCALC =>
+                    a_r <= a_r(254 downto 0) & '0';
+                    a_tmp := (others => a_r(255));
+                    sum <= std_logic_vector(shift_left(unsigned(y_r),1) + unsigned(a_tmp and data_b_in));      
+                    
+                    PS <= MODCOMP;
+                 when MODCOMP =>
+                    if (sum >= data_n_in) then
+                       sum <= std_logic_vector(unsigned(sum) - unsigned(data_n_in));
+                    else 
+                        y_nxt <= sum;
+                        shift_counter <= shift_counter + 1;
+                        PS <= MODFIN;
+                    end if;                       
+                 when MODFIN =>
+                    y_r <= y_nxt;
+                    if(shift_counter >= 255) then
+                        data_out <= y_nxt;
+                        modmult_finished <= '1';
+                        shift_counter <= (others => '0');
+                        PS <= INIT;
+                    else
+                        PS <= MODCALC;
+                    end if;
+                 when others =>
+                    PS <= INIT;
+             end case;
         end if;
-      end if;
-       
-      data_out <= y_nxt;
-       
       end process;
 end Behavioral;

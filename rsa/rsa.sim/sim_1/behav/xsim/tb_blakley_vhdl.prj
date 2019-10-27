@@ -2,7 +2,7 @@
 vhdl xil_defaultlib  \
 "../../../../rsa.srcs/sources_1/new/blakley_module.vhd" \
 "../../../../rsa.srcs/sources_1/new/blakeley.vhd" \
-"../../../../rsa.srcs/sim_1/new/tester.vhd" \
+"../../../../rsa.srcs/sim_1/new/tb_blakley.vhd" \
 
 # Do not sort compile order
 nosort
