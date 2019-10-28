@@ -58,66 +58,122 @@ architecture Behavioral of blakley_module is
   signal a_r, a_nxt: std_logic_vector(255 downto 0);
   signal b_r, b_nxt: std_logic_vector(255 downto 0);
   
-  signal a_test: std_logic;
-  
   -- Signals associated with the output registers
   signal y_r, y_nxt: std_logic_vector(255 downto 0);
   
-  signal sum: std_logic_vector(255 downto 0);
+  signal sum, sum_nxt: std_logic_vector(255 downto 0);
   
-  signal shift_counter: unsigned(7 downto 0); --256 bit counter register
+  signal shift_counter, shift_counter_nxt: unsigned(7 downto 0); --256 bit counter register
   
   type state_type is (INIT, MODCALC, MODCOMP, MODFIN, MODDONE);
-  signal PS : state_type;
+  signal PS, NS : state_type;
 
-begin
+begin   
+    sync_state: process(clk, reset_n, NS)
+        begin
+            if(reset_n = '0') then PS <= INIT;
+            elsif (clk'event and clk='1') then PS <= NS;
+            end if;
+    end process sync_state;             
 
-    process (clk, reset_n) 
-    
-    variable a_tmp: std_logic_vector(255 downto 0);
-    
-    begin
-        modmult_finished <= '0';
-        
-        if(reset_n = '0') then
-          a_r <= (others => '0'); 
-          y_r <= (others => '0');         
-          shift_counter <= (others => '0');
-        elsif(clk'event and clk='1') then
-            case PS is
-                when INIT =>
-                    y_r <= (others => '0'); --resetting result register
-                    a_r <= data_a_in;                    
-                    if (start = '1') then
-                        PS <= MODCALC;
+    calc_ns: process (PS) 
+        begin
+             case PS is
+                when INIT =>                
+                    if (start = '1') then                    
+                        NS <= MODCALC;
+                    else
+                        NS <= INIT;
                     end if;
-                when MODCALC =>
-                    a_r <= a_r(254 downto 0) & '0';
-                    a_tmp := (others => a_r(255));
-                    sum <= std_logic_vector(shift_left(unsigned(y_r),1) + unsigned(a_tmp and data_b_in));      
-                    
-                    PS <= MODCOMP;
+                 when MODCALC =>
+                    NS <= MODCOMP;
                  when MODCOMP =>
                     if (sum >= data_n_in) then
-                       sum <= std_logic_vector(unsigned(sum) - unsigned(data_n_in));
-                    else 
-                        y_nxt <= sum;
-                        shift_counter <= shift_counter + 1;
-                        PS <= MODFIN;
+                        NS <= MODCOMP;
+                    else
+                        NS <= MODFIN;
                     end if;                       
                  when MODFIN =>
-                    y_r <= y_nxt;
-                    if(shift_counter >= 255) then
-                        data_out <= y_nxt;
-                        modmult_finished <= '1';
-                        shift_counter <= (others => '0');
-                        PS <= INIT;
+                    if(shift_counter >= 255) then                     
+                        NS <= INIT;
                     else
-                        PS <= MODCALC;
+                        NS <= MODCALC;
                     end if;
                  when others =>
-                    PS <= INIT;
+                    NS <= INIT;
              end case;
-        end if;
-      end process;
+      end process calc_ns;
+      
+      sync_regs: process(clk, reset_n) is
+      begin
+      if(reset_n = '0') then
+         a_r           <= (others => '0');
+         b_r           <= (others => '0');
+         y_r           <= (others => '0');
+         sum           <= (others => '0');
+         shift_counter <= (others => '0');
+      elsif (clk'event and clk='1') then
+         a_r           <= a_nxt;
+         b_r           <= b_nxt;
+         y_r           <= y_nxt;
+         sum           <= sum_nxt;
+         shift_counter <= shift_counter_nxt;  
+      end if;
+      
+      end process sync_regs;
+      
+      comp_proc: process(data_a_in,data_b_in,a_r,b_r,y_r,sum,shift_counter,PS)
+      
+      variable a_tmp: std_logic_vector(255 downto 0);
+      
+      begin
+      modmult_finished <= '0';
+            case PS is
+                when INIT =>
+                    y_nxt             <= (others => '0'); --resetting result register
+                    sum_nxt           <= (others => '0');
+                    shift_counter_nxt <= (others => '0');
+                    a_nxt             <= data_a_in;  
+                    b_nxt             <= data_b_in;  
+                when MODCALC =>
+                    a_nxt <= a_r(254 downto 0) & '0';
+                    a_tmp := (others => a_r(255));
+                    
+                    sum_nxt <= std_logic_vector(shift_left(unsigned(y_r),1) + unsigned(a_tmp and data_b_in));                     
+                    b_nxt <= b_r;
+                    y_nxt <= y_r;
+                    shift_counter_nxt <= shift_counter;                    
+                    
+                 when MODCOMP =>
+
+                    if (sum >= data_n_in) then
+                       sum_nxt <= std_logic_vector(unsigned(sum) - unsigned(data_n_in));
+                       y_nxt <= y_r;
+                       shift_counter_nxt <= shift_counter;  
+                    else 
+                       sum_nxt <= sum;
+                       y_nxt <= sum;
+                       shift_counter <= shift_counter + 1;
+                    end if;
+                    
+                    b_nxt <= b_r;
+                    a_nxt <= a_r;                                            
+                 when MODFIN =>
+                    if(shift_counter >= 255) then                        
+                        modmult_finished <= '1';
+                    end if;
+                    y_nxt             <= y_r; 
+                    sum_nxt           <= sum;
+                    shift_counter_nxt <= shift_counter;
+                    a_nxt             <= a_r;  
+                    b_nxt             <= b_r;      
+                    
+                   
+                 when others =>
+             end case;    
+             
+                 
+      data_out <= y_r;    
+      
+      end process comp_proc;
 end Behavioral;
