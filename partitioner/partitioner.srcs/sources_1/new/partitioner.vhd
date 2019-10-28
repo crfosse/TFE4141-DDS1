@@ -36,7 +36,7 @@ entity partitioner is
         reset_n : in  std_logic;
         pStart  : in  std_logic;
         e       : in  std_logic_vector(REGISTER_WIDTH-1 downto 0);
-        e_i     : out std_logic);
+        e_i     : inout std_logic);
 end partitioner;
 
 architecture Behavioral of partitioner is
@@ -45,9 +45,23 @@ architecture Behavioral of partitioner is
     signal shift_e : std_logic;
     signal reset_count : std_logic;
     signal counter : unsigned(7 downto 0);
+    signal wordcounter : unsigned(1 downto 0);
+    signal word : std_logic_vector(3 downto 0);
+    signal write : std_logic;
+    signal read : std_logic;
+    signal addr : std_logic_vector(5 downto 0);
+    signal read_addr : std_logic_vector(5 downto 0);
+    signal memory_out : std_logic_vector(word'length + counter'length downto 0);
+    signal inc_addr : std_logic;
+        
+    type ram_type is array (0 to (2**addr'length)-1) of std_logic_vector(word'length + counter'length downto 0);
+    signal ram : ram_type;
     
     type state_type is (idle, load, shift); 
     signal state_reg, state_next : state_type;
+    
+    type state_type2 is (idle, zero, nzero);
+    signal state_reg2, state_next2 : state_type2;
     
 begin
     process(clk, reset_n)
@@ -112,4 +126,70 @@ begin
                 end if;
         end case;
     end process;
+    
+    process(clk, reset_n)
+    begin
+        if reset_n = '0' then
+ 	      state_reg2 <= idle;
+	   elsif (clk'event and clk='1') then
+	       state_reg2 <= state_next2;
+	   end if;
+    end process;
+    
+    process(state_reg2) --More?
+    begin
+        state_next2 <= idle;
+        wordcounter <= (others => '0');
+        case state_reg2 is
+            when idle =>
+                if pStart='1' then
+                    if e_i = '0' then
+                        state_next2 <= zero;
+                    else
+                        state_next2 <= nzero;
+                        word <= x"000" & e_i;
+                    end if;
+                else
+                    state_next2 <= idle;
+                end if;
+            when zero =>
+                if e_i = '0' then
+                    state_next2 <= zero;
+                else
+                    state_next2 <= nzero;
+                    word <= x"000" & e_i;
+                end if;
+            when nzero =>
+                if wordcounter = 3 then
+                    if e_i = '0' then
+                        state_next2 <= zero;
+                    else
+                        state_next2 <= nzero;
+                    end if;
+                end if;
+                word <= word(2 downto 0) & e_i;
+        end case;
+    end process;
+    
+    RamProc: process(clk) is
+    begin
+        if (clk'event and clk='1') then
+            if write = '1' then
+                ram(to_integer(unsigned(addr))) <= word & std_logic_vector(counter);
+            end if;
+            read_addr <= addr;
+        end if;
+    end process RamProc;
+    
+    memory_out <= ram(to_integer(unsigned(read_addr)));
+    
+    process(load_e, inc_addr) is
+    begin
+        if load_e = '1' then
+ 	      addr <= (others => '0');
+ 	    elsif inc_addr = '1' then
+ 	      addr <= std_logic_vector(unsigned(addr) + 1);
+ 	    end if;    
+    end process;
+    
 end Behavioral;

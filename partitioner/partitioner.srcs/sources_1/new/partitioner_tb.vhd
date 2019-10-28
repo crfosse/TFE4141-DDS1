@@ -34,9 +34,51 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity partitioner_tb is
 end partitioner_tb;
 
-architecture Behavioral of partitioner_tb is
+architecture simulate of partitioner_tb is
+    component partitioner
+    port (
+        clk     : in  std_logic;
+        reset_n : in  std_logic;
+        pStart  : in  std_logic;
+        e       : in  std_logic_vector(255 downto 0);
+        e_i     : out std_logic);
+    end component;
+
+    constant CLK_PERIOD : time := 100ns;
+    signal clk : std_logic := '0';
+    signal reset_n : std_logic := '0';
+    signal pStart : std_logic;
+    signal e : std_logic_vector(255 downto 0);
+    signal e_i : std_logic;
 
 begin
+uut: partitioner
+port map (
+    clk => clk,
+    reset_n => reset_n,
+    pStart => pStart,
+    e => e,
+    e_i => e_i);
+    
+clk <= not clk after CLK_PERIOD/2;
 
+reset : process
+begin
+    wait for CLK_PERIOD;
+    reset_n <= '1';
+    wait;
+end process;
 
-end Behavioral;
+stimulus: process
+    begin
+        wait for 5*CLK_PERIOD;
+    
+        e <= (  0 => '1',
+                1 => '1',
+                others => '0');
+        pStart <= '1';
+    
+    wait;
+    end process; -- stimulus
+
+end simulate;
