@@ -103,7 +103,37 @@ begin
                         3      =>'1',
                         4      =>'1',  
                         others =>'0');
-    
+    wait for 256*CLK_PERIOD;
+    data_a_in       <= (0      =>'1',
+                        1      =>'1',  
+                        2      =>'1',  
+                        others =>'0');
+    data_b_in       <= (0      =>'1',
+                        1      =>'1',  
+                        2      =>'1',  
+                        others =>'0');
+    data_n_in       <= (0      =>'1',
+                        1      =>'1',  
+                        2      =>'1',
+                        3      =>'1',
+                        4      =>'1',  
+                        others =>'0');
+    wait for 256*CLK_PERIOD;
+    data_a_in       <= (0      =>'1',
+                        1      =>'1',  
+                        2      =>'1',  
+                        others =>'0');
+    data_b_in       <= (0      =>'1',
+                        1      =>'1',  
+                        2      =>'1',  
+                        others =>'0');
+    data_n_in       <= (0      =>'1',
+                        1      =>'1',  
+                        2      =>'1',
+                        3      =>'1',
+                        4      =>'1',
+                        5      =>'1',  
+                        others =>'0');
     -- Wait for results
     wait;
   end process;  
