@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_blakley_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_blakley" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="75776426230fs"></ZoomStartTime>
+      <ZoomEndTime time="78617868855fs"></ZoomEndTime>
+      <Cursor1Time time="76850000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="164"></NameColumnWidth>
+      <ValueColumnWidth column_width="78"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="14" />
+   <wvobject type="logic" fp_name="/tb_blakley/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_blakley/reset_n">
+      <obj_property name="ElementShortName">reset_n</obj_property>
+      <obj_property name="ObjectShortName">reset_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_blakley/start">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_blakley/modmult_finished">
+      <obj_property name="ElementShortName">modmult_finished</obj_property>
+      <obj_property name="ObjectShortName">modmult_finished</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_blakley/data_a_in">
+      <obj_property name="ElementShortName">data_a_in[255:0]</obj_property>
+      <obj_property name="ObjectShortName">data_a_in[255:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_blakley/data_b_in">
+      <obj_property name="ElementShortName">data_b_in[255:0]</obj_property>
+      <obj_property name="ObjectShortName">data_b_in[255:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_blakley/data_n_in">
+      <obj_property name="ElementShortName">data_n_in[255:0]</obj_property>
+      <obj_property name="ObjectShortName">data_n_in[255:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_blakley/data_out">
+      <obj_property name="ElementShortName">data_out[255:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[255:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb_blakley/dut/blakley/PS">
+      <obj_property name="ElementShortName">PS</obj_property>
+      <obj_property name="ObjectShortName">PS</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_blakley/dut/blakley/sum">
+      <obj_property name="ElementShortName">sum[255:0]</obj_property>
+      <obj_property name="ObjectShortName">sum[255:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_blakley/dut/blakley/y_r">
+      <obj_property name="ElementShortName">y_r[255:0]</obj_property>
+      <obj_property name="ObjectShortName">y_r[255:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_blakley/dut/blakley/shift_counter">
+      <obj_property name="ElementShortName">shift_counter[7:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_counter[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb_blakley/CLK_PERIOD">
+      <obj_property name="ElementShortName">CLK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_blakley/dut/blakley/a_r">
+      <obj_property name="ElementShortName">a_r[255:0]</obj_property>
+      <obj_property name="ObjectShortName">a_r[255:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+</wave_config>

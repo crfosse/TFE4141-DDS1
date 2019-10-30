@@ -71,12 +71,14 @@ architecture Behavioral of blakley_module is
 begin   
     sync_state: process(clk, reset_n, NS)
         begin
-            if(reset_n = '0') then PS <= INIT;
-            elsif (clk'event and clk='1') then PS <= NS;
+            if(reset_n = '0') then 
+                PS <= INIT;
+            elsif (clk'event and clk='1') then 
+                PS <= NS;
             end if;
     end process sync_state;             
 
-    calc_ns: process (PS) 
+    calc_ns: process (PS, start, sum, data_n_in, shift_counter) 
         begin
              case PS is
                 when INIT =>                
@@ -125,6 +127,7 @@ begin
       comp_proc: process(data_a_in,data_b_in,a_r,b_r,y_r,sum,shift_counter,PS)
       
       variable a_tmp: std_logic_vector(255 downto 0);
+      variable a_mult_b_res: std_logic_vector(255 downto 0);
       
       begin
       modmult_finished <= '0';
@@ -136,10 +139,13 @@ begin
                     a_nxt             <= data_a_in;  
                     b_nxt             <= data_b_in;  
                 when MODCALC =>
-                    a_nxt <= a_r(254 downto 0) & '0';
-                    a_tmp := (others => a_r(255));
+                    a_nxt <= a_r(254 downto 0) & a_r(255);
                     
-                    sum_nxt <= std_logic_vector(shift_left(unsigned(y_r),1) + unsigned(a_tmp and data_b_in));                     
+                    a_tmp := (others => a_r(254));
+                    a_mult_b_res:= a_tmp and data_b_in; 
+                    
+                    
+                    sum_nxt <= std_logic_vector(shift_left(unsigned(y_r),1) + unsigned(a_mult_b_res));                    
                     b_nxt <= b_r;
                     y_nxt <= y_r;
                     shift_counter_nxt <= shift_counter;                    
@@ -153,7 +159,7 @@ begin
                     else 
                        sum_nxt <= sum;
                        y_nxt <= sum;
-                       shift_counter <= shift_counter + 1;
+                       shift_counter_nxt <= shift_counter + 1;
                     end if;
                     
                     b_nxt <= b_r;
@@ -170,10 +176,16 @@ begin
                     
                    
                  when others =>
-             end case;    
-             
-                 
-      data_out <= y_r;    
+                    -- Move to idle state
+                    y_nxt             <= (others => '0');
+                    sum_nxt           <= (others => '0');
+                    shift_counter_nxt <= (others => '0');
+                    a_nxt             <= data_a_in;  
+                    b_nxt             <= data_b_in;                   
+             end case;      
       
       end process comp_proc;
+      
+      data_out <= y_r;  
+      
 end Behavioral;

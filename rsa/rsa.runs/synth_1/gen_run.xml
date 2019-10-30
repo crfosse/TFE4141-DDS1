@@ -1,21 +1,451 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1570567150">
-  <File Type="RDS-DCP" Name="adder_datapath.dcp"/>
-  <File Type="PA-TCL" Name="adder_datapath.tcl"/>
-  <File Type="REPORTS-TCL" Name="adder_datapath_reports.tcl"/>
-  <File Type="RDS-RDS" Name="adder_datapath.vds"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1572447902">
+  <File Type="VDS-TIMINGSUMMARY" Name="mod_mult_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="mod_mult.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="mod_mult_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="mod_mult_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="mod_mult_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="mod_mult.vds"/>
+  <File Type="REPORTS-TCL" Name="mod_mult_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="mod_mult_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="mod_mult.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/blakley_module.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/blakeley.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/register_reset_n/rtl/register_reset_n.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/register_reset_n/rtl/register_reset_n.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/register_file/rtl/register_file_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/register_file/rtl/register_file_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/pos_edge_detector/rtl/pos_edge_detector.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/pos_edge_detector/rtl/pos_edge_detector.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/priority_encoder/rtl/priority_encoder.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/priority_encoder/rtl/priority_encoder.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/adder_tree_pipelined/rtl/adder_tree_pipelined.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/adder_tree_pipelined/rtl/adder_tree_pipelined.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/bit_scanner/rtl/bit_scanner.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/bit_scanner/rtl/bit_scanner.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/dff_clr/rtl/dff_clr_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/dff_clr/rtl/dff_clr_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/dff_reset_n/rtl/dff_reset_n.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/dff_reset_n/rtl/dff_reset_n.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/reg/rtl/reg.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/reg/rtl/reg.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/dff_reset_n/rtl/dff_reset_n_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/dff_reset_n/rtl/dff_reset_n_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/adder_tree_comb/rtl/adder_tree_comb_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/adder_tree_comb/rtl/adder_tree_comb_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/mux8x1/rtl/mux8x1_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/mux8x1/rtl/mux8x1_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/dff/rtl/dff_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/dff/rtl/dff_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/mux2x1/rtl/mux2x1.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/mux2x1/rtl/mux2x1.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/pos_edge_detector/rtl/pos_edge_detector_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/pos_edge_detector/rtl/pos_edge_detector_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/priority_encoder/rtl/priority_encoder_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/priority_encoder/rtl/priority_encoder_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/rr_bit_scanner/rtl/rr_bit_scanner_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/rr_bit_scanner/rtl/rr_bit_scanner_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/adder_tree_comb/rtl/adder_tree_comb.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/adder_tree_comb/rtl/adder_tree_comb.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/fifo/rtl/fifo.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/fifo/rtl/fifo.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/bit_scanner/rtl/bit_scanner_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/bit_scanner/rtl/bit_scanner_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/up_down_counter/rtl/up_down_counter_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/up_down_counter/rtl/up_down_counter_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/fifo/rtl/fifo_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/fifo/rtl/fifo_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/dff/rtl/dff.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/dff/rtl/dff.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/register_reset_n/rtl/register_reset_n_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/register_reset_n/rtl/register_reset_n_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/counter/rtl/counter.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/counter/rtl/counter.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/shift_register/rtl/shift_register_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/shift_register/rtl/shift_register_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/arraypackage.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/arraypackage.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/adder_tree_pipelined/rtl/adder_tree_pipelined_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/adder_tree_pipelined/rtl/adder_tree_pipelined_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/register_file/rtl/register_file.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/register_file/rtl/register_file.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/counter/rtl/counter_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/counter/rtl/counter_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/mux8x1/rtl/mux8x1.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/mux8x1/rtl/mux8x1.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/dff_clr/rtl/dff_clr.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/dff_clr/rtl/dff_clr.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/math_utilities.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/math_utilities.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/reg/rtl/reg_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/reg/rtl/reg_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/bin_decoder/rtl/bin_decoder.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/bin_decoder/rtl/bin_decoder.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/bin_decoder/rtl/bin_decoder_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/bin_decoder/rtl/bin_decoder_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/mux2x1/rtl/mux2x1_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/mux2x1/rtl/mux2x1_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/mux4x1/rtl/mux4x1_ent.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/mux4x1/rtl/mux4x1_ent.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/rr_bit_scanner/rtl/rr_bit_scanner.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/rr_bit_scanner/rtl/rr_bit_scanner.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/shift_register/rtl/shift_register.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/shift_register/rtl/shift_register.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/mux4x1/rtl/mux4x1.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/mux4x1/rtl/mux4x1.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/module_lib/up_down_counter/rtl/up_down_counter.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../module_lib/up_down_counter/rtl/up_down_counter.vhd"/>
+        <Attr Name="ImportTime" Val="1571315974"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="adder_datapath"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="mod_mult"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

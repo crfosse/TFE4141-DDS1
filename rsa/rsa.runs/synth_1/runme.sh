@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log adder_datapath.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source adder_datapath.tcl
+EAStep vivado -log mod_mult.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mod_mult.tcl
