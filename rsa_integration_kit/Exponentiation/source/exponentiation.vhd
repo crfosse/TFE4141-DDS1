@@ -33,6 +33,36 @@ end exponentiation;
 
 architecture expBehave of exponentiation is
 begin
+	
+	exp_fsm: process ()
+		begin
+			case PS is 
+				when IDLE
+
+					if start = '1' then
+							NS <= PRECOMPUTE_INIT;
+				    end if;
+
+				when PRECOMPUTE_INIT =>
+					-- Initialize and start/reset partitioner and counters.
+					-- Ensure that neccesary signals(p_start, counter1=0) is set.
+					-- 
+					
+					--Conditons for further next state?
+					NS <= PRECOMUTE_LD;
+				when PRECOMPUTE_LD =>
+					-- Load registers with message(chosen with a mux)
+					-- Set PMEM[counter1] = M (initial message)
+
+				    -- Conditions for ensuring this is finished?
+				when PRECOMPUTE =>
+					-- Start modular multiplier. If it's finished, set C on the output. 
+			end case;
+
+	end exp_fsm;
+
+
+
 	result <= message xor modulus;
 	ready_in <= ready_out;
 	valid_out <= valid_in;
