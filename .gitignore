@@ -1,6 +1,9 @@
+### User added gitignore for rsa_integration_kit ###
+
+rsa_integration_kit/*/*/**
+
 #########################################################################################################
-##	This is an example .gitignore file for Vivado, please treat it as an example as 
-##	it might not be complete. In addition, XAPP 1165 should be followed.
+#Vivado gitignore
 #########################################################################################################
 #########
 #Exclude all
