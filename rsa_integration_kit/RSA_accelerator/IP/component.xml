@@ -328,7 +328,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>9413b01e</spirit:value>
+            <spirit:value>0dafa6e5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -344,7 +344,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>3a20dfa4</spirit:value>
+            <spirit:value>e7567a4f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -373,7 +373,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>25bb5db2</spirit:value>
+            <spirit:value>5a9eb295</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1001,7 +1001,7 @@
       <spirit:file>
         <spirit:name>xgui/RSA_accelerator_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_25bb5db2</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_5a9eb295</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1046,18 +1046,8 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:supportedFamilies>
-        <xilinx:family xilinx:lifeCycle="Production">kintex7</xilinx:family>
-        <xilinx:family xilinx:lifeCycle="Production">kintex7l</xilinx:family>
-        <xilinx:family xilinx:lifeCycle="Production">artix7</xilinx:family>
-        <xilinx:family xilinx:lifeCycle="Production">artix7l</xilinx:family>
-        <xilinx:family xilinx:lifeCycle="Production">aartix7</xilinx:family>
         <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
         <xilinx:family xilinx:lifeCycle="Production">azynq</xilinx:family>
-        <xilinx:family xilinx:lifeCycle="Production">spartan7</xilinx:family>
-        <xilinx:family xilinx:lifeCycle="Production">aspartan7</xilinx:family>
-        <xilinx:family xilinx:lifeCycle="Production">kintexuplus</xilinx:family>
-        <xilinx:family xilinx:lifeCycle="Production">zynquplus</xilinx:family>
-        <xilinx:family xilinx:lifeCycle="Production">kintexu</xilinx:family>
       </xilinx:supportedFamilies>
       <xilinx:taxonomies>
         <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
@@ -1065,21 +1055,23 @@
       <xilinx:displayName>RSA_accelerator_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-10-31T14:08:09Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2019-11-11T18:17:43Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@22c31770_ARCHIVE_LOCATION">/home/crfosse/dds1/rsa_integration_kit/RSA_accelerator/IP</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f5b2327_ARCHIVE_LOCATION">/home/crfosse/dds1/rsa_integration_kit/RSA_accelerator/IP</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@129f3f1d_ARCHIVE_LOCATION">/home/crfosse/dds1/rsa_integration_kit/RSA_accelerator/IP</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4418cc48_ARCHIVE_LOCATION">/home/crfosse/dds1/rsa_integration_kit/RSA_accelerator/IP</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@154e2f01_ARCHIVE_LOCATION">/home/crfosse/dds1/rsa_integration_kit/RSA_accelerator/IP</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@17865887_ARCHIVE_LOCATION">/home/crfosse/dds1/rsa_integration_kit/RSA_accelerator/IP</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73ee5c10_ARCHIVE_LOCATION">c:/Users/student/Downloads/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/IP</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10fb978a_ARCHIVE_LOCATION">c:/Users/student/Downloads/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/IP</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34dda33e_ARCHIVE_LOCATION">c:/Users/student/Downloads/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/IP</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@791c82a1_ARCHIVE_LOCATION">c:/Users/student/Downloads/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/IP</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@726f0e84_ARCHIVE_LOCATION">c:/Users/student/Downloads/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/IP</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a60b75a_ARCHIVE_LOCATION">c:/Users/student/Downloads/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/IP</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b572cd7_ARCHIVE_LOCATION">c:/Users/student/Downloads/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/IP</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e913b75_ARCHIVE_LOCATION">c:/Users/student/Downloads/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/IP</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.1.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="438212c9"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="871c369d"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="4c0315c4"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="9e722144"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="5374d2dd"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="2d841084"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="f2ed1cff"/>
