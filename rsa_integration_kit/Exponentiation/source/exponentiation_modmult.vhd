@@ -24,21 +24,25 @@ use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
 
 entity exponentiation_modmult is
+  generic (
+    C_block_size : integer := 256
+		
+  );
   port (
     -- Clocks and resets
     clk             : in std_logic;
     reset_n         : in std_logic;
-    start           : in std_logic;
+    mult_start      : in std_logic;
     
-    modmult_finished : out std_logic;
+    mult_finished : out std_logic;
     
     -- Data in interface       
-    data_a_in         : in std_logic_vector (255 downto 0);
-    data_b_in         : in std_logic_vector (255 downto 0);          
-    data_n_in         : in std_logic_vector (255 downto 0);
+    data_a_in         : in std_logic_vector ( C_block_size-1 downto 0);
+    data_b_in         : in std_logic_vector ( C_block_size-1 downto 0);          
+    data_n_in         : in std_logic_vector ( C_block_size-1 downto 0);
     
     -- Data out interface
-    data_out          : out std_logic_vector (255 downto 0)
+    data_out          : out std_logic_vector ( C_block_size-1 downto 0)
     
    );     
 end exponentiation_modmult;
@@ -46,13 +50,13 @@ end exponentiation_modmult;
 architecture expBehave of exponentiation_modmult is
 
   -- Signals associated with the input registers
-  signal a_r, a_nxt: std_logic_vector(255 downto 0);
-  signal b_r, b_nxt: std_logic_vector(255 downto 0);
+  signal a_r, a_nxt: std_logic_vector( C_block_size-1 downto 0);
+  signal b_r, b_nxt: std_logic_vector( C_block_size-1 downto 0);
   
   -- Signals associated with the output registers
-  signal y_r, y_nxt: std_logic_vector(255 downto 0);
+  signal y_r, y_nxt: std_logic_vector( C_block_size-1 downto 0);
   
-  signal sum, sum_nxt: std_logic_vector(255 downto 0);
+  signal sum, sum_nxt: std_logic_vector( C_block_size-1 downto 0);
   
   signal shift_counter, shift_counter_nxt: unsigned(7 downto 0); --256 bit counter register
   
@@ -60,7 +64,7 @@ architecture expBehave of exponentiation_modmult is
   signal PS, NS : state_type;
 
 begin   
-    sync_state: process(clk, reset_n, NS)
+    sync_state: process(clk, reset_n)
         begin
             if(reset_n = '0') then 
                 PS <= INIT;
@@ -69,11 +73,11 @@ begin
             end if;
     end process sync_state;             
 
-    calc_ns: process (PS, start, sum, data_n_in, shift_counter) 
+    calc_ns: process (PS, mult_start, sum, data_n_in, shift_counter) 
         begin
              case PS is
                 when INIT =>                
-                    if (start = '1') then                    
+                    if (mult_start = '1') then                    
                         NS <= MODCALC;
                     else
                         NS <= INIT;
@@ -121,7 +125,7 @@ begin
       variable a_mult_b_res: std_logic_vector(255 downto 0);
       
       begin
-      modmult_finished <= '0';
+      mult_finished <= '0';
             case PS is
                 when INIT =>
                     y_nxt             <= (others => '0'); --resetting result register
@@ -156,8 +160,8 @@ begin
                     b_nxt <= b_r;
                     a_nxt <= a_r;                                            
                  when MODFIN =>
-                    if(shift_counter >= 255) then                        
-                        modmult_finished <= '1';
+                    if(shift_counter >=  C_block_size-1) then                        
+                        mult_finished <= '1';
                     end if;
                     y_nxt             <= y_r; 
                     sum_nxt           <= sum;

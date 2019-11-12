@@ -40,11 +40,15 @@ architecture expBehave of exponentiation is
   signal e_r, e_nxt: std_logic_vector(C_block_size downto 0);
   
   -- Signals associated with the output registers
-  signal y_r, y_nxt: std_logic_vector(C_block_size downto 0);
+  signal c_r, c_nxt: std_logic_vector(C_block_size downto 0);
   
-  signal sum, sum_nxt: std_logic_vector(C_block_size downto 0);
+  signal a_in, b_in: std_logic_vector(C_block_size downto 0);
   
-  signal shift_counter, shift_counter_nxt: unsigned(7 downto 0); --256 bit counter register
+  signal r, r_nxt: std_logic_vector(C_block_size downto 0);
+  
+  signal shift_counter_e, shift_counter_nxt: unsigned(7 downto 0); --256 bit counter register
+  
+  signal m_start, m_finished: std_logic;
 
   type state_type is (
     IDLE, 
@@ -64,14 +68,13 @@ begin
            when IDLE => 
                 if(valid_in = '1') then
                     NS <= CHECK_E;
-                    ready_in <= '1';
                 else
-                    NS <= INIT;
+                    NS <= IDLE;
                 end if;
            when CHECK_E =>
                 NS <= LOAD_CC;
            when LOAD_CC =>
-                m_start <= 1;
+                m_start <= '1';
                 NS <= COMP_CC;
            when COMP_CC =>
                 if(m_finished = '1') then
@@ -84,7 +87,6 @@ begin
                     NS <= COMP_CC;
                 end if;
            when LOAD_CM =>
-                m_start <= 1;
                 NS <= COMP_CM;
            when COMP_CM =>                  
                if(m_finished = '1') then
@@ -95,7 +97,6 @@ begin
            when CHECK_FINISH =>
                 if(shift_counter_e = '0') then -- Finished 
                     NS <= IDLE;
-                    result_write <= 1;
                 else 
                     NS => LOAD_CC;
                 end if;       
@@ -109,6 +110,7 @@ begin
         case PS is 
            when IDLE => 
                 if(valid_in = '1') then
+                    ready_in <= '1';
                     m_nxt <= message;
                     e_nxt <= key;
                 else
@@ -116,22 +118,27 @@ begin
                     e_nxt <= e_r; 
                 end if;
            when CHECK_E =>
-                if (e_r(255) = '1') when
-                    c_nxt <= (0=>'1',others =>'0');
+                if (e_r(255) = '1') then
+                    c_nxt <= m_r;
                 else 
-                    
+                    c_nxt <= (0=>'1',others =>'0');
+                end if;
            when LOAD_CC =>
                 m_start <= 1;
-                NS <= COMP_CC;
+                a_in <= c_r;
+                b_in <= c_r;                
            when COMP_CC =>
                 if(m_finished = '1') then
                     if(e_i = '1') then
-                        NS <= LOAD_CM;
+                        a_in <= c_r;
+                        b_in <= m_r;
+                        c_nxt <= m_out;
                     else 
-                        NS <= CHECK_FINISH;
+                        a_in <= c_r;
+                        b_in <= c_r;
                     end if;
                 else
-                    NS <= COMP_CC;
+                    
                 end if;
            when LOAD_CM =>
                 m_start <= 1;
