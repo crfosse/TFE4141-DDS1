@@ -54,7 +54,6 @@ architecture expBehave of exponentiation is
 
   type state_type is (
     IDLE, 
-    STORE_DATA_IN, 
     CHECK_E, 
     LOAD_CC,
     COMP_CC,
@@ -130,7 +129,7 @@ begin
                     NS <= COMP_CC;
                 end if;
            when CHECK_FINISH =>
-                if(shift_counter = (C_BLOCK_SIZE-2)) then -- Finished 
+                if(shift_counter >= (C_BLOCK_SIZE-2)) then -- Finished 
                     if(ready_out = '1') then 
                         NS <= IDLE;
                     else
@@ -169,16 +168,18 @@ begin
         m_nxt <= m_r;
         e_nxt <= e_r;  
         c_nxt <= c_r;  
-        mult_in_a <= mult_in_a;
-        mult_in_b <= mult_in_b;   
+        mult_in_a <= c_r;
+        mult_in_b <= c_r;   
         shift_counter_nxt <= shift_counter;    
     
         case PS is 
            when IDLE => 
+                shift_counter_nxt <= (others => '0');
                 if(valid_in = '1') then
                     ready_in <= '1';
                     m_nxt <= message;
                     e_nxt <= key;
+                    shift_counter_nxt <= (others => '0');
                 else
                     m_nxt <= m_r;
                     e_nxt <= e_r; 
@@ -226,5 +227,7 @@ begin
                 shift_counter_nxt <= (others => '0');
         end case;        
     end process;
+    
+    result <= c_r;
     
 end expBehave;

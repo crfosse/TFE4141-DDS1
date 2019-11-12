@@ -119,7 +119,7 @@ begin
       
       end process sync_regs;
       
-      comp_proc: process(data_a_in,data_b_in,data_n_in ,a_r,b_r,y_r,sum,shift_counter,PS)
+      comp_proc: process(data_a_in,data_b_in,a_r,b_r,y_r,sum,shift_counter,PS)
       
       variable a_tmp: std_logic_vector(255 downto 0);
       variable a_mult_b_res: std_logic_vector(255 downto 0);

@@ -36,19 +36,21 @@ end exponentiation;
 architecture expBehave of exponentiation is
 
     -- Signals associated with the input registers
-  signal m_r, m_nxt: std_logic_vector(C_block_size downto 0);
-  signal e_r, e_nxt: std_logic_vector(C_block_size downto 0);
+  signal m_r, m_nxt: std_logic_vector(C_block_size-1 downto 0);
+  signal e_r, e_nxt: std_logic_vector(C_block_size-1 downto 0);
   
   -- Signals associated with the output registers
-  signal c_r, c_nxt: std_logic_vector(C_block_size downto 0);
+  signal c_r, c_nxt: std_logic_vector(C_block_size-1 downto 0);
   
-  signal a_in, b_in: std_logic_vector(C_block_size downto 0);
+  signal a_in, b_in: std_logic_vector(C_block_size-1 downto 0);
   
-  signal r, r_nxt: std_logic_vector(C_block_size downto 0);
+  signal r, r_nxt: std_logic_vector(C_block_size-1 downto 0);
   
-  signal shift_counter_e, shift_counter_nxt: unsigned(7 downto 0); --256 bit counter register
+  signal shift_counter, shift_counter_nxt: unsigned(7 downto 0); --256 bit counter register
   
-  signal m_start, m_finished: std_logic;
+  signal mult_start, mult_finished: std_logic;
+  
+   signal mult_in_a, mult_in_b, mult_out: std_logic_vector(C_block_size-1 downto 0);
 
   type state_type is (
     IDLE, 
@@ -62,7 +64,41 @@ architecture expBehave of exponentiation is
   signal PS, NS : state_type;
 begin
 
-    calc_ns: process (PS, valid_in, e_i)
+    i_modmult : entity work.exponentiation_modmult
+        generic map (
+            C_block_size => C_block_size
+        )
+        port map (
+                
+            -- Clocks and resets
+            clk             => clk, 
+            reset_n         => reset_n, 
+            
+            -- Control signals
+            mult_start      => mult_start,
+            mult_finished   => mult_finished,
+            
+            -- Data in interface       
+            data_a_in         => mult_in_a, 
+            data_b_in         => mult_in_b,          
+            data_n_in         => modulus,
+            
+            -- Data out interface
+            data_out          => mult_out
+                
+        );
+
+
+    sync_state: process(clk, reset_n)
+        begin
+            if(reset_n = '0') then 
+                PS <= IDLE;
+            elsif (clk'event and clk='1') then 
+                PS <= NS;
+            end if;
+    end process sync_state;   
+
+    calc_ns: process (PS, valid_in, e_r, mult_finished, shift_counter, ready_out)
     begin
         case PS is 
            when IDLE => 
@@ -74,11 +110,10 @@ begin
            when CHECK_E =>
                 NS <= LOAD_CC;
            when LOAD_CC =>
-                m_start <= '1';
                 NS <= COMP_CC;
            when COMP_CC =>
-                if(m_finished = '1') then
-                    if(e_i = '1') then
+                if(mult_finished = '1') then
+                    if(e_r(255) = '1') then
                         NS <= LOAD_CM;
                     else 
                         NS <= CHECK_FINISH;
@@ -89,24 +124,55 @@ begin
            when LOAD_CM =>
                 NS <= COMP_CM;
            when COMP_CM =>                  
-               if(m_finished = '1') then
-                        NS <= CHECK_FINISH;
+               if(mult_finished = '1') then
+                    NS <= CHECK_FINISH;
                 else
                     NS <= COMP_CC;
                 end if;
            when CHECK_FINISH =>
-                if(shift_counter_e = '0') then -- Finished 
-                    NS <= IDLE;
+                if(shift_counter = (C_BLOCK_SIZE-2)) then -- Finished 
+                    if(ready_out = '1') then 
+                        NS <= IDLE;
+                    else
+                        NS <= CHECK_FINISH;
+                    end if;
                 else 
-                    NS => LOAD_CC;
-                end if;       
+                    NS <= LOAD_CC;
+                end if;   
+            when others =>
+                NS <= IDLE;    
         end case;        
     end process;
     
+    sync_regs: process(clk, reset_n) is
+      begin
+      if(reset_n = '0') then
+        m_r <= (others => '0');
+        e_r <= (others => '0');  
+        c_r <= (others => '0');  
+        shift_counter <= (others => '0');
+      elsif (clk'event and clk='1') then
+         m_r           <= m_nxt;
+         e_r           <= e_nxt;
+         c_r           <= c_nxt;
+         shift_counter <= shift_counter_nxt;
+      end if;
+    end process sync_regs;
     
-    comp_proc: process (PS, valid_in, e_i)
+    comp_proc: process (PS, valid_in, shift_counter, mult_finished, e_r)
     
     begin
+        valid_out  <= '0';
+        ready_in   <= '0';
+        mult_start <= '0';  
+          
+        m_nxt <= m_r;
+        e_nxt <= e_r;  
+        c_nxt <= c_r;  
+        mult_in_a <= mult_in_a;
+        mult_in_b <= mult_in_b;   
+        shift_counter_nxt <= shift_counter;    
+    
         case PS is 
            when IDLE => 
                 if(valid_in = '1') then
@@ -118,47 +184,47 @@ begin
                     e_nxt <= e_r; 
                 end if;
            when CHECK_E =>
+           
+                e_nxt <= e_r(254 downto 0) & '0';
+                
                 if (e_r(255) = '1') then
                     c_nxt <= m_r;
                 else 
                     c_nxt <= (0=>'1',others =>'0');
                 end if;
+                               
            when LOAD_CC =>
-                m_start <= 1;
-                a_in <= c_r;
-                b_in <= c_r;                
+                mult_start <= '1';
+                mult_in_a <= c_r;
+                mult_in_b <= c_r;                
+                          
            when COMP_CC =>
-                if(m_finished = '1') then
-                    if(e_i = '1') then
-                        a_in <= c_r;
-                        b_in <= m_r;
-                        c_nxt <= m_out;
-                    else 
-                        a_in <= c_r;
-                        b_in <= c_r;
-                    end if;
-                else
+                if(mult_finished = '1') then
+                    c_nxt <= mult_out;
                     
+                    e_nxt <= e_r(254 downto 0) & '0';
+                    shift_counter_nxt <= shift_counter + 1;
+                else
+                    c_nxt <= c_r;
                 end if;
            when LOAD_CM =>
-                m_start <= 1;
-                NS <= COMP_CM;
+                mult_start <= '1';
+                mult_in_a <= c_r;
+                mult_in_b <= m_r; 
            when COMP_CM =>                  
-               if(m_finished = '1') then
-                        NS <= CHECK_FINISH;
-                else
-                    NS <= COMP_CC;
+               if(mult_finished = '1') then
+                    c_nxt <= mult_out;
                 end if;
            when CHECK_FINISH =>
-                if(shift_counter_e = '0') then -- Finished 
-                    NS <= IDLE;
-                    result_write <= 1;
-                else 
-                    NS => LOAD_CC;
-                end if;       
+                if(shift_counter = (C_BLOCK_SIZE-2)) then -- Finished 
+                    valid_out <= '1';
+                end if; 
+            when others =>
+                m_nxt <= (others => '0');
+                e_nxt <= (others => '0');  
+                c_nxt <= (others => '0');  
+                shift_counter_nxt <= (others => '0');
         end case;        
     end process;
-	result <= message xor modulus;
-	ready_in <= ready_out;
-	valid_out <= valid_in;
+    
 end expBehave;
