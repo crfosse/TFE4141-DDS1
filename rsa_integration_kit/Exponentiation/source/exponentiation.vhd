@@ -112,7 +112,7 @@ begin
                 NS <= COMP_CC;
            when COMP_CC =>
                 if(mult_finished = '1') then
-                    if(e_r(255) = '1') then
+                    if(e_r(254) = '1') then
                         NS <= LOAD_CM;
                     else 
                         NS <= CHECK_FINISH;
@@ -126,7 +126,7 @@ begin
                if(mult_finished = '1') then
                     NS <= CHECK_FINISH;
                 else
-                    NS <= COMP_CC;
+                    NS <= COMP_CM;
                 end if;
            when CHECK_FINISH =>
                 if(shift_counter >= (C_BLOCK_SIZE-2)) then -- Finished 
@@ -158,7 +158,7 @@ begin
       end if;
     end process sync_regs;
     
-    comp_proc: process (PS, valid_in, shift_counter, mult_finished, e_r)
+    comp_proc: process (PS, valid_in, shift_counter, mult_finished, e_r, m_r, c_r, message, key, mult_out)
     
     begin
         valid_out  <= '0';
@@ -176,19 +176,15 @@ begin
            when IDLE => 
                 shift_counter_nxt <= (others => '0');
                 if(valid_in = '1') then
-                    ready_in <= '1';
                     m_nxt <= message;
                     e_nxt <= key;
-                    shift_counter_nxt <= (others => '0');
-                else
-                    m_nxt <= m_r;
-                    e_nxt <= e_r; 
                 end if;
            when CHECK_E =>
-           
+                ready_in <= '1'; --Data is loaded
+                      
                 e_nxt <= e_r(254 downto 0) & '0';
                 
-                if (e_r(255) = '1') then
+                if (e_r(254) = '1') then
                     c_nxt <= m_r;
                 else 
                     c_nxt <= (0=>'1',others =>'0');
@@ -205,8 +201,6 @@ begin
                     
                     e_nxt <= e_r(254 downto 0) & '0';
                     shift_counter_nxt <= shift_counter + 1;
-                else
-                    c_nxt <= c_r;
                 end if;
            when LOAD_CM =>
                 mult_start <= '1';
@@ -215,9 +209,9 @@ begin
            when COMP_CM =>                  
                if(mult_finished = '1') then
                     c_nxt <= mult_out;
-                end if;
+               end if;
            when CHECK_FINISH =>
-                if(shift_counter = (C_BLOCK_SIZE-2)) then -- Finished 
+                if(shift_counter >= (C_BLOCK_SIZE-2)) then -- Finished 
                     valid_out <= '1';
                 end if; 
             when others =>

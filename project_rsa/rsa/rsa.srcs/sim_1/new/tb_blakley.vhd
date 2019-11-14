@@ -91,39 +91,9 @@ begin
     start           <= '1';
     data_a_in       <= (0      =>'1',
                         1      =>'0',  
-                        2      =>'1',  
-                        others =>'0');
-    data_b_in       <= (0      =>'1',
-                        1      =>'1',  
-                        2      =>'1',  
-                        others =>'0');
-    data_n_in       <= (0      =>'1',
-                        1      =>'1',  
-                        2      =>'1',
+                        2      =>'1', 
                         3      =>'1', 
                         others =>'0');
-    wait for 5*CLK_PERIOD;
-    wait until modmult_finished = '1';
-    data_a_in       <= (0      =>'1',
-                        1      =>'0',  
-                        2      =>'1',  
-                        others =>'0');
-    data_b_in       <= (0      =>'1',
-                        1      =>'1',  
-                        2      =>'1',  
-                        others =>'0');
-    data_n_in       <= (0      =>'1',
-                        1      =>'1',  
-                        2      =>'1',
-                        3      =>'1',
-                        4      =>'1',  
-                        others =>'0');
-    wait for 5*CLK_PERIOD;
-    wait until modmult_finished = '1';
-    data_a_in       <= (0      =>'1',
-                        1      =>'0',  
-                        2      =>'1',  
-                        others =>'0');
     data_b_in       <= (0      =>'1',
                         1      =>'1',  
                         2      =>'1',  
@@ -133,23 +103,7 @@ begin
                         2      =>'1',
                         3      =>'1',
                         4      =>'1',
-                        5      =>'1',  
-                        others =>'0');
-    wait until modmult_finished = '1';
-    data_a_in       <= (0      =>'1',
-                        1      =>'1',  
-                        2      =>'1',  
-                        others =>'0');
-    data_b_in       <= (0      =>'1',
-                        1      =>'1',  
-                        2      =>'1',  
-                        others =>'0');
-    data_n_in       <= (0      =>'1',
-                        1      =>'1',  
-                        2      =>'1',
-                        3      =>'1',
-                        4      =>'1',
-                        5      =>'1',  
+                        6      =>'1', 
                         others =>'0');
     -- Wait for results
     wait;

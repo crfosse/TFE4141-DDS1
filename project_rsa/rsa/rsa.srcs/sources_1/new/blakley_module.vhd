@@ -23,14 +23,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity blakley_module is
   port (
@@ -69,7 +61,7 @@ architecture Behavioral of blakley_module is
   signal PS, NS : state_type;
 
 begin   
-    sync_state: process(clk, reset_n, NS)
+    sync_state: process(clk, reset_n)
         begin
             if(reset_n = '0') then 
                 PS <= INIT;
@@ -124,7 +116,7 @@ begin
       
       end process sync_regs;
       
-      comp_proc: process(data_a_in,data_b_in,a_r,b_r,y_r,sum,shift_counter,PS)
+      comp_proc: process(data_a_in,data_b_in,data_n_in,a_r,b_r,y_r,sum,shift_counter,PS)
       
       variable a_tmp: std_logic_vector(255 downto 0);
       variable a_mult_b_res: std_logic_vector(255 downto 0);
