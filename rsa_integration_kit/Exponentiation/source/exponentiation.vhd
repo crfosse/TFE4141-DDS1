@@ -50,7 +50,7 @@ architecture expBehave of exponentiation is
   
   signal mult_start, mult_finished: std_logic;
   
-   signal mult_in_a, mult_in_b, mult_out: std_logic_vector(C_block_size-1 downto 0);
+  signal mult_in_a, mult_in_b, mult_out: std_logic_vector(C_block_size-1 downto 0);
 
   type state_type is (
     IDLE, 
@@ -112,7 +112,7 @@ begin
                 NS <= COMP_CC;
            when COMP_CC =>
                 if(mult_finished = '1') then
-                    if(e_r(254) = '1') then
+                    if(e_r(255) = '1') then
                         NS <= LOAD_CM;
                     else 
                         NS <= CHECK_FINISH;
@@ -163,7 +163,7 @@ begin
     begin
         valid_out  <= '0';
         ready_in   <= '0';
-        mult_start <= '0';  
+        mult_start <= '0';      
           
         m_nxt <= m_r;
         e_nxt <= e_r;  
@@ -184,7 +184,7 @@ begin
                       
                 e_nxt <= e_r(254 downto 0) & '0';
                 
-                if (e_r(254) = '1') then
+                if (e_r(255) = '1') then
                     c_nxt <= m_r;
                 else 
                     c_nxt <= (0=>'1',others =>'0');
@@ -200,7 +200,6 @@ begin
                     c_nxt <= mult_out;
                     
                     e_nxt <= e_r(254 downto 0) & '0';
-                    shift_counter_nxt <= shift_counter + 1;
                 end if;
            when LOAD_CM =>
                 mult_start <= '1';
@@ -211,6 +210,10 @@ begin
                     c_nxt <= mult_out;
                end if;
            when CHECK_FINISH =>
+           
+                
+                shift_counter_nxt <= shift_counter + 1;
+           
                 if(shift_counter >= (C_BLOCK_SIZE-2)) then -- Finished 
                     valid_out <= '1';
                 end if; 

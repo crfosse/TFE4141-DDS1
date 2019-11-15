@@ -56,7 +56,7 @@ architecture expBehave of exponentiation_modmult is
   -- Signals associated with the output registers
   signal y_r, y_nxt: std_logic_vector( C_block_size downto 0); -- Overflow compansated
   
-  signal sum, sum_nxt: unsigned(C_block_size+1 downto 0); --Overflow compansated
+  signal sum, sum_nxt: unsigned(C_block_size+2 downto 0); --Overflow compansated
   
   signal shift_counter, shift_counter_nxt: unsigned(7 downto 0); --256 bit counter register
   
@@ -85,7 +85,7 @@ begin
                  when MODCALC =>
                     NS <= MODCOMP;
                  when MODCOMP =>
-                    if (sum >= (b"00" & unsigned(data_n_in))) then
+                    if (sum >= (b"000" & unsigned(data_n_in))) then
                         NS <= MODCOMP;
                     else
                         NS <= MODFIN;
@@ -123,6 +123,7 @@ begin
       
       variable a_tmp: std_logic_vector(C_BLOCK_SIZE - 1 downto 0);
       variable a_mult_b_res: std_logic_vector(C_BLOCK_SIZE - 1 downto 0);
+      variable sum_geq: unsigned(C_BLOCK_SIZE + 2 downto 0);
       
       begin
       mult_finished <= '0';
@@ -144,21 +145,23 @@ begin
                 when MODCALC =>
                     a_nxt <= a_r(C_BLOCK_SIZE-2 downto 0) & '0';
                     
-                    a_tmp := (others => a_r(C_BLOCK_SIZE-2));
+                    a_tmp := (others => a_r(C_BLOCK_SIZE-1));
                     a_mult_b_res:= a_tmp and b_r; 
                     
                     
-                    sum_nxt <= ('0' & shift_left(unsigned(y_r),1)) + (b"00" & unsigned(a_mult_b_res));              
+                    sum_nxt <= (b"00" & shift_left(unsigned(y_r),1)) + (b"000" & unsigned(a_mult_b_res));              
                     
                  when MODCOMP =>
-
-                    if (sum >= (b"00" & unsigned(data_n_in))) then
-                       sum_nxt <= sum - ('0'&unsigned(data_n_in));
+                    sum_geq := (b"000" & unsigned(data_n_in));
+                    if (sum >= sum_geq) then
+                       sum_nxt <= sum - (sum_geq);
                     else 
                        y_nxt <= std_logic_vector(sum(C_BLOCK_SIZE downto 0));
-                       shift_counter_nxt <= shift_counter + 1;
                     end if;                                    
                  when MODFIN =>
+                    
+                    shift_counter_nxt <= shift_counter + 1;
+                 
                     if(shift_counter >=  C_block_size-1) then                        
                         mult_finished <= '1';
                     end if;                   

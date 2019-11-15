@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1994306586073fs"></ZoomStartTime>
-      <ZoomEndTime time="1994537069637fs"></ZoomEndTime>
-      <Cursor1Time time="1994435000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="2010005000001fs"></ZoomEndTime>
+      <Cursor1Time time="2010000032000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="158"></NameColumnWidth>
-      <ValueColumnWidth column_width="167"></ValueColumnWidth>
+      <ValueColumnWidth column_width="155"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="26" />
+   <WVObjectSize size="27" />
    <wvobject type="logic" fp_name="/exponentiation_tb/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -30,7 +30,7 @@
    <wvobject type="array" fp_name="/exponentiation_tb/modulus">
       <obj_property name="ElementShortName">modulus[255:0]</obj_property>
       <obj_property name="ObjectShortName">modulus[255:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/exponentiation_tb/message">
       <obj_property name="ElementShortName">message[255:0]</obj_property>
@@ -104,14 +104,14 @@
       <obj_property name="ObjectShortName">shift_counter[7:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/exponentiation_tb/i_exponentiation/i_modmult/sum">
-      <obj_property name="ElementShortName">sum[257:0]</obj_property>
-      <obj_property name="ObjectShortName">sum[257:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="ElementShortName">sum[258:0]</obj_property>
+      <obj_property name="ObjectShortName">sum[258:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/exponentiation_tb/i_exponentiation/i_modmult/a_r">
       <obj_property name="ElementShortName">a_r[255:0]</obj_property>
       <obj_property name="ObjectShortName">a_r[255:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/exponentiation_tb/i_exponentiation/i_modmult/b_r">
       <obj_property name="ElementShortName">b_r[255:0]</obj_property>
@@ -133,6 +133,10 @@
    <wvobject type="array" fp_name="/exponentiation_tb/i_exponentiation/i_modmult/y_r">
       <obj_property name="ElementShortName">y_r[256:0]</obj_property>
       <obj_property name="ObjectShortName">y_r[256:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/exponentiation_tb/i_exponentiation/i_modmult/mult_start">
+      <obj_property name="ElementShortName">mult_start</obj_property>
+      <obj_property name="ObjectShortName">mult_start</obj_property>
    </wvobject>
 </wave_config>

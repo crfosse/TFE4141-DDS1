@@ -29,10 +29,10 @@ entity mod_mult is
     reset_n         : in std_logic;
     
     -- Control in
-    start           : in std_logic;
+    mult_start           : in std_logic;
     
     -- Control out
-    modmult_finished : out std_logic;
+    mult_finished : out std_logic;
     
     
     -- Data in interface       
@@ -53,8 +53,8 @@ begin
     port map(
         clk     => clk,
         reset_n => reset_n,
-        start   => start,
-        modmult_finished => modmult_finished,
+        mult_start   => mult_start,
+        mult_finished => mult_finished,
         
         data_a_in => data_a_in,
         data_b_in => data_b_in,

@@ -60,8 +60,8 @@ begin
     port map (
        clk              => clk,
        reset_n          => reset_n,
-       start            => start,
-       modmult_finished => modmult_finished,
+       mult_start            => start,
+       mult_finished => modmult_finished,
     
     
       data_a_in      => data_a_in,
@@ -89,22 +89,9 @@ begin
     -- Send in first test vector
     wait for 5*CLK_PERIOD;
     start           <= '1';
-    data_a_in       <= (0      =>'1',
-                        1      =>'0',  
-                        2      =>'1', 
-                        3      =>'1', 
-                        others =>'0');
-    data_b_in       <= (0      =>'1',
-                        1      =>'1',  
-                        2      =>'1',  
-                        others =>'0');
-    data_n_in       <= (0      =>'1',
-                        1      =>'1',  
-                        2      =>'1',
-                        3      =>'1',
-                        4      =>'1',
-                        6      =>'1', 
-                        others =>'0');
+    data_a_in       <= x"80f0a0ec4c0247ab0ca6c63c0f54d372cb120ebb893035c750c37b1971a7734d";
+    data_b_in       <= x"0a23232323232323232323232323232323232323232323232323232323232323";
+    data_n_in       <= x"99925173ad65686715385ea800cd28120288fc70a9bc98dd4c90d676f8ff768d";
     -- Wait for results
     wait;
   end process;  
