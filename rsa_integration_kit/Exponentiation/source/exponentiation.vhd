@@ -158,7 +158,7 @@ begin
       end if;
     end process sync_regs;
     
-    comp_proc: process (PS, valid_in, shift_counter, mult_finished, e_r, m_r, c_r, message, key, mult_out)
+    comp_proc: process (PS, valid_in, shift_counter, mult_finished, e_r, m_r, c_r, message, key, mult_out,ready_out)
     
     begin
         valid_out  <= '0';
@@ -179,9 +179,7 @@ begin
                     m_nxt <= message;
                     e_nxt <= key;
                 end if;
-           when CHECK_E =>
-                ready_in <= '1'; --Data is loaded
-                      
+           when CHECK_E =>                      
                 e_nxt <= e_r(254 downto 0) & '0';
                 
                 if (e_r(255) = '1') then
@@ -209,13 +207,14 @@ begin
                if(mult_finished = '1') then
                     c_nxt <= mult_out;
                end if;
-           when CHECK_FINISH =>
-           
-                
-                shift_counter_nxt <= shift_counter + 1;
-           
+           when CHECK_FINISH =>           
                 if(shift_counter >= (C_BLOCK_SIZE-2)) then -- Finished 
                     valid_out <= '1';
+                    if(ready_out = '1') then                       
+                        ready_in <= '1'; --Ready for new data
+                    end if;
+                else
+                    shift_counter_nxt <= shift_counter + 1;
                 end if; 
             when others =>
                 m_nxt <= (others => '0');

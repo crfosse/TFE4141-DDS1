@@ -22,7 +22,8 @@ use ieee.numeric_std.all;
 entity rsa_core is
 	generic (
 		-- Users to add parameters here
-		C_BLOCK_SIZE          : integer := 256
+		C_BLOCK_SIZE          : integer := 256;
+		N_CORES               : integer := 2
 	);
 	port (
 		-----------------------------------------------------------------------------
@@ -66,14 +67,14 @@ entity rsa_core is
 end rsa_core;
 
 architecture rtl of rsa_core is
-
+    
 begin
-	i_exponentiation : entity work.exponentiation
+       exp: entity work.exponentiation
 		generic map (
 			C_block_size => C_BLOCK_SIZE
 		)
 		port map (
-			message   => msgin_data  ,
+			message   => msgin_data,
 			key       => key_e_d     ,
 			valid_in  => msgin_valid ,
 			ready_in  => msgin_ready ,
@@ -84,6 +85,26 @@ begin
 			clk       => clk         ,
 			reset_n   => reset_n
 		);
+    
+    --process(PS, NS) 
+    
+--    begin
+--        case PS is
+--            when IDLE =>
+--                if(ready_in = '1' and valid_in = '1') then
+--                    NS <= WORKING;
+--                else
+--                    NS <= IDLE;
+--                end if;
+            
+--            when WORKING => 
+--                if(msgout_valid = '1' and msgout_ready = '1') then
+--                    NS <= CHECK_FINISH;
+--                else
+--                    NS <= WORKING;
+--            when CHECK_FINISH =>
+                
+--    end process;
     
 	msgout_last  <= msgin_last;
 	rsa_status   <= (others => '0');
