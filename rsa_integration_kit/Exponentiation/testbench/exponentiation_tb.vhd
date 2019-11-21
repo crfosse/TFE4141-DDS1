@@ -18,10 +18,10 @@ architecture expBehave of exponentiation_tb is
 
 	signal message 		: STD_LOGIC_VECTOR ( C_block_size-1 downto 0 );
 	signal key 			: STD_LOGIC_VECTOR ( C_block_size-1 downto 0 );
-	signal valid_in 	: STD_LOGIC;
-	signal ready_in 	: STD_LOGIC;
-	signal ready_out 	: STD_LOGIC := '1';
-	signal valid_out 	: STD_LOGIC;
+	signal start    	: STD_LOGIC;
+	signal busy     	: STD_LOGIC;
+	signal clear    	: STD_LOGIC := '1';
+	signal done     	: STD_LOGIC;
 	signal result 		: STD_LOGIC_VECTOR(C_block_size-1 downto 0);
 	signal modulus 		: STD_LOGIC_VECTOR(C_block_size-1 downto 0);
 	signal clk 			: STD_LOGIC := '0';
@@ -33,10 +33,10 @@ begin
 		port map (
 			message   => message  ,
 			key       => key      ,
-			valid_in  => valid_in ,
-			ready_in  => ready_in ,
-			ready_out => ready_out,
-			valid_out => valid_out,
+			start     => start ,
+			busy      => busy ,
+			clear     => clear,
+			done      => done,
 			result    => result   ,
 			modulus   => modulus  ,
 			clk       => clk      ,
@@ -59,7 +59,7 @@ begin
   
     -- Send in first test vector
     wait for 5*CLK_PERIOD;
-    valid_in        <= '1';
+    start        <= '1';
    /*message         <=  (0      =>'1',
                         1      =>'1',
                         2      =>'0',

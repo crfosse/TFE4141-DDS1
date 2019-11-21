@@ -9,16 +9,19 @@ entity exponentiation is
 	);
 	port (
 		--input control
-		valid_in	: in STD_LOGIC;
-		ready_in	: out STD_LOGIC;
+		start     	: in STD_LOGIC;
+		busy      	: out STD_LOGIC;
 
 		--input data
 		message 	: in STD_LOGIC_VECTOR ( C_block_size-1 downto 0 );
 		key 		: in STD_LOGIC_VECTOR ( C_block_size-1 downto 0 );
+		
+		flag_in     : in STD_LOGIC;
+		flag_out    : out STD_LOGIC;
 
 		--ouput control
-		ready_out	: in STD_LOGIC;
-		valid_out	: out STD_LOGIC;
+		clear      	: in STD_LOGIC;
+		done	    : out STD_LOGIC;
 
 		--output data
 		result 		: out STD_LOGIC_VECTOR(C_block_size-1 downto 0);
@@ -45,6 +48,8 @@ architecture expBehave of exponentiation is
   signal a_in, b_in: std_logic_vector(C_block_size-1 downto 0);
   
   signal r, r_nxt: std_logic_vector(C_block_size-1 downto 0);
+  
+  signal flag_reg, flag_reg_nxt: STD_LOGIC;
   
   signal shift_counter, shift_counter_nxt: unsigned(7 downto 0); --256 bit counter register
   
@@ -97,11 +102,11 @@ begin
             end if;
     end process sync_state;   
 
-    calc_ns: process (PS, valid_in, e_r, mult_finished, shift_counter, ready_out)
+    calc_ns: process (PS, start, e_r, mult_finished, shift_counter, clear)
     begin
         case PS is 
            when IDLE => 
-                if(valid_in = '1') then
+                if(start = '1') then
                     NS <= CHECK_E;
                 else
                     NS <= IDLE;
@@ -130,7 +135,7 @@ begin
                 end if;
            when CHECK_FINISH =>
                 if(shift_counter >= (C_BLOCK_SIZE-2)) then -- Finished 
-                    if(ready_out = '1') then 
+                    if(clear = '1') then 
                         NS <= IDLE;
                     else
                         NS <= CHECK_FINISH;
@@ -149,25 +154,28 @@ begin
         m_r <= (others => '0');
         e_r <= (others => '0');  
         c_r <= (others => '0');  
+        flag_reg <= '0';
         shift_counter <= (others => '0');
       elsif (clk'event and clk='1') then
          m_r           <= m_nxt;
          e_r           <= e_nxt;
          c_r           <= c_nxt;
+         flag_reg      <= flag_reg_nxt;
          shift_counter <= shift_counter_nxt;
       end if;
     end process sync_regs;
     
-    comp_proc: process (PS, valid_in, shift_counter, mult_finished, e_r, m_r, c_r, message, key, mult_out,ready_out)
+    comp_proc: process (PS, start, shift_counter, mult_finished, e_r, m_r, c_r, message, key, mult_out,clear)
     
     begin
-        valid_out  <= '0';
-        ready_in   <= '0';
-        mult_start <= '0';      
+        done       <= '0';
+        mult_start <= '0';   
+        busy       <= '0';    
           
         m_nxt <= m_r;
         e_nxt <= e_r;  
-        c_nxt <= c_r;  
+        c_nxt <= c_r;
+        flag_reg_nxt <= flag_reg;  
         mult_in_a <= c_r;
         mult_in_b <= c_r;   
         shift_counter_nxt <= shift_counter;    
@@ -175,11 +183,16 @@ begin
         case PS is 
            when IDLE => 
                 shift_counter_nxt <= (others => '0');
-                if(valid_in = '1') then
+                if(start = '1') then
+                    busy <= '1';
                     m_nxt <= message;
                     e_nxt <= key;
+                    flag_reg_nxt <= flag_in;
                 end if;
+                
            when CHECK_E =>                      
+                busy <= '1';
+                
                 e_nxt <= e_r(254 downto 0) & '0';
                 
                 if (e_r(255) = '1') then
@@ -187,33 +200,43 @@ begin
                 else 
                     c_nxt <= (0=>'1',others =>'0');
                 end if;
-                               
+                                               
            when LOAD_CC =>
+                busy <= '1';   
                 mult_start <= '1';
                 mult_in_a <= c_r;
-                mult_in_b <= c_r;                
-                          
+                mult_in_b <= c_r;         
+                        
            when COMP_CC =>
+                busy <= '1'; 
                 if(mult_finished = '1') then
                     c_nxt <= mult_out;
                     
                     e_nxt <= e_r(254 downto 0) & '0';
                 end if;
+
            when LOAD_CM =>
+                busy <= '1';
                 mult_start <= '1';
                 mult_in_a <= c_r;
-                mult_in_b <= m_r; 
-           when COMP_CM =>                  
+                mult_in_b <= m_r;             
+                  
+           when COMP_CM =>       
+               busy <= '1'; 
+                
+                           
                if(mult_finished = '1') then
                     c_nxt <= mult_out;
                end if;
-           when CHECK_FINISH =>           
+           when CHECK_FINISH =>      
+                busy <= '1';   
+                  
                 if(shift_counter >= (C_BLOCK_SIZE-2)) then -- Finished 
-                    valid_out <= '1';
-                    if(ready_out = '1') then                       
-                        ready_in <= '1'; --Ready for new data
+                    done <= '1';
+                    if(clear = '1') then                       
+                        busy <= '0'; --Ready for new data
                     end if;
-                else
+                else 
                     shift_counter_nxt <= shift_counter + 1;
                 end if; 
             when others =>
@@ -224,6 +247,7 @@ begin
         end case;        
     end process;
     
+    flag_out <= flag_reg;
     result <= c_r;
     
 end expBehave;
