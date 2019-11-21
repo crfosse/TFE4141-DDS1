@@ -67,44 +67,82 @@ entity rsa_core is
 end rsa_core;
 
 architecture rtl of rsa_core is
+
+    signal mod_reg, key_reg : std_logic_vector(C_BLOCK_SIZE-1 downto 0);
+    signal core_start, core_finish : std_logic_vector(N_CORES-1 downto 0);
+    signal cores_done, cores_clear : std_logic_vector(N_CORES-1 downto 0);
+    
+    -- Data type and decleration for output data
+    type core_data is array (N_CORES - 1 downto 0) of std_logic_vector(C_BLOCK_SIZE-1 downto 0);
+    
+    signal core_data_out : core_data; 
     
 begin
-       exp: entity work.exponentiation
+
+    
+		
+generating: for i in 0 to (N_CORES-1) generate 
+     exp: entity work.exponentiation
 		generic map (
 			C_block_size => C_BLOCK_SIZE
 		)
 		port map (
 			message   => msgin_data,
-			key       => key_e_d     ,
-			valid_in  => msgin_valid ,
-			ready_in  => msgin_ready ,
-			ready_out => msgout_ready,
-			valid_out => msgout_valid,
-			result    => msgout_data ,
-			modulus   => key_n       ,
+			key       => mod_reg     ,
+			busy      => cores_busy(i),
+			start     => core_start(i),
+			clear     => cores_clear(i),
+			done      => cores_done(i),
+			result    => core_data_out(i) ,
+			modulus   => key_reg       ,
 			clk       => clk         ,
 			reset_n   => reset_n
 		);
+	end generate;
+	   
     
-    --process(PS, NS) 
+    Input_fsm : process(Input_State, NIS) 
     
---    begin
---        case PS is
---            when IDLE =>
---                if(ready_in = '1' and valid_in = '1') then
---                    NS <= WORKING;
---                else
---                    NS <= IDLE;
---                end if;
-            
---            when WORKING => 
---                if(msgout_valid = '1' and msgout_ready = '1') then
---                    NS <= CHECK_FINISH;
---                else
---                    NS <= WORKING;
---            when CHECK_FINISH =>
+    begin        
+        case Input_State is
+            when IDLE =>
+                if(valid_in = '1') then
+                    NIS <= CHECK_CORES;
+                else
+                    NIS <= IDLE;
+                end if;
+            when CHECK_CORES =>
+                if !cores_busy(core_start_counter) then 
+                    core_start(core_start_counter) = '1';
+                    current_core_nxt <= current_core + 1;
+                else 
+                    NIS => CHECK_CORES;
+                end if; 
+         end case;
+     end process;
+     
+     Output_fsm : process(Output_State, NOS)
+     
+     begin
+         case Output_State is 
+            when MONITOR_CORE_OUTPUT =>
+                if(core_done(core_finished_counter) = '1')
+                    NOS <= WRITE DATA;
+                else 
+                    NOS <= MONITOR_CORE_OUTPUT;
+                endif;
+            when WRITE_DATA =>
+                msgout_data <= core_data_out(core_finished_counter); -- Read data from core
+                cores_clear(core_finished_counter) <= '1'; --Notify core that it can release data and move to idle.
+                if(core_finished_counter >= (N_CORES-1) then
+                    core_finished_counter_nxt <= (others => '0');
+                else 
+                    core_finished_counter_nxt <= core_finished_counter + 1;
+                end if;
+                NOS <= MONITOR_CORE_OUTPUT;
+          end case 
                 
---    end process;
+    end process;
     
 	msgout_last  <= msgin_last;
 	rsa_status   <= (others => '0');
