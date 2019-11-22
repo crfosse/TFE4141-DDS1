@@ -2,8 +2,8 @@
 # Vivado v2019.1.2 (64-bit)
 # SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
 # IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
-# Start of session at: Thu Nov 21 18:55:35 2019
-# Process ID: 31583
+# Start of session at: Fri Nov 22 14:34:56 2019
+# Process ID: 7107
 # Current directory: /home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/RSA_soc/RSA_soc.runs/synth_1
 # Command line: vivado -log RSA_soc_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RSA_soc_wrapper.tcl
 # Log file: /home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/RSA_soc/RSA_soc.runs/synth_1/RSA_soc_wrapper.vds
@@ -19,9 +19,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 31605 
+INFO: Helper process launched with PID 7139 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1756.363 ; gain = 152.715 ; free physical = 951 ; free virtual = 4923
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1756.367 ; gain = 152.715 ; free physical = 2768 ; free virtual = 6428
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'rsa_soc_wrapper' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/source/rsa_soc.vhd:40]
 INFO: [Synth 8-3491] module 'rsa_soc' declared at '/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/synth/rsa_soc.vhd:1529' bound to instance 'rsa_soc_i' of component 'rsa_soc' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/source/rsa_soc.vhd:67]
@@ -2161,50 +2161,50 @@ INFO: [Synth 8-638] synthesizing module 'rsa_soc_rsa_acc_0' [/home/crfosse/dds1/
 	Parameter C_S00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_M00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_M00_AXIS_START_COUNT bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'rsa_accelerator' declared at '/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_accelerator.vhd:16' bound to instance 'U0' of component 'RSA_accelerator' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ip/rsa_soc_rsa_acc_0/synth/rsa_soc_rsa_acc_0.vhd:186]
-INFO: [Synth 8-638] synthesizing module 'rsa_accelerator' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_accelerator.vhd:84]
+INFO: [Synth 8-3491] module 'rsa_accelerator' declared at '/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_accelerator.vhd:16' bound to instance 'U0' of component 'RSA_accelerator' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ip/rsa_soc_rsa_acc_0/synth/rsa_soc_rsa_acc_0.vhd:186]
+INFO: [Synth 8-638] synthesizing module 'rsa_accelerator' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_accelerator.vhd:84]
 	Parameter C_BLOCK_SIZE bound to: 256 - type: integer 
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter C_S00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_M00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_M00_AXIS_START_COUNT bound to: 32 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'rsa_regio' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_regio.vhd:115]
+INFO: [Synth 8-638] synthesizing module 'rsa_regio' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_regio.vhd:115]
 	Parameter C_BLOCK_SIZE bound to: 256 - type: integer 
 	Parameter C_register_count bound to: 33 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 8 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element slv_reg_reg[33] was removed.  [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_regio.vhd:245]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_regio.vhd:247]
-INFO: [Synth 8-256] done synthesizing module 'rsa_regio' (119#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_regio.vhd:115]
-INFO: [Synth 8-638] synthesizing module 'rsa_msgin' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_msgin.vhd:69]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg_reg[33] was removed.  [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_regio.vhd:245]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_regio.vhd:247]
+INFO: [Synth 8-256] done synthesizing module 'rsa_regio' (119#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_regio.vhd:115]
+INFO: [Synth 8-638] synthesizing module 'rsa_msgin' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_msgin.vhd:69]
 	Parameter C_BLOCK_SIZE bound to: 256 - type: integer 
 	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'rsa_msgin' (120#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_msgin.vhd:69]
-INFO: [Synth 8-638] synthesizing module 'rsa_msgout' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_msgout.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'rsa_msgin' (120#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_msgin.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'rsa_msgout' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_msgout.vhd:61]
 	Parameter C_BLOCK_SIZE bound to: 256 - type: integer 
 	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_M_START_COUNT bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'rsa_msgout' (121#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_msgout.vhd:61]
-INFO: [Synth 8-638] synthesizing module 'rsa_core' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_core.vhd:69]
+INFO: [Synth 8-256] done synthesizing module 'rsa_msgout' (121#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_msgout.vhd:61]
+INFO: [Synth 8-638] synthesizing module 'rsa_core' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_core.vhd:69]
 	Parameter C_BLOCK_SIZE bound to: 256 - type: integer 
-	Parameter N_CORES bound to: 22 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'exponentiation' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/exponentiation.vhd:39]
+	Parameter N_CORES bound to: 21 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'exponentiation' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/exponentiation.vhd:39]
 	Parameter C_block_size bound to: 256 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'exponentiation_modmult' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/exponentiation_modmult.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'exponentiation_modmult' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/exponentiation_modmult.vhd:50]
 	Parameter C_block_size bound to: 256 - type: integer 
-INFO: [Synth 8-226] default block is never used [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/exponentiation_modmult.vhd:78]
-INFO: [Synth 8-226] default block is never used [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/exponentiation_modmult.vhd:138]
-INFO: [Synth 8-256] done synthesizing module 'exponentiation_modmult' (122#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/exponentiation_modmult.vhd:50]
-WARNING: [Synth 8-614] signal 'flag_reg' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/exponentiation.vhd:168]
-WARNING: [Synth 8-614] signal 'flag_in' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/exponentiation.vhd:168]
-INFO: [Synth 8-256] done synthesizing module 'exponentiation' (123#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/exponentiation.vhd:39]
-WARNING: [Synth 8-614] signal 'next_to_start' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_core.vhd:146]
-INFO: [Synth 8-226] default block is never used [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_core.vhd:207]
-WARNING: [Synth 8-614] signal 'core_data_out' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_core.vhd:197]
-WARNING: [Synth 8-614] signal 'core_flag_out' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_core.vhd:197]
-INFO: [Synth 8-256] done synthesizing module 'rsa_core' (124#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_core.vhd:69]
-INFO: [Synth 8-256] done synthesizing module 'rsa_accelerator' (125#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/rsa_accelerator.vhd:84]
+INFO: [Synth 8-226] default block is never used [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/exponentiation_modmult.vhd:78]
+INFO: [Synth 8-226] default block is never used [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/exponentiation_modmult.vhd:138]
+INFO: [Synth 8-256] done synthesizing module 'exponentiation_modmult' (122#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/exponentiation_modmult.vhd:50]
+WARNING: [Synth 8-614] signal 'flag_reg' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/exponentiation.vhd:168]
+WARNING: [Synth 8-614] signal 'flag_in' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/exponentiation.vhd:168]
+INFO: [Synth 8-256] done synthesizing module 'exponentiation' (123#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/exponentiation.vhd:39]
+WARNING: [Synth 8-614] signal 'next_to_start' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_core.vhd:146]
+INFO: [Synth 8-226] default block is never used [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_core.vhd:207]
+WARNING: [Synth 8-614] signal 'core_data_out' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_core.vhd:197]
+WARNING: [Synth 8-614] signal 'core_flag_out' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_core.vhd:197]
+INFO: [Synth 8-256] done synthesizing module 'rsa_core' (124#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_core.vhd:69]
+INFO: [Synth 8-256] done synthesizing module 'rsa_accelerator' (125#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/rsa_accelerator.vhd:84]
 INFO: [Synth 8-256] done synthesizing module 'rsa_soc_rsa_acc_0' (126#1927) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ip/rsa_soc_rsa_acc_0/synth/rsa_soc_rsa_acc_0.vhd:92]
 WARNING: [Synth 8-5640] Port 'axi_dma_tstvec' is missing in component declaration [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/synth/rsa_soc.vhd:293]
 INFO: [Synth 8-3491] module 'rsa_soc_rsa_dma_0' declared at '/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ip/rsa_soc_rsa_dma_0/synth/rsa_soc_rsa_dma_0.vhd:59' bound to instance 'rsa_dma' of component 'rsa_soc_rsa_dma_0' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/synth/rsa_soc.vhd:576]
@@ -3804,7 +3804,7 @@ WARNING: [Synth 8-3331] design axi_dma_s2mm_mngr has unconnected port m_axis_s2m
 WARNING: [Synth 8-3331] design axi_dma_s2mm_mngr has unconnected port m_axis_s2mm_ftch_tdata_new[59]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:23 ; elapsed = 00:00:38 . Memory (MB): peak = 2119.527 ; gain = 515.879 ; free physical = 786 ; free virtual = 4766
+Finished RTL Elaboration : Time (s): cpu = 00:00:21 ; elapsed = 00:00:36 . Memory (MB): peak = 2119.531 ; gain = 515.879 ; free physical = 2602 ; free virtual = 6269
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -3817,10 +3817,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:41 . Memory (MB): peak = 2134.371 ; gain = 530.723 ; free physical = 827 ; free virtual = 4806
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:38 . Memory (MB): peak = 2134.375 ; gain = 530.723 ; free physical = 2643 ; free virtual = 6310
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:41 . Memory (MB): peak = 2134.371 ; gain = 530.723 ; free physical = 827 ; free virtual = 4806
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:38 . Memory (MB): peak = 2134.375 ; gain = 530.723 ; free physical = 2643 ; free virtual = 6310
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 38 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -3932,22 +3932,22 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/rsa_soc_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2687.535 ; gain = 0.000 ; free physical = 123 ; free virtual = 4073
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2683.000 ; gain = 0.000 ; free physical = 1935 ; free virtual = 5599
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 38 instances were transformed.
   FDR => FDRE: 36 instances
   SRL16 => SRL16E: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.70 ; elapsed = 00:00:00.71 . Memory (MB): peak = 2687.535 ; gain = 0.000 ; free physical = 123 ; free virtual = 4073
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.71 ; elapsed = 00:00:00.71 . Memory (MB): peak = 2683.000 ; gain = 0.000 ; free physical = 1935 ; free virtual = 5599
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:57 ; elapsed = 00:01:14 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 785 ; free virtual = 4732
+Finished Constraint Validation : Time (s): cpu = 00:00:56 ; elapsed = 00:01:12 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2588 ; free virtual = 6252
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:57 ; elapsed = 00:01:14 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 785 ; free virtual = 4732
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:56 ; elapsed = 00:01:12 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2588 ; free virtual = 6252
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -3991,7 +3991,7 @@ Applied set_property DONT_TOUCH = true for rsa_soc_i/axi_smc/inst/s00_nodes/s00_
 Applied set_property DONT_TOUCH = true for rsa_soc_i/axi_smc/inst/s01_nodes/s01_b_node/inst/inst_mi_handler/\gen_normal_area.inst_fifo_node_payld /\gen_xpm_memory_fifo.inst_fifo /\gen_mem_rep[0].inst_xpm_memory . (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for rsa_soc_i/axi_smc/inst/s01_nodes/s01_w_node/inst/inst_mi_handler/\gen_normal_area.inst_fifo_node_payld /\gen_xpm_memory_fifo.inst_fifo /\gen_mem_rep[0].inst_xpm_memory . (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:58 ; elapsed = 00:01:14 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 784 ; free virtual = 4732
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:01:12 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2588 ; free virtual = 6252
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-4471] merging register 'seq_cnt_en_reg' into 'from_sys_reg' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:377]
 INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
@@ -4012,7 +4012,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_p
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2870]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2870]
 INFO: [Synth 8-4471] merging register 'gen_axilite.s_axi_wready_i_reg' into 'gen_axilite.s_axi_awready_i_reg' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v:3574]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/760a/src/exponentiation_modmult.vhd:138]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/boards/ipshared/62c0/src/exponentiation_modmult.vhd:138]
 INFO: [Synth 8-802] inferred FSM for state register 'PS_reg' in module 'exponentiation_modmult'
 INFO: [Synth 8-802] inferred FSM for state register 'PS_reg' in module 'exponentiation'
 INFO: [Synth 8-802] inferred FSM for state register 'Input_State_reg' in module 'rsa_core'
@@ -4172,7 +4172,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'gen_fwft.curr_fwft_state_r
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'smpl_cs_reg' using encoding 'sequential' in module 'axi_dma_smple_sm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:09 ; elapsed = 00:01:28 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 748 ; free virtual = 4703
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:07 ; elapsed = 00:01:25 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2549 ; free virtual = 6220
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
@@ -4190,8 +4190,8 @@ Report RTL Partitions:
 |7     |sc_mmu_v1_0_7_top__parameterized0__GC0 |           1|      2088|
 |8     |s01_entry_pipeline_imp_1HEE37W__GC0    |           1|       280|
 |9     |bd_ae75__GC0                           |           1|     14970|
-|10    |exponentiation                         |          22|     15710|
-|11    |rsa_core__GC0                          |           1|      7384|
+|10    |exponentiation                         |          21|     15710|
+|11    |rsa_core__GC0                          |           1|      7105|
 |12    |rsa_accelerator__GC0                   |           1|      6889|
 |13    |rsa_soc_rsa_dma_0                      |           1|     10901|
 |14    |rsa_soc__GC0                           |           1|      3571|
@@ -4201,13 +4201,13 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input    259 Bit       Adders := 22    
+	   3 Input    259 Bit       Adders := 21    
 	   2 Input     32 Bit       Adders := 2     
 	   3 Input     26 Bit       Adders := 1     
 	   2 Input     16 Bit       Adders := 3     
 	   2 Input     12 Bit       Adders := 8     
 	   2 Input      9 Bit       Adders := 2     
-	   2 Input      8 Bit       Adders := 60    
+	   2 Input      8 Bit       Adders := 58    
 	   3 Input      8 Bit       Adders := 2     
 	   4 Input      8 Bit       Adders := 8     
 	   2 Input      7 Bit       Adders := 9     
@@ -4231,9 +4231,9 @@ Detailed RTL Component Info :
 +---Registers : 
 	             2178 Bit    Registers := 42    
 	              512 Bit    Registers := 2     
-	              259 Bit    Registers := 22    
-	              257 Bit    Registers := 22    
-	              256 Bit    Registers := 113   
+	              259 Bit    Registers := 21    
+	              257 Bit    Registers := 21    
+	              256 Bit    Registers := 108   
 	              156 Bit    Registers := 2     
 	              153 Bit    Registers := 2     
 	              138 Bit    Registers := 4     
@@ -4255,7 +4255,7 @@ Detailed RTL Component Info :
 	               26 Bit    Registers := 12    
 	               24 Bit    Registers := 1     
 	               23 Bit    Registers := 2     
-	               22 Bit    Registers := 2     
+	               21 Bit    Registers := 2     
 	               19 Bit    Registers := 2     
 	               18 Bit    Registers := 4     
 	               16 Bit    Registers := 9     
@@ -4263,25 +4263,25 @@ Detailed RTL Component Info :
 	               12 Bit    Registers := 9     
 	               10 Bit    Registers := 3     
 	                9 Bit    Registers := 6     
-	                8 Bit    Registers := 87    
+	                8 Bit    Registers := 85    
 	                7 Bit    Registers := 19    
 	                6 Bit    Registers := 67    
 	                5 Bit    Registers := 23    
 	                4 Bit    Registers := 86    
 	                3 Bit    Registers := 40    
 	                2 Bit    Registers := 55    
-	                1 Bit    Registers := 1015  
+	                1 Bit    Registers := 1014  
 +---RAMs : 
 	               4K Bit         RAMs := 2     
 	              144 Bit         RAMs := 1     
 +---Muxes : 
 	   2 Input   2178 Bit        Muxes := 21    
 	   2 Input    512 Bit        Muxes := 2     
-	   4 Input    259 Bit        Muxes := 66    
-	   4 Input    257 Bit        Muxes := 22    
-	   4 Input    256 Bit        Muxes := 23    
-	   2 Input    256 Bit        Muxes := 24    
-	   7 Input    256 Bit        Muxes := 88    
+	   4 Input    259 Bit        Muxes := 63    
+	   4 Input    257 Bit        Muxes := 21    
+	   4 Input    256 Bit        Muxes := 22    
+	   2 Input    256 Bit        Muxes := 23    
+	   7 Input    256 Bit        Muxes := 84    
 	   2 Input    153 Bit        Muxes := 2     
 	   2 Input    138 Bit        Muxes := 2     
 	   2 Input     88 Bit        Muxes := 1     
@@ -4297,20 +4297,20 @@ Detailed RTL Component Info :
 	   3 Input     26 Bit        Muxes := 1     
 	   4 Input     26 Bit        Muxes := 2     
 	   2 Input     23 Bit        Muxes := 3     
-	   2 Input     22 Bit        Muxes := 3     
-	   3 Input     22 Bit        Muxes := 1     
+	   2 Input     21 Bit        Muxes := 3     
+	   3 Input     21 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 5     
 	   2 Input     14 Bit        Muxes := 4     
 	   2 Input     12 Bit        Muxes := 6     
 	   2 Input     11 Bit        Muxes := 2     
 	   2 Input      9 Bit        Muxes := 5     
 	   2 Input      8 Bit        Muxes := 199   
-	   4 Input      8 Bit        Muxes := 27    
-	   7 Input      8 Bit        Muxes := 22    
+	   4 Input      8 Bit        Muxes := 26    
+	   7 Input      8 Bit        Muxes := 21    
 	   8 Input      8 Bit        Muxes := 1     
 	   3 Input      8 Bit        Muxes := 1     
-	   2 Input      7 Bit        Muxes := 176   
-	   7 Input      7 Bit        Muxes := 23    
+	   2 Input      7 Bit        Muxes := 170   
+	   7 Input      7 Bit        Muxes := 22    
 	   2 Input      6 Bit        Muxes := 24    
 	   2 Input      5 Bit        Muxes := 10    
 	   2 Input      4 Bit        Muxes := 45    
@@ -4322,16 +4322,16 @@ Detailed RTL Component Info :
 	   3 Input      3 Bit        Muxes := 2     
 	   6 Input      3 Bit        Muxes := 2     
 	   5 Input      3 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 297   
+	   2 Input      2 Bit        Muxes := 294   
 	   3 Input      2 Bit        Muxes := 4     
 	   7 Input      2 Bit        Muxes := 5     
-	   4 Input      2 Bit        Muxes := 47    
+	   4 Input      2 Bit        Muxes := 46    
 	   6 Input      1 Bit        Muxes := 141   
-	   4 Input      1 Bit        Muxes := 197   
+	   4 Input      1 Bit        Muxes := 191   
 	  10 Input      1 Bit        Muxes := 63    
-	   7 Input      1 Bit        Muxes := 221   
+	   7 Input      1 Bit        Muxes := 213   
 	  12 Input      1 Bit        Muxes := 10    
-	   2 Input      1 Bit        Muxes := 507   
+	   2 Input      1 Bit        Muxes := 506   
 	   3 Input      1 Bit        Muxes := 33    
 	   8 Input      1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
@@ -6347,13 +6347,13 @@ Detailed RTL Component Info :
 	   2 Input      5 Bit       Adders := 2     
 +---Registers : 
 	              256 Bit    Registers := 2     
-	               22 Bit    Registers := 2     
+	               21 Bit    Registers := 2     
 	                5 Bit    Registers := 2     
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input    256 Bit        Muxes := 2     
-	   2 Input     22 Bit        Muxes := 3     
-	   3 Input     22 Bit        Muxes := 1     
+	   2 Input     21 Bit        Muxes := 3     
+	   3 Input     21 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
 	   3 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 2     
@@ -7816,7 +7816,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (sc_util_v
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (sc_util_v1_0_4_axi_reg_stall__6:/\skid_buffer_reg[33] )
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:27 ; elapsed = 00:02:53 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 612 ; free virtual = 4622
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:15 ; elapsed = 00:02:39 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2415 ; free virtual = 6141
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
@@ -7881,8 +7881,8 @@ Report RTL Partitions:
 |7     |sc_mmu_v1_0_7_top__parameterized0__GC0 |           1|       282|
 |8     |s01_entry_pipeline_imp_1HEE37W__GC0    |           1|       215|
 |9     |bd_ae75__GC0                           |           1|      8739|
-|10    |exponentiation                         |          22|      8609|
-|11    |rsa_core__GC0                          |           1|      6393|
+|10    |exponentiation                         |          21|      8609|
+|11    |rsa_core__GC0                          |           1|      6195|
 |12    |rsa_accelerator__GC0                   |           1|      3114|
 |13    |rsa_soc_rsa_dma_0                      |           1|      6763|
 |14    |rsa_soc__GC0                           |           1|      2856|
@@ -7908,7 +7908,7 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:34 ; elapsed = 00:03:01 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 351 ; free virtual = 4361
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:21 ; elapsed = 00:02:45 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2152 ; free virtual = 5878
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -7916,7 +7916,7 @@ Start Timing Optimization
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:44 ; elapsed = 00:03:11 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 279 ; free virtual = 4290
+Finished Timing Optimization : Time (s): cpu = 00:02:30 ; elapsed = 00:02:54 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2080 ; free virtual = 5807
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -7977,8 +7977,8 @@ Report RTL Partitions:
 |7     |sc_mmu_v1_0_7_top__parameterized0__GC0 |           1|       282|
 |8     |s01_entry_pipeline_imp_1HEE37W__GC0    |           1|       215|
 |9     |bd_ae75__GC0                           |           1|      8739|
-|10    |exponentiation                         |          22|      8609|
-|11    |rsa_core__GC0                          |           1|      6393|
+|10    |exponentiation                         |          21|      8609|
+|11    |rsa_core__GC0                          |           1|      6195|
 |12    |rsa_accelerator__GC0                   |           1|      3114|
 |13    |rsa_soc_rsa_dma_0                      |           1|      6763|
 |14    |rsa_soc__GC0                           |           1|      2856|
@@ -8007,7 +8007,7 @@ INFO: [Synth 8-3332] Sequential element (gen_endpoint.decerr_slave_inst/FSM_oneh
 INFO: [Synth 8-3332] Sequential element (gen_endpoint.decerr_slave_inst/FSM_onehot_gen_axi.gen_write.write_cs_reg[1]) is unused and will be removed from module sc_mmu_v1_0_7_top.
 INFO: [Synth 8-3332] Sequential element (gen_endpoint.decerr_slave_inst/FSM_onehot_gen_axi.gen_write.write_cs_reg[0]) is unused and will be removed from module sc_mmu_v1_0_7_top.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:23 ; elapsed = 00:03:52 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 263 ; free virtual = 4273
+Finished Technology Mapping : Time (s): cpu = 00:03:02 ; elapsed = 00:03:28 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2070 ; free virtual = 5796
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -8057,7 +8057,7 @@ Finished Final Netlist Cleanup
 WARNING: [Synth 8-3295] tying undriven pin I_AXI_DMA_REG_MODULE/strm_valid_int2_inferred:in0 to constant 0
 WARNING: [Synth 8-3295] tying undriven pin I_AXI_DMA_REG_MODULE/strm_valid_int_cdc_to_inferred:in0 to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:33 ; elapsed = 00:04:03 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 248 ; free virtual = 4258
+Finished IO Insertion : Time (s): cpu = 00:03:11 ; elapsed = 00:03:37 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2057 ; free virtual = 5783
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -8070,7 +8070,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:34 ; elapsed = 00:04:04 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 249 ; free virtual = 4259
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:12 ; elapsed = 00:03:38 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2058 ; free virtual = 5784
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -8082,25 +8082,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:49 ; elapsed = 00:04:19 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 235 ; free virtual = 4246
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:25 ; elapsed = 00:03:52 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2044 ; free virtual = 5770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:49 ; elapsed = 00:04:20 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 235 ; free virtual = 4246
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:25 ; elapsed = 00:03:52 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2044 ; free virtual = 5770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:54 ; elapsed = 00:04:25 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 239 ; free virtual = 4249
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:29 ; elapsed = 00:03:56 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2036 ; free virtual = 5763
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:54 ; elapsed = 00:04:25 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 239 ; free virtual = 4249
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:29 ; elapsed = 00:03:57 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2036 ; free virtual = 5763
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -8144,15 +8144,15 @@ Report Cell Usage:
 +------+-----------+------+
 |1     |BIBUF      |   130|
 |2     |BUFG       |     1|
-|3     |CARRY4     |  2272|
-|4     |LUT1       |   386|
-|5     |LUT2       |  6512|
-|6     |LUT3       | 13421|
-|7     |LUT4       | 17969|
-|8     |LUT5       |  6906|
-|9     |LUT6       | 14814|
-|10    |MUXF7      |   647|
-|11    |MUXF8      |    33|
+|3     |CARRY4     |  2174|
+|4     |LUT1       |   384|
+|5     |LUT2       |  6231|
+|6     |LUT3       | 12882|
+|7     |LUT4       | 17199|
+|8     |LUT5       |  6357|
+|9     |LUT6       | 14310|
+|10    |MUXF7      |   644|
+|11    |MUXF8      |   290|
 |12    |PS7        |     1|
 |13    |RAM16X1D   |     2|
 |14    |RAM32M     |   186|
@@ -8161,8 +8161,8 @@ Report Cell Usage:
 |17    |SRL16      |     2|
 |18    |SRL16E     |   230|
 |19    |SRLC32E    |    47|
-|20    |FDCE       | 41522|
-|21    |FDPE       |    44|
+|20    |FDCE       | 39677|
+|21    |FDPE       |    42|
 |22    |FDR        |    20|
 |23    |FDRE       |  7574|
 |24    |FDSE       |   237|
@@ -8172,58 +8172,58 @@ Report Instance Areas:
 +------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------+-------+
 |      |Instance                                                                                            |Module                                                         |Cells  |
 +------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------+-------+
-|1     |top                                                                                                 |                                                               | 112963|
-|2     |  rsa_soc_i                                                                                         |rsa_soc                                                        | 112963|
+|1     |top                                                                                                 |                                                               | 108627|
+|2     |  rsa_soc_i                                                                                         |rsa_soc                                                        | 108627|
 |3     |    axi_smc                                                                                         |rsa_soc_axi_smc_0                                              |   6616|
 |4     |      inst                                                                                          |bd_ae75                                                        |   6616|
 |5     |        clk_map                                                                                     |clk_map_imp_90PHHC                                             |     41|
 |6     |          psr_aclk                                                                                  |bd_ae75_psr_aclk_0                                             |     41|
 |7     |            U0                                                                                      |proc_sys_reset                                                 |     41|
 |8     |              EXT_LPF                                                                               |lpf                                                            |      9|
-|9     |                \ACTIVE_LOW_AUX.ACT_LO_AUX                                                          |cdc_sync_214                                                   |      5|
-|10    |              SEQ                                                                                   |sequence_psr_212                                               |     31|
-|11    |                SEQ_COUNTER                                                                         |upcnt_n_213                                                    |     13|
+|9     |                \ACTIVE_LOW_AUX.ACT_LO_AUX                                                          |cdc_sync_212                                                   |      5|
+|10    |              SEQ                                                                                   |sequence_psr_210                                               |     31|
+|11    |                SEQ_COUNTER                                                                         |upcnt_n_211                                                    |     13|
 |12    |        m00_exit_pipeline                                                                           |m00_exit_pipeline_imp_1NZDZBV                                  |   1862|
 |13    |          m00_exit                                                                                  |bd_ae75_m00e_0                                                 |   1862|
 |14    |            inst                                                                                    |sc_exit_v1_0_8_top                                             |   1862|
-|15    |              ar_reg                                                                                |sc_util_v1_0_4_axi_reg_stall_181                               |    157|
-|16    |              aw_reg                                                                                |sc_util_v1_0_4_axi_reg_stall_182                               |    157|
-|17    |              b_reg                                                                                 |sc_util_v1_0_4_axi_reg_stall_183                               |     19|
+|15    |              ar_reg                                                                                |sc_util_v1_0_4_axi_reg_stall_179                               |    157|
+|16    |              aw_reg                                                                                |sc_util_v1_0_4_axi_reg_stall_180                               |    157|
+|17    |              b_reg                                                                                 |sc_util_v1_0_4_axi_reg_stall_181                               |     19|
 |18    |              exit_inst                                                                             |sc_exit_v1_0_8_exit                                            |    114|
 |19    |                \gen_r_cmd_fifo.r_cmd_fifo                                                          |sc_util_v1_0_4_axic_reg_srl_fifo__parameterized2               |     85|
-|20    |                  \gen_srls[10].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_197                                     |      2|
-|21    |                  \gen_srls[11].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_198                                     |      2|
-|22    |                  \gen_srls[12].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_199                                     |      2|
-|23    |                  \gen_srls[13].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_200                                     |      2|
-|24    |                  \gen_srls[14].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_201                                     |      2|
-|25    |                  \gen_srls[15].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_202                                     |      3|
-|26    |                  \gen_srls[1].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_203                                     |      2|
-|27    |                  \gen_srls[2].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_204                                     |      2|
-|28    |                  \gen_srls[3].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_205                                     |      2|
-|29    |                  \gen_srls[4].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_206                                     |      2|
-|30    |                  \gen_srls[5].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_207                                     |      2|
-|31    |                  \gen_srls[6].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_208                                     |      2|
-|32    |                  \gen_srls[7].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_209                                     |      2|
-|33    |                  \gen_srls[8].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_210                                     |      2|
-|34    |                  \gen_srls[9].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_211                                     |      2|
+|20    |                  \gen_srls[10].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_195                                     |      2|
+|21    |                  \gen_srls[11].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_196                                     |      2|
+|22    |                  \gen_srls[12].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_197                                     |      2|
+|23    |                  \gen_srls[13].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_198                                     |      2|
+|24    |                  \gen_srls[14].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_199                                     |      2|
+|25    |                  \gen_srls[15].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_200                                     |      3|
+|26    |                  \gen_srls[1].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_201                                     |      2|
+|27    |                  \gen_srls[2].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_202                                     |      2|
+|28    |                  \gen_srls[3].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_203                                     |      2|
+|29    |                  \gen_srls[4].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_204                                     |      2|
+|30    |                  \gen_srls[5].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_205                                     |      2|
+|31    |                  \gen_srls[6].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_206                                     |      2|
+|32    |                  \gen_srls[7].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_207                                     |      2|
+|33    |                  \gen_srls[8].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_208                                     |      2|
+|34    |                  \gen_srls[9].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_209                                     |      2|
 |35    |                \gen_w_cmd_fifo.w_cmd_fifo                                                          |sc_util_v1_0_4_axic_reg_srl_fifo__parameterized3               |     28|
-|36    |                  \gen_srls[1].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_196                                     |      3|
-|37    |              r_reg                                                                                 |sc_util_v1_0_4_axi_reg_stall_184                               |    217|
+|36    |                  \gen_srls[1].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_194                                     |      3|
+|37    |              r_reg                                                                                 |sc_util_v1_0_4_axi_reg_stall_182                               |    217|
 |38    |              splitter_inst                                                                         |sc_exit_v1_0_8_splitter                                        |    950|
 |39    |                \gen_axi3.splitter_inst                                                             |sc_exit_v1_0_8_axi3_conv                                       |    949|
-|40    |                  ar_cmd_reg                                                                        |sc_util_v1_0_4_axi_reg_stall_186                               |    295|
-|41    |                  aw_cmd_reg                                                                        |sc_util_v1_0_4_axi_reg_stall_187                               |    269|
+|40    |                  ar_cmd_reg                                                                        |sc_util_v1_0_4_axi_reg_stall_184                               |    295|
+|41    |                  aw_cmd_reg                                                                        |sc_util_v1_0_4_axi_reg_stall_185                               |    269|
 |42    |                  \gen_rsplitter.gen_rthread_loop[0].r_split_fifo                                   |sc_util_v1_0_4_axic_reg_srl_fifo                               |     27|
-|43    |                    \gen_srls[0].srl_nx1                                                            |sc_util_v1_0_4_srl_rtl_195                                     |      3|
-|44    |                  \gen_wsplitter.gen_wthread_loop[0].b_split_fifo                                   |sc_util_v1_0_4_axic_reg_srl_fifo_188                           |     34|
-|45    |                    \gen_srls[0].srl_nx1                                                            |sc_util_v1_0_4_srl_rtl_194                                     |      5|
+|43    |                    \gen_srls[0].srl_nx1                                                            |sc_util_v1_0_4_srl_rtl_193                                     |      3|
+|44    |                  \gen_wsplitter.gen_wthread_loop[0].b_split_fifo                                   |sc_util_v1_0_4_axic_reg_srl_fifo_186                           |     34|
+|45    |                    \gen_srls[0].srl_nx1                                                            |sc_util_v1_0_4_srl_rtl_192                                     |      5|
 |46    |                  \gen_wsplitter.w_split_fifo                                                       |sc_util_v1_0_4_axic_reg_srl_fifo__parameterized0               |     60|
-|47    |                    \gen_srls[0].srl_nx1                                                            |sc_util_v1_0_4_srl_rtl_189                                     |      3|
-|48    |                    \gen_srls[1].srl_nx1                                                            |sc_util_v1_0_4_srl_rtl_190                                     |      2|
-|49    |                    \gen_srls[2].srl_nx1                                                            |sc_util_v1_0_4_srl_rtl_191                                     |      2|
-|50    |                    \gen_srls[3].srl_nx1                                                            |sc_util_v1_0_4_srl_rtl_192                                     |      2|
-|51    |                    \gen_srls[4].srl_nx1                                                            |sc_util_v1_0_4_srl_rtl_193                                     |      3|
-|52    |              w_reg                                                                                 |sc_util_v1_0_4_axi_reg_stall_185                               |    229|
+|47    |                    \gen_srls[0].srl_nx1                                                            |sc_util_v1_0_4_srl_rtl_187                                     |      3|
+|48    |                    \gen_srls[1].srl_nx1                                                            |sc_util_v1_0_4_srl_rtl_188                                     |      2|
+|49    |                    \gen_srls[2].srl_nx1                                                            |sc_util_v1_0_4_srl_rtl_189                                     |      2|
+|50    |                    \gen_srls[3].srl_nx1                                                            |sc_util_v1_0_4_srl_rtl_190                                     |      2|
+|51    |                    \gen_srls[4].srl_nx1                                                            |sc_util_v1_0_4_srl_rtl_191                                     |      3|
+|52    |              w_reg                                                                                 |sc_util_v1_0_4_axi_reg_stall_183                               |    229|
 |53    |        m00_nodes                                                                                   |m00_nodes_imp_11RJM7R                                          |   1449|
 |54    |          m00_ar_node                                                                               |bd_ae75_m00arn_0                                               |    330|
 |55    |            inst                                                                                    |sc_node_v1_0_10_top                                            |    330|
@@ -8232,21 +8232,21 @@ Report Instance Areas:
 |58    |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__xdcDup__1                      |     70|
 |59    |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram                                              |      4|
 |60    |                      xpm_memory_base_inst                                                          |xpm_memory_base                                                |      4|
-|61    |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_178                     |     14|
-|62    |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_179                     |     13|
-|63    |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_180                     |     29|
+|61    |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_176                     |     14|
+|62    |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_177                     |     13|
+|63    |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_178                     |     29|
 |64    |                \gen_normal_area.inst_fifo_node_payld                                               |sc_node_v1_0_10_fifo__parameterized0__xdcDup__1                |    239|
 |65    |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized0__xdcDup__1      |    239|
 |66    |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized0                              |    183|
 |67    |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized0                                |    183|
-|68    |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_175                     |     14|
-|69    |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_176                     |     13|
-|70    |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_177                     |     21|
+|68    |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_173                     |     14|
+|69    |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_174                     |     13|
+|70    |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_175                     |     21|
 |71    |                inst_ingress                                                                        |sc_node_v1_0_10_ingress                                        |      1|
-|72    |                  inst_pipeline_valid                                                               |sc_util_v1_0_4_pipeline_174                                    |      1|
+|72    |                  inst_pipeline_valid                                                               |sc_util_v1_0_4_pipeline_172                                    |      1|
 |73    |              inst_si_handler                                                                       |sc_node_v1_0_10_si_handler                                     |     14|
-|74    |                \gen_si_handler.gen_arbiter_rr_normal_area.inst_arbiter                             |sc_node_v1_0_10_arb_alg_rr_172                                 |      6|
-|75    |                \gen_si_handler.gen_request_counters.gen_req_counter[0].inst_req_counter            |sc_util_v1_0_4_counter_173                                     |      7|
+|74    |                \gen_si_handler.gen_arbiter_rr_normal_area.inst_arbiter                             |sc_node_v1_0_10_arb_alg_rr_170                                 |      6|
+|75    |                \gen_si_handler.gen_request_counters.gen_req_counter[0].inst_req_counter            |sc_util_v1_0_4_counter_171                                     |      7|
 |76    |          m00_aw_node                                                                               |bd_ae75_m00awn_0                                               |    359|
 |77    |            inst                                                                                    |sc_node_v1_0_10_top__parameterized0                            |    359|
 |78    |              inst_mi_handler                                                                       |sc_node_v1_0_10_mi_handler__parameterized0                     |    313|
@@ -8254,22 +8254,22 @@ Report Instance Areas:
 |80    |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__xdcDup__2                      |     70|
 |81    |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__8                                           |      4|
 |82    |                      xpm_memory_base_inst                                                          |xpm_memory_base__8                                             |      4|
-|83    |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_169                     |     14|
-|84    |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_170                     |     13|
-|85    |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_171                     |     29|
+|83    |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_167                     |     14|
+|84    |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_168                     |     13|
+|85    |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_169                     |     29|
 |86    |                \gen_normal_area.inst_fifo_node_payld                                               |sc_node_v1_0_10_fifo__parameterized0                           |    239|
 |87    |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized0                 |    239|
 |88    |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized0__2                           |    183|
 |89    |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized0__2                             |    183|
-|90    |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_166                     |     14|
-|91    |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_167                     |     13|
-|92    |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_168                     |     21|
+|90    |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_164                     |     14|
+|91    |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_165                     |     13|
+|92    |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_166                     |     21|
 |93    |                inst_ingress                                                                        |sc_node_v1_0_10_ingress__parameterized0                        |      2|
-|94    |                  inst_pipeline_recv                                                                |sc_util_v1_0_4_pipeline__parameterized3_164                    |      1|
-|95    |                  inst_pipeline_valid                                                               |sc_util_v1_0_4_pipeline_165                                    |      1|
+|94    |                  inst_pipeline_recv                                                                |sc_util_v1_0_4_pipeline__parameterized3_162                    |      1|
+|95    |                  inst_pipeline_valid                                                               |sc_util_v1_0_4_pipeline_163                                    |      1|
 |96    |              inst_si_handler                                                                       |sc_node_v1_0_10_si_handler__parameterized0                     |     42|
 |97    |                \gen_m_axis_arb_fifo.inst_axis_arb_fifo                                             |sc_util_v1_0_4_axic_reg_srl_fifo__parameterized4               |     32|
-|98    |                  \gen_srls[1].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_163                                     |      2|
+|98    |                  \gen_srls[1].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_161                                     |      2|
 |99    |                \gen_si_handler.gen_arbiter_rr_normal_area.inst_arbiter                             |sc_node_v1_0_10_arb_alg_rr                                     |      3|
 |100   |                \gen_si_handler.gen_request_counters.gen_req_counter[1].inst_req_counter            |sc_util_v1_0_4_counter                                         |      6|
 |101   |          m00_b_node                                                                                |bd_ae75_m00bn_0                                                |    181|
@@ -8279,19 +8279,19 @@ Report Instance Areas:
 |105   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized1__xdcDup__1      |     80|
 |106   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized1                              |     24|
 |107   |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized1                                |     24|
-|108   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_160                     |     14|
-|109   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_161                     |     13|
-|110   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_162                     |     22|
+|108   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_158                     |     14|
+|109   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_159                     |     13|
+|110   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_160                     |     22|
 |111   |                \gen_normal_area.inst_fifo_node_payld                                               |sc_node_v1_0_10_fifo__parameterized2                           |     75|
 |112   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized2                 |     75|
 |113   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized2                              |      8|
 |114   |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized2                                |      8|
-|115   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_157                     |     14|
-|116   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_158                     |     13|
-|117   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_159                     |     30|
-|118   |                \gen_normal_area.inst_fifo_send                                                     |sc_node_v1_0_10_reg_slice3__parameterized0_156                 |     17|
-|119   |              inst_si_handler                                                                       |sc_node_v1_0_10_si_handler__parameterized1_154                 |      3|
-|120   |                inst_arb_stall_late                                                                 |sc_util_v1_0_4_pipeline_155                                    |      3|
+|115   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_155                     |     14|
+|116   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_156                     |     13|
+|117   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_157                     |     30|
+|118   |                \gen_normal_area.inst_fifo_send                                                     |sc_node_v1_0_10_reg_slice3__parameterized0_154                 |     17|
+|119   |              inst_si_handler                                                                       |sc_node_v1_0_10_si_handler__parameterized1_152                 |      3|
+|120   |                inst_arb_stall_late                                                                 |sc_util_v1_0_4_pipeline_153                                    |      3|
 |121   |          m00_r_node                                                                                |bd_ae75_m00rn_0                                                |    273|
 |122   |            inst                                                                                    |sc_node_v1_0_10_top__parameterized2                            |    273|
 |123   |              inst_mi_handler                                                                       |sc_node_v1_0_10_mi_handler__parameterized2                     |    266|
@@ -8299,19 +8299,19 @@ Report Instance Areas:
 |125   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized1                 |     81|
 |126   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized1__2                           |     24|
 |127   |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized1__2                             |     24|
-|128   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_151                     |     14|
-|129   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_152                     |     13|
-|130   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_153                     |     22|
+|128   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_149                     |     14|
+|129   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_150                     |     13|
+|130   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_151                     |     22|
 |131   |                \gen_normal_area.inst_fifo_node_payld                                               |sc_node_v1_0_10_fifo__parameterized3                           |    166|
 |132   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized3                 |    166|
 |133   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized3                              |     99|
 |134   |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized3                                |     99|
-|135   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_148                     |     14|
-|136   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_149                     |     13|
-|137   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_150                     |     30|
+|135   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_146                     |     14|
+|136   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_147                     |     13|
+|137   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_148                     |     30|
 |138   |                \gen_normal_area.inst_fifo_send                                                     |sc_node_v1_0_10_reg_slice3__parameterized0                     |     17|
-|139   |              inst_si_handler                                                                       |sc_node_v1_0_10_si_handler__parameterized2_146                 |      3|
-|140   |                inst_arb_stall_late                                                                 |sc_util_v1_0_4_pipeline_147                                    |      3|
+|139   |              inst_si_handler                                                                       |sc_node_v1_0_10_si_handler__parameterized2_144                 |      3|
+|140   |                inst_arb_stall_late                                                                 |sc_util_v1_0_4_pipeline_145                                    |      3|
 |141   |          m00_w_node                                                                                |bd_ae75_m00wn_0                                                |    306|
 |142   |            inst                                                                                    |sc_node_v1_0_10_top__parameterized3                            |    306|
 |143   |              inst_mi_handler                                                                       |sc_node_v1_0_10_mi_handler__parameterized3                     |    257|
@@ -8319,21 +8319,21 @@ Report Instance Areas:
 |145   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__xdcDup__3                      |     71|
 |146   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__7                                           |      4|
 |147   |                      xpm_memory_base_inst                                                          |xpm_memory_base__7                                             |      4|
-|148   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_143                     |     14|
-|149   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_144                     |     13|
-|150   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_145                     |     30|
+|148   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_141                     |     14|
+|149   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_142                     |     13|
+|150   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_143                     |     30|
 |151   |                \gen_normal_area.inst_fifo_node_payld                                               |sc_node_v1_0_10_fifo__parameterized5                           |    182|
 |152   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized5                 |    182|
 |153   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized5                              |    125|
 |154   |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized5                                |    125|
-|155   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_140                     |     14|
-|156   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_141                     |     13|
-|157   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_142                     |     21|
+|155   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_138                     |     14|
+|156   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_139                     |     13|
+|157   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_140                     |     21|
 |158   |                inst_ingress                                                                        |sc_node_v1_0_10_ingress__parameterized3                        |      2|
 |159   |                  inst_pipeline_recv                                                                |sc_util_v1_0_4_pipeline__parameterized3                        |      1|
-|160   |                  inst_pipeline_valid                                                               |sc_util_v1_0_4_pipeline_139                                    |      1|
+|160   |                  inst_pipeline_valid                                                               |sc_util_v1_0_4_pipeline_137                                    |      1|
 |161   |              inst_si_handler                                                                       |sc_node_v1_0_10_si_handler__parameterized3                     |     45|
-|162   |                \gen_si_handler.gen_axis_packet_slave_normal_area.inst_allow_transfer_late          |sc_util_v1_0_4_pipeline_137                                    |      2|
+|162   |                \gen_si_handler.gen_axis_packet_slave_normal_area.inst_allow_transfer_late          |sc_util_v1_0_4_pipeline_135                                    |      2|
 |163   |                \gen_si_handler.gen_request_fifos.gen_req_fifo[0].inst_req_fifo                     |sc_node_v1_0_10_fifo__parameterized4__xdcDup__1                |     12|
 |164   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized4__xdcDup__1      |     12|
 |165   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized4                              |      2|
@@ -8343,15 +8343,15 @@ Report Instance Areas:
 |169   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized4__2                           |      2|
 |170   |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized4__2                             |      2|
 |171   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized3                         |      6|
-|172   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized3_138                     |      6|
+|172   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized3_136                     |      6|
 |173   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized4                         |     10|
 |174   |        s00_entry_pipeline                                                                          |s00_entry_pipeline_imp_P992QG                                  |    601|
 |175   |          s00_mmu                                                                                   |bd_ae75_s00mmu_0                                               |    581|
 |176   |            inst                                                                                    |sc_mmu_v1_0_7_top                                              |    581|
-|177   |              ar_reg_stall                                                                          |sc_util_v1_0_4_axi_reg_stall_133                               |    186|
-|178   |              ar_sreg                                                                               |sc_util_v1_0_4_axi_reg_stall_134                               |    196|
-|179   |              \gen_endpoint.decerr_slave_inst                                                       |sc_mmu_v1_0_7_decerr_slave_135                                 |     36|
-|180   |              r_sreg                                                                                |sc_util_v1_0_4_axi_reg_stall_136                               |    150|
+|177   |              ar_reg_stall                                                                          |sc_util_v1_0_4_axi_reg_stall_131                               |    186|
+|178   |              ar_sreg                                                                               |sc_util_v1_0_4_axi_reg_stall_132                               |    196|
+|179   |              \gen_endpoint.decerr_slave_inst                                                       |sc_mmu_v1_0_7_decerr_slave_133                                 |     36|
+|180   |              r_sreg                                                                                |sc_util_v1_0_4_axi_reg_stall_134                               |    150|
 |181   |          s00_si_converter                                                                          |bd_ae75_s00sic_0                                               |     20|
 |182   |            inst                                                                                    |sc_si_converter_v1_0_8_top                                     |     20|
 |183   |        s00_nodes                                                                                   |s00_nodes_imp_LUJTHE                                           |    622|
@@ -8362,19 +8362,19 @@ Report Instance Areas:
 |188   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized6__xdcDup__1      |     78|
 |189   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized6                              |     22|
 |190   |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized6                                |     22|
-|191   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_130                     |     14|
-|192   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_131                     |     13|
-|193   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_132                     |     22|
+|191   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_128                     |     14|
+|192   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_129                     |     13|
+|193   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_130                     |     22|
 |194   |                \gen_normal_area.inst_fifo_node_payld                                               |sc_node_v1_0_10_fifo__parameterized7__xdcDup__1                |    229|
 |195   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized7__xdcDup__1      |    229|
 |196   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized7                              |    162|
 |197   |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized7                                |    162|
-|198   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_127                     |     14|
-|199   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_128                     |     13|
-|200   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_129                     |     30|
-|201   |                \gen_normal_area.inst_fifo_send                                                     |sc_node_v1_0_10_reg_slice3__parameterized1_126                 |      9|
+|198   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_125                     |     14|
+|199   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_126                     |     13|
+|200   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_127                     |     30|
+|201   |                \gen_normal_area.inst_fifo_send                                                     |sc_node_v1_0_10_reg_slice3__parameterized1_124                 |      9|
 |202   |              inst_si_handler                                                                       |sc_node_v1_0_10_si_handler__parameterized4                     |      3|
-|203   |                inst_arb_stall_late                                                                 |sc_util_v1_0_4_pipeline_125                                    |      3|
+|203   |                inst_arb_stall_late                                                                 |sc_util_v1_0_4_pipeline_123                                    |      3|
 |204   |          s00_r_node                                                                                |bd_ae75_srn_0                                                  |    297|
 |205   |            inst                                                                                    |sc_node_v1_0_10_top__parameterized5                            |    297|
 |206   |              inst_mi_handler                                                                       |sc_node_v1_0_10_mi_handler__parameterized5                     |    290|
@@ -8383,46 +8383,46 @@ Report Instance Areas:
 |209   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__xdcDup__4                      |     69|
 |210   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__6                                           |      4|
 |211   |                      xpm_memory_base_inst                                                          |xpm_memory_base__6                                             |      4|
-|212   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_122                     |     13|
-|213   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_123                     |     13|
-|214   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_124                     |     30|
+|212   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_120                     |     13|
+|213   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_121                     |     13|
+|214   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_122                     |     30|
 |215   |                \gen_normal_area.inst_fifo_node_payld                                               |sc_node_v1_0_10_fifo__parameterized8                           |    213|
 |216   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized8                 |    213|
 |217   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized8                              |    120|
 |218   |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized8                                |    120|
-|219   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_119                     |     15|
-|220   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_120                     |     13|
-|221   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_121                     |     22|
+|219   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_117                     |     15|
+|220   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_118                     |     13|
+|221   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_119                     |     22|
 |222   |                inst_ingress                                                                        |sc_node_v1_0_10_ingress__parameterized5                        |      1|
-|223   |                  inst_pipeline_valid                                                               |sc_util_v1_0_4_pipeline_118                                    |      1|
+|223   |                  inst_pipeline_valid                                                               |sc_util_v1_0_4_pipeline_116                                    |      1|
 |224   |              inst_si_handler                                                                       |sc_node_v1_0_10_si_handler__parameterized2                     |      3|
-|225   |                inst_arb_stall_late                                                                 |sc_util_v1_0_4_pipeline_117                                    |      3|
+|225   |                inst_arb_stall_late                                                                 |sc_util_v1_0_4_pipeline_115                                    |      3|
 |226   |        s01_entry_pipeline                                                                          |s01_entry_pipeline_imp_1HEE37W                                 |    690|
 |227   |          s01_mmu                                                                                   |bd_ae75_s01mmu_0                                               |    575|
 |228   |            inst                                                                                    |sc_mmu_v1_0_7_top__parameterized0                              |    575|
 |229   |              aw_reg_stall                                                                          |sc_util_v1_0_4_axi_reg_stall                                   |    184|
-|230   |              aw_sreg                                                                               |sc_util_v1_0_4_axi_reg_stall_114                               |    198|
-|231   |              b_sreg                                                                                |sc_util_v1_0_4_axi_reg_stall_115                               |     27|
+|230   |              aw_sreg                                                                               |sc_util_v1_0_4_axi_reg_stall_112                               |    198|
+|231   |              b_sreg                                                                                |sc_util_v1_0_4_axi_reg_stall_113                               |     27|
 |232   |              \gen_endpoint.decerr_slave_inst                                                       |sc_mmu_v1_0_7_decerr_slave                                     |     18|
-|233   |              w_sreg                                                                                |sc_util_v1_0_4_axi_reg_stall_116                               |    126|
+|233   |              w_sreg                                                                                |sc_util_v1_0_4_axi_reg_stall_114                               |    126|
 |234   |          s01_si_converter                                                                          |bd_ae75_s01sic_0                                               |    115|
 |235   |            inst                                                                                    |sc_si_converter_v1_0_8_top__parameterized0                     |    115|
 |236   |              splitter_inst                                                                         |sc_si_converter_v1_0_8_splitter                                |    104|
 |237   |                \gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo  |sc_util_v1_0_4_axic_reg_srl_fifo__parameterized5               |    103|
 |238   |                  \gen_srls[0].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl                                         |      2|
-|239   |                  \gen_srls[10].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_101                                     |      2|
-|240   |                  \gen_srls[11].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_102                                     |      2|
-|241   |                  \gen_srls[12].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_103                                     |      2|
-|242   |                  \gen_srls[13].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_104                                     |      3|
-|243   |                  \gen_srls[1].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_105                                     |      2|
-|244   |                  \gen_srls[2].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_106                                     |      2|
-|245   |                  \gen_srls[3].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_107                                     |      2|
-|246   |                  \gen_srls[4].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_108                                     |      2|
-|247   |                  \gen_srls[5].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_109                                     |      2|
-|248   |                  \gen_srls[6].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_110                                     |     13|
-|249   |                  \gen_srls[7].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_111                                     |      2|
-|250   |                  \gen_srls[8].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_112                                     |      2|
-|251   |                  \gen_srls[9].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_113                                     |      2|
+|239   |                  \gen_srls[10].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_99                                      |      2|
+|240   |                  \gen_srls[11].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_100                                     |      2|
+|241   |                  \gen_srls[12].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_101                                     |      2|
+|242   |                  \gen_srls[13].srl_nx1                                                             |sc_util_v1_0_4_srl_rtl_102                                     |      3|
+|243   |                  \gen_srls[1].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_103                                     |      2|
+|244   |                  \gen_srls[2].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_104                                     |      2|
+|245   |                  \gen_srls[3].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_105                                     |      2|
+|246   |                  \gen_srls[4].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_106                                     |      2|
+|247   |                  \gen_srls[5].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_107                                     |      2|
+|248   |                  \gen_srls[6].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_108                                     |     13|
+|249   |                  \gen_srls[7].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_109                                     |      2|
+|250   |                  \gen_srls[8].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_110                                     |      2|
+|251   |                  \gen_srls[9].srl_nx1                                                              |sc_util_v1_0_4_srl_rtl_111                                     |      2|
 |252   |        s01_nodes                                                                                   |s01_nodes_imp_1MQJQLW                                          |    900|
 |253   |          s01_aw_node                                                                               |bd_ae75_sawn_0                                                 |    325|
 |254   |            inst                                                                                    |sc_node_v1_0_10_top__parameterized6                            |    325|
@@ -8431,19 +8431,19 @@ Report Instance Areas:
 |257   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized6                 |     78|
 |258   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized6__3                           |     22|
 |259   |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized6__3                             |     22|
-|260   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_98                      |     14|
-|261   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_99                      |     13|
-|262   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_100                     |     22|
+|260   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_96                      |     14|
+|261   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_97                      |     13|
+|262   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_98                      |     22|
 |263   |                \gen_normal_area.inst_fifo_node_payld                                               |sc_node_v1_0_10_fifo__parameterized7                           |    229|
 |264   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized7                 |    229|
 |265   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized7__2                           |    162|
 |266   |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized7__2                             |    162|
-|267   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_95                      |     14|
-|268   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_96                      |     13|
-|269   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_97                      |     30|
-|270   |                \gen_normal_area.inst_fifo_send                                                     |sc_node_v1_0_10_reg_slice3__parameterized1_94                  |      9|
+|267   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_93                      |     14|
+|268   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_94                      |     13|
+|269   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_95                      |     30|
+|270   |                \gen_normal_area.inst_fifo_send                                                     |sc_node_v1_0_10_reg_slice3__parameterized1_92                  |      9|
 |271   |              inst_si_handler                                                                       |sc_node_v1_0_10_si_handler__parameterized5                     |      3|
-|272   |                inst_arb_stall_late                                                                 |sc_util_v1_0_4_pipeline_93                                     |      3|
+|272   |                inst_arb_stall_late                                                                 |sc_util_v1_0_4_pipeline_91                                     |      3|
 |273   |          s01_b_node                                                                                |bd_ae75_sbn_0                                                  |    166|
 |274   |            inst                                                                                    |sc_node_v1_0_10_top__parameterized7                            |    166|
 |275   |              inst_mi_handler                                                                       |sc_node_v1_0_10_mi_handler__parameterized7                     |    159|
@@ -8451,20 +8451,20 @@ Report Instance Areas:
 |277   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo                                 |     70|
 |278   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__5                                           |      4|
 |279   |                      xpm_memory_base_inst                                                          |xpm_memory_base__5                                             |      4|
-|280   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_90                      |     14|
-|281   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_91                      |     13|
-|282   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_92                      |     29|
+|280   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_88                      |     14|
+|281   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_89                      |     13|
+|282   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_90                      |     29|
 |283   |                \gen_normal_area.inst_fifo_node_payld                                               |sc_node_v1_0_10_fifo__parameterized9                           |     86|
 |284   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized9                 |     86|
 |285   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized9                              |     29|
 |286   |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized9                                |     29|
-|287   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_87                      |     14|
-|288   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_88                      |     13|
-|289   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_89                      |     21|
+|287   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_85                      |     14|
+|288   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_86                      |     13|
+|289   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_87                      |     21|
 |290   |                inst_ingress                                                                        |sc_node_v1_0_10_ingress__parameterized7                        |      1|
-|291   |                  inst_pipeline_valid                                                               |sc_util_v1_0_4_pipeline_86                                     |      1|
+|291   |                  inst_pipeline_valid                                                               |sc_util_v1_0_4_pipeline_84                                     |      1|
 |292   |              inst_si_handler                                                                       |sc_node_v1_0_10_si_handler__parameterized1                     |      3|
-|293   |                inst_arb_stall_late                                                                 |sc_util_v1_0_4_pipeline_85                                     |      3|
+|293   |                inst_arb_stall_late                                                                 |sc_util_v1_0_4_pipeline_83                                     |      3|
 |294   |          s01_w_node                                                                                |bd_ae75_swn_0                                                  |    409|
 |295   |            inst                                                                                    |sc_node_v1_0_10_top__parameterized8                            |    409|
 |296   |              inst_mi_handler                                                                       |sc_node_v1_0_10_mi_handler__parameterized8                     |    403|
@@ -8473,9 +8473,9 @@ Report Instance Areas:
 |299   |                  \gen_xpm_memory_fifo.inst_fifo                                                    |sc_util_v1_0_4_xpm_memory_fifo__parameterized10                |     77|
 |300   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized6__2                           |     22|
 |301   |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized6__2                             |     22|
-|302   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_82                      |     14|
-|303   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_83                      |     13|
-|304   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_84                      |     21|
+|302   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0_80                      |     14|
+|303   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_81                      |     13|
+|304   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1_82                      |     21|
 |305   |                \gen_normal_area.gen_upsizer.inst_upsizer                                           |sc_node_v1_0_10_upsizer                                        |    138|
 |306   |                  inst_upsizer_target_pipeline                                                      |sc_util_v1_0_4_pipeline__parameterized8                        |      6|
 |307   |                \gen_normal_area.inst_fifo_node_payld                                               |sc_node_v1_0_10_fifo__parameterized11                          |    173|
@@ -8483,7 +8483,7 @@ Report Instance Areas:
 |309   |                    \gen_mem_rep[0].inst_xpm_memory                                                 |xpm_memory_sdpram__parameterized10                             |    104|
 |310   |                      xpm_memory_base_inst                                                          |xpm_memory_base__parameterized10                               |    104|
 |311   |                    \gen_mem_rep[0].inst_rd_addrb                                                   |sc_util_v1_0_4_counter__parameterized0                         |     14|
-|312   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_81                      |     13|
+|312   |                    \gen_mem_rep[0].inst_wr_addra                                                   |sc_util_v1_0_4_counter__parameterized0_79                      |     13|
 |313   |                    \gen_wr.inst_wr_addra_p1                                                        |sc_util_v1_0_4_counter__parameterized1                         |     31|
 |314   |                \gen_normal_area.inst_fifo_send                                                     |sc_node_v1_0_10_reg_slice3__parameterized1                     |      9|
 |315   |              inst_si_handler                                                                       |sc_node_v1_0_10_si_handler__parameterized6                     |      2|
@@ -8491,7 +8491,7 @@ Report Instance Areas:
 |317   |        switchboards                                                                                |switchboards_imp_ACGRH2                                        |    451|
 |318   |          ar_switchboard                                                                            |bd_ae75_arsw_0                                                 |    137|
 |319   |            inst                                                                                    |sc_switchboard_v1_0_6_top                                      |    137|
-|320   |              \gen_mi[0].inst_opipe_payld                                                           |sc_util_v1_0_4_pipeline__parameterized11_80                    |    137|
+|320   |              \gen_mi[0].inst_opipe_payld                                                           |sc_util_v1_0_4_pipeline__parameterized11_78                    |    137|
 |321   |          aw_switchboard                                                                            |bd_ae75_awsw_0                                                 |    138|
 |322   |            inst                                                                                    |sc_switchboard_v1_0_6_top__1                                   |    138|
 |323   |              \gen_mi[0].inst_opipe_payld                                                           |sc_util_v1_0_4_pipeline__parameterized11                       |    138|
@@ -8521,15 +8521,15 @@ Report Instance Areas:
 |347   |            \gen_axilite.gen_b2s_conv.axilite_b2s                                                   |axi_protocol_converter_v2_1_19_b2s                             |   1140|
 |348   |              \RD.ar_channel_0                                                                      |axi_protocol_converter_v2_1_19_b2s_ar_channel                  |    177|
 |349   |                ar_cmd_fsm_0                                                                        |axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm                  |     32|
-|350   |                cmd_translator_0                                                                    |axi_protocol_converter_v2_1_19_b2s_cmd_translator_77           |    133|
-|351   |                  incr_cmd_0                                                                        |axi_protocol_converter_v2_1_19_b2s_incr_cmd_78                 |     67|
-|352   |                  wrap_cmd_0                                                                        |axi_protocol_converter_v2_1_19_b2s_wrap_cmd_79                 |     61|
+|350   |                cmd_translator_0                                                                    |axi_protocol_converter_v2_1_19_b2s_cmd_translator_75           |    133|
+|351   |                  incr_cmd_0                                                                        |axi_protocol_converter_v2_1_19_b2s_incr_cmd_76                 |     67|
+|352   |                  wrap_cmd_0                                                                        |axi_protocol_converter_v2_1_19_b2s_wrap_cmd_77                 |     61|
 |353   |              \RD.r_channel_0                                                                       |axi_protocol_converter_v2_1_19_b2s_r_channel                   |     92|
 |354   |                rd_data_fifo_0                                                                      |axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized1 |     50|
 |355   |                transaction_fifo_0                                                                  |axi_protocol_converter_v2_1_19_b2s_simple_fifo__parameterized2 |     28|
 |356   |              SI_REG                                                                                |axi_register_slice_v2_1_19_axi_register_slice                  |    636|
 |357   |                \ar.ar_pipe                                                                         |axi_register_slice_v2_1_19_axic_register_slice                 |    219|
-|358   |                \aw.aw_pipe                                                                         |axi_register_slice_v2_1_19_axic_register_slice_76              |    223|
+|358   |                \aw.aw_pipe                                                                         |axi_register_slice_v2_1_19_axic_register_slice_74              |    223|
 |359   |                \b.b_pipe                                                                           |axi_register_slice_v2_1_19_axic_register_slice__parameterized1 |     48|
 |360   |                \r.r_pipe                                                                           |axi_register_slice_v2_1_19_axic_register_slice__parameterized2 |    146|
 |361   |              \WR.aw_channel_0                                                                      |axi_protocol_converter_v2_1_19_b2s_aw_channel                  |    173|
@@ -8544,208 +8544,206 @@ Report Instance Areas:
 |370   |      U0                                                                                            |proc_sys_reset__parameterized1                                 |     66|
 |371   |        EXT_LPF                                                                                     |lpf__parameterized0                                            |     23|
 |372   |          \ACTIVE_LOW_AUX.ACT_LO_AUX                                                                |cdc_sync                                                       |      6|
-|373   |          \ACTIVE_LOW_EXT.ACT_LO_EXT                                                                |cdc_sync_75                                                    |      6|
+|373   |          \ACTIVE_LOW_EXT.ACT_LO_EXT                                                                |cdc_sync_73                                                    |      6|
 |374   |        SEQ                                                                                         |sequence_psr                                                   |     38|
 |375   |          SEQ_COUNTER                                                                               |upcnt_n                                                        |     13|
-|376   |    rsa                                                                                             |rsa_imp_1WUMTU2                                                | 104616|
-|377   |      rsa_acc                                                                                       |rsa_soc_rsa_acc_0                                              | 100454|
-|378   |        U0                                                                                          |rsa_accelerator                                                | 100454|
-|379   |          u_rsa_core                                                                                |rsa_core                                                       |  97959|
+|376   |    rsa                                                                                             |rsa_imp_1WUMTU2                                                | 100280|
+|377   |      rsa_acc                                                                                       |rsa_soc_rsa_acc_0                                              |  96118|
+|378   |        U0                                                                                          |rsa_accelerator                                                |  96118|
+|379   |          u_rsa_core                                                                                |rsa_core                                                       |  93659|
 |380   |            \generating[0].exp                                                                      |exponentiation                                                 |   4332|
-|381   |              i_modmult                                                                             |exponentiation_modmult_74                                      |   2719|
+|381   |              i_modmult                                                                             |exponentiation_modmult_72                                      |   2719|
 |382   |            \generating[10].exp                                                                     |exponentiation_33                                              |   4312|
-|383   |              i_modmult                                                                             |exponentiation_modmult_73                                      |   2700|
-|384   |            \generating[11].exp                                                                     |exponentiation_34                                              |   4830|
-|385   |              i_modmult                                                                             |exponentiation_modmult_72                                      |   2700|
+|383   |              i_modmult                                                                             |exponentiation_modmult_71                                      |   2700|
+|384   |            \generating[11].exp                                                                     |exponentiation_34                                              |   4829|
+|385   |              i_modmult                                                                             |exponentiation_modmult_70                                      |   2700|
 |386   |            \generating[12].exp                                                                     |exponentiation_35                                              |   4312|
-|387   |              i_modmult                                                                             |exponentiation_modmult_71                                      |   2700|
+|387   |              i_modmult                                                                             |exponentiation_modmult_69                                      |   2700|
 |388   |            \generating[13].exp                                                                     |exponentiation_36                                              |   4312|
-|389   |              i_modmult                                                                             |exponentiation_modmult_70                                      |   2700|
+|389   |              i_modmult                                                                             |exponentiation_modmult_68                                      |   2700|
 |390   |            \generating[14].exp                                                                     |exponentiation_37                                              |   4312|
-|391   |              i_modmult                                                                             |exponentiation_modmult_69                                      |   2700|
-|392   |            \generating[15].exp                                                                     |exponentiation_38                                              |   4571|
-|393   |              i_modmult                                                                             |exponentiation_modmult_68                                      |   2700|
+|391   |              i_modmult                                                                             |exponentiation_modmult_67                                      |   2700|
+|392   |            \generating[15].exp                                                                     |exponentiation_38                                              |   4593|
+|393   |              i_modmult                                                                             |exponentiation_modmult_66                                      |   2700|
 |394   |            \generating[16].exp                                                                     |exponentiation_39                                              |   4312|
-|395   |              i_modmult                                                                             |exponentiation_modmult_67                                      |   2700|
-|396   |            \generating[17].exp                                                                     |exponentiation_40                                              |   4308|
-|397   |              i_modmult                                                                             |exponentiation_modmult_66                                      |   2700|
-|398   |            \generating[18].exp                                                                     |exponentiation_41                                              |   4308|
-|399   |              i_modmult                                                                             |exponentiation_modmult_65                                      |   2700|
-|400   |            \generating[19].exp                                                                     |exponentiation_42                                              |   4824|
-|401   |              i_modmult                                                                             |exponentiation_modmult_64                                      |   2700|
+|395   |              i_modmult                                                                             |exponentiation_modmult_65                                      |   2700|
+|396   |            \generating[17].exp                                                                     |exponentiation_40                                              |   4312|
+|397   |              i_modmult                                                                             |exponentiation_modmult_64                                      |   2700|
+|398   |            \generating[18].exp                                                                     |exponentiation_41                                              |   4313|
+|399   |              i_modmult                                                                             |exponentiation_modmult_63                                      |   2700|
+|400   |            \generating[19].exp                                                                     |exponentiation_42                                              |   4588|
+|401   |              i_modmult                                                                             |exponentiation_modmult_62                                      |   2718|
 |402   |            \generating[1].exp                                                                      |exponentiation_43                                              |   4326|
-|403   |              i_modmult                                                                             |exponentiation_modmult_63                                      |   2718|
-|404   |            \generating[20].exp                                                                     |exponentiation_44                                              |   4327|
-|405   |              i_modmult                                                                             |exponentiation_modmult_62                                      |   2718|
-|406   |            \generating[21].exp                                                                     |exponentiation_45                                              |   4584|
-|407   |              i_modmult                                                                             |exponentiation_modmult_61                                      |   2718|
-|408   |            \generating[2].exp                                                                      |exponentiation_46                                              |   4326|
-|409   |              i_modmult                                                                             |exponentiation_modmult_60                                      |   2718|
-|410   |            \generating[3].exp                                                                      |exponentiation_47                                              |   4857|
-|411   |              i_modmult                                                                             |exponentiation_modmult_59                                      |   2700|
-|412   |            \generating[4].exp                                                                      |exponentiation_48                                              |   4326|
-|413   |              i_modmult                                                                             |exponentiation_modmult_58                                      |   2718|
-|414   |            \generating[5].exp                                                                      |exponentiation_49                                              |   4312|
-|415   |              i_modmult                                                                             |exponentiation_modmult_57                                      |   2700|
-|416   |            \generating[6].exp                                                                      |exponentiation_50                                              |   4312|
-|417   |              i_modmult                                                                             |exponentiation_modmult_56                                      |   2700|
-|418   |            \generating[7].exp                                                                      |exponentiation_51                                              |   4571|
-|419   |              i_modmult                                                                             |exponentiation_modmult_55                                      |   2700|
-|420   |            \generating[8].exp                                                                      |exponentiation_52                                              |   4312|
-|421   |              i_modmult                                                                             |exponentiation_modmult_54                                      |   2700|
-|422   |            \generating[9].exp                                                                      |exponentiation_53                                              |   4312|
-|423   |              i_modmult                                                                             |exponentiation_modmult                                         |   2700|
-|424   |          u_rsa_msgin                                                                               |rsa_msgin                                                      |    280|
-|425   |          u_rsa_msgout                                                                              |rsa_msgout                                                     |    556|
-|426   |          u_rsa_regio                                                                               |rsa_regio                                                      |   1659|
-|427   |      rsa_dma                                                                                       |rsa_soc_rsa_dma_0                                              |   4162|
-|428   |        U0                                                                                          |axi_dma                                                        |   4162|
-|429   |          \INCLUDE_MM2S_SOF_EOF_GENERATOR.I_MM2S_DMA_MNGR                                           |axi_dma_mm2s_mngr                                              |     94|
-|430   |            \GEN_MM2S_DMA_CONTROL.GEN_SIMPLE_DMA_MODE.I_MM2S_SMPL_SM                                |axi_dma_smple_sm_32                                            |     74|
-|431   |            \GEN_MM2S_DMA_CONTROL.I_MM2S_CMDSTS                                                     |axi_dma_mm2s_cmdsts_if                                         |     14|
-|432   |            \GEN_MM2S_DMA_CONTROL.I_MM2S_STS_MNGR                                                   |axi_dma_mm2s_sts_mngr                                          |      5|
-|433   |          \INCLUDE_MM2S_SOF_EOF_GENERATOR.I_MM2S_SOFEOF_GEN                                         |axi_dma_sofeof_gen                                             |     12|
-|434   |          \INCLUDE_S2MM_SOF_EOF_GENERATOR.I_S2MM_DMA_MNGR                                           |axi_dma_s2mm_mngr                                              |    148|
-|435   |            \GEN_S2MM_DMA_CONTROL.GEN_SIMPLE_DMA_MODE.I_S2MM_SMPL_SM                                |axi_dma_smple_sm                                               |     74|
-|436   |            \GEN_S2MM_DMA_CONTROL.I_S2MM_CMDSTS                                                     |axi_dma_s2mm_cmdsts_if                                         |     68|
-|437   |            \GEN_S2MM_DMA_CONTROL.I_S2MM_STS_MNGR                                                   |axi_dma_s2mm_sts_mngr                                          |      5|
-|438   |          \INCLUDE_S2MM_SOF_EOF_GENERATOR.I_S2MM_SOFEOF_GEN                                         |axi_dma_sofeof_gen_0                                           |     12|
-|439   |          I_AXI_DMA_REG_MODULE                                                                      |axi_dma_reg_module                                             |    442|
-|440   |            \GEN_AXI_LITE_IF.AXI_LITE_IF_I                                                          |axi_dma_lite_if                                                |    223|
-|441   |            \GEN_MM2S_REGISTERS.I_MM2S_DMA_REGISTER                                                 |axi_dma_register                                               |    105|
-|442   |            \GEN_S2MM_REGISTERS.I_S2MM_DMA_REGISTER                                                 |axi_dma_register_s2mm                                          |    112|
-|443   |          I_PRMRY_DATAMOVER                                                                         |axi_datamover                                                  |   3386|
-|444   |            \GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER                                                      |axi_datamover_mm2s_full_wrap                                   |   1087|
-|445   |              \ENABLE_AXIS_SKID.I_MM2S_SKID_BUF                                                     |axi_datamover_skid_buf_13                                      |    128|
-|446   |              \GEN_INCLUDE_MM2S_SF.I_RD_SF                                                          |axi_datamover_rd_sf                                            |    255|
-|447   |                I_DATA_FIFO                                                                         |axi_datamover_sfifo_autord                                     |    231|
-|448   |                  \BLK_MEM.I_SYNC_FIFOGEN_FIFO                                                      |sync_fifo_fg                                                   |    231|
-|449   |                    \xpm_fifo_instance.xpm_fifo_sync_inst                                           |xpm_fifo_sync                                                  |    222|
-|450   |                      xpm_fifo_base_inst                                                            |xpm_fifo_base                                                  |    222|
-|451   |                        \gen_sdpram.xpm_memory_base_inst                                            |xpm_memory_base__parameterized11                               |      1|
-|452   |                        \gen_fwft.rdpp1_inst                                                        |xpm_counter_updn__parameterized1_24                            |      8|
-|453   |                        rdp_inst                                                                    |xpm_counter_updn__parameterized2_25                            |     50|
-|454   |                        rdpp1_inst                                                                  |xpm_counter_updn__parameterized3_26                            |     18|
-|455   |                        rst_d1_inst                                                                 |xpm_fifo_reg_bit_27                                            |     12|
-|456   |                        wrp_inst                                                                    |xpm_counter_updn__parameterized2_28                            |     26|
-|457   |                        wrpp1_inst                                                                  |xpm_counter_updn__parameterized3_29                            |     25|
-|458   |                        wrpp2_inst                                                                  |xpm_counter_updn__parameterized0_30                            |     19|
-|459   |                        xpm_fifo_rst_inst                                                           |xpm_fifo_rst_31                                                |     10|
-|460   |                \OMIT_DRE_CNTL.I_DRE_CNTL_FIFO                                                      |axi_datamover_fifo__parameterized3                             |     12|
-|461   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f__parameterized1                                     |      9|
-|462   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f__parameterized1                                 |      9|
-|463   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f_23                                       |      8|
-|464   |              I_ADDR_CNTL                                                                           |axi_datamover_addr_cntl                                        |    106|
-|465   |                \GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO                                                     |axi_datamover_fifo__parameterized1_18                          |     61|
-|466   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f_19                                                  |     52|
-|467   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f_20                                              |     52|
-|468   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f_21                                       |      9|
-|469   |                      DYNSHREG_F_I                                                                  |dynshreg_f_22                                                  |     41|
-|470   |              I_CMD_STATUS                                                                          |axi_datamover_cmd_status                                       |     79|
-|471   |                \GEN_INCLUDE_STATUS_FIFO.I_STS_FIFO                                                 |axi_datamover_fifo__parameterized0                             |     14|
-|472   |                I_CMD_FIFO                                                                          |axi_datamover_fifo_17                                          |     65|
-|473   |              I_MSTR_PCC                                                                            |axi_datamover_pcc                                              |    391|
-|474   |                I_STRT_STRB_GEN                                                                     |axi_datamover_strb_gen2_16                                     |      2|
-|475   |              I_RD_DATA_CNTL                                                                        |axi_datamover_rddata_cntl                                      |    115|
-|476   |                \GEN_DATA_CNTL_FIFO.I_DATA_CNTL_FIFO                                                |axi_datamover_fifo__parameterized2                             |     48|
-|477   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f__parameterized0                                     |     45|
-|478   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f__parameterized0                                 |     45|
-|479   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f_15                                       |     20|
-|480   |                      DYNSHREG_F_I                                                                  |dynshreg_f__parameterized0                                     |     23|
-|481   |              I_RD_STATUS_CNTLR                                                                     |axi_datamover_rd_status_cntl                                   |      8|
-|482   |              I_RESET                                                                               |axi_datamover_reset_14                                         |      5|
-|483   |            \GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER                                                      |axi_datamover_s2mm_full_wrap                                   |   2299|
-|484   |              \ENABLE_AXIS_SKID.I_S2MM_STRM_SKID_BUF                                                |axi_datamover_skid_buf                                         |    131|
-|485   |              \GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT                                                  |axi_datamover_indet_btt                                        |    580|
-|486   |                \ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF                                              |axi_datamover_skid_buf__parameterized0                         |    133|
-|487   |                I_DATA_FIFO                                                                         |axi_datamover_sfifo_autord__parameterized1                     |    228|
-|488   |                  \BLK_MEM.I_SYNC_FIFOGEN_FIFO                                                      |sync_fifo_fg__parameterized1                                   |    228|
-|489   |                    \xpm_fifo_instance.xpm_fifo_sync_inst                                           |xpm_fifo_sync__parameterized3                                  |    222|
-|490   |                      xpm_fifo_base_inst                                                            |xpm_fifo_base__parameterized1                                  |    222|
-|491   |                        \gen_sdpram.xpm_memory_base_inst                                            |xpm_memory_base__parameterized13                               |      1|
-|492   |                        \gen_fwft.rdpp1_inst                                                        |xpm_counter_updn__parameterized1_8                             |      8|
-|493   |                        rdp_inst                                                                    |xpm_counter_updn__parameterized2                               |     50|
-|494   |                        rdpp1_inst                                                                  |xpm_counter_updn__parameterized3                               |     18|
-|495   |                        rst_d1_inst                                                                 |xpm_fifo_reg_bit_9                                             |     12|
-|496   |                        wrp_inst                                                                    |xpm_counter_updn__parameterized2_10                            |     26|
-|497   |                        wrpp1_inst                                                                  |xpm_counter_updn__parameterized3_11                            |     25|
-|498   |                        wrpp2_inst                                                                  |xpm_counter_updn__parameterized0                               |     19|
-|499   |                        xpm_fifo_rst_inst                                                           |xpm_fifo_rst_12                                                |     10|
-|500   |                I_XD_FIFO                                                                           |axi_datamover_sfifo_autord__parameterized0                     |    190|
-|501   |                  \NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO                                                  |sync_fifo_fg__parameterized0                                   |    190|
-|502   |                    \xpm_fifo_instance.xpm_fifo_sync_inst                                           |xpm_fifo_sync__parameterized1                                  |    166|
-|503   |                      xpm_fifo_base_inst                                                            |xpm_fifo_base__parameterized0                                  |    166|
-|504   |                        \gen_sdpram.xpm_memory_base_inst                                            |xpm_memory_base__parameterized12                               |     20|
-|505   |                        \gen_fwft.rdpp1_inst                                                        |xpm_counter_updn__parameterized1                               |      9|
-|506   |                        rdp_inst                                                                    |xpm_counter_updn__parameterized6                               |     17|
-|507   |                        rdpp1_inst                                                                  |xpm_counter_updn__parameterized7                               |     10|
-|508   |                        rst_d1_inst                                                                 |xpm_fifo_reg_bit                                               |     13|
-|509   |                        wrp_inst                                                                    |xpm_counter_updn__parameterized6_6                             |     22|
-|510   |                        wrpp1_inst                                                                  |xpm_counter_updn__parameterized7_7                             |     12|
-|511   |                        wrpp2_inst                                                                  |xpm_counter_updn__parameterized5                               |     11|
-|512   |                        xpm_fifo_rst_inst                                                           |xpm_fifo_rst                                                   |     10|
-|513   |              \GEN_INCLUDE_IBTTCC.I_S2MM_MSTR_IBTTCC                                                |axi_datamover_ibttcc                                           |    476|
-|514   |              \GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER                                               |axi_datamover_s2mm_realign                                     |    454|
-|515   |                \GEN_INCLUDE_SCATTER.I_S2MM_SCATTER                                                 |axi_datamover_s2mm_scatter                                     |    393|
-|516   |                  I_MSSAI_SKID_BUF                                                                  |axi_datamover_mssai_skid_buf                                   |    146|
-|517   |                  I_TSTRB_FIFO                                                                      |axi_datamover_fifo__parameterized8                             |     38|
-|518   |                    \USE_SRL_FIFO.I_SYNC_FIFO                                                       |srl_fifo_f__parameterized5                                     |     32|
-|519   |                      I_SRL_FIFO_RBU_F                                                              |srl_fifo_rbu_f__parameterized5                                 |     32|
-|520   |                        CNTR_INCR_DECR_ADDN_F_I                                                     |cntr_incr_decr_addn_f__parameterized1                          |     15|
-|521   |                        DYNSHREG_F_I                                                                |dynshreg_f__parameterized5                                     |     16|
-|522   |                  SLICE_INSERTION                                                                   |axi_datamover_slice                                            |     53|
-|523   |                I_DRE_CNTL_FIFO                                                                     |axi_datamover_fifo__parameterized7                             |     54|
-|524   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f__parameterized4                                     |     46|
-|525   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f__parameterized4                                 |     46|
-|526   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f_5                                        |     11|
-|527   |                      DYNSHREG_F_I                                                                  |dynshreg_f__parameterized4                                     |     34|
-|528   |              I_ADDR_CNTL                                                                           |axi_datamover_addr_cntl__parameterized0                        |    101|
-|529   |                \GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO                                                     |axi_datamover_fifo__parameterized1                             |     55|
-|530   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f                                                     |     52|
-|531   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f                                                 |     52|
-|532   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f_4                                        |      9|
-|533   |                      DYNSHREG_F_I                                                                  |dynshreg_f                                                     |     42|
-|534   |              I_CMD_STATUS                                                                          |axi_datamover_cmd_status__parameterized0                       |    134|
-|535   |                \GEN_INCLUDE_STATUS_FIFO.I_STS_FIFO                                                 |axi_datamover_fifo__parameterized4                             |     68|
-|536   |                I_CMD_FIFO                                                                          |axi_datamover_fifo                                             |     66|
-|537   |              I_RESET                                                                               |axi_datamover_reset                                            |      6|
-|538   |              I_S2MM_MMAP_SKID_BUF                                                                  |axi_datamover_skid2mm_buf                                      |    113|
-|539   |              I_WR_DATA_CNTL                                                                        |axi_datamover_wrdata_cntl                                      |    172|
-|540   |                \GEN_DATA_CNTL_FIFO.I_DATA_CNTL_FIFO                                                |axi_datamover_fifo__parameterized9                             |     45|
-|541   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f__parameterized6                                     |     42|
-|542   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f__parameterized6                                 |     42|
-|543   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f                                          |     19|
-|544   |                      DYNSHREG_F_I                                                                  |dynshreg_f__parameterized6                                     |     22|
-|545   |                \GEN_INDET_BTT.I_STRT_STRB_GEN                                                      |axi_datamover_strb_gen2                                        |      1|
-|546   |              I_WR_STATUS_CNTLR                                                                     |axi_datamover_wr_status_cntl                                   |    132|
-|547   |                \GEN_ENABLE_INDET_BTT.I_SF_DATA_CNTL_STATUS_FIFO                                    |axi_datamover_fifo__parameterized6                             |     51|
-|548   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f__parameterized3                                     |     48|
-|549   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f__parameterized3                                 |     48|
-|550   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f__parameterized0_3                        |     15|
-|551   |                      DYNSHREG_F_I                                                                  |dynshreg_f__parameterized3                                     |     32|
-|552   |                I_WRESP_STATUS_FIFO                                                                 |axi_datamover_fifo__parameterized5                             |     32|
-|553   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f__parameterized2                                     |     22|
-|554   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f__parameterized2                                 |     22|
-|555   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f__parameterized0                          |     11|
-|556   |                      DYNSHREG_F_I                                                                  |dynshreg_f__parameterized2                                     |      5|
-|557   |          I_RST_MODULE                                                                              |axi_dma_rst_module                                             |     68|
-|558   |            \GEN_RESET_FOR_MM2S.RESET_I                                                             |axi_dma_reset                                                  |     28|
-|559   |            \GEN_RESET_FOR_S2MM.RESET_I                                                             |axi_dma_reset_1                                                |     29|
-|560   |            REG_HRD_RST                                                                             |cdc_sync__parameterized0                                       |      4|
-|561   |            REG_HRD_RST_OUT                                                                         |cdc_sync__parameterized0_2                                     |      4|
+|403   |              i_modmult                                                                             |exponentiation_modmult_61                                      |   2718|
+|404   |            \generating[20].exp                                                                     |exponentiation_44                                              |   4323|
+|405   |              i_modmult                                                                             |exponentiation_modmult_60                                      |   2718|
+|406   |            \generating[2].exp                                                                      |exponentiation_45                                              |   4330|
+|407   |              i_modmult                                                                             |exponentiation_modmult_59                                      |   2718|
+|408   |            \generating[3].exp                                                                      |exponentiation_46                                              |   5378|
+|409   |              i_modmult                                                                             |exponentiation_modmult_58                                      |   2700|
+|410   |            \generating[4].exp                                                                      |exponentiation_47                                              |   4312|
+|411   |              i_modmult                                                                             |exponentiation_modmult_57                                      |   2700|
+|412   |            \generating[5].exp                                                                      |exponentiation_48                                              |   4312|
+|413   |              i_modmult                                                                             |exponentiation_modmult_56                                      |   2700|
+|414   |            \generating[6].exp                                                                      |exponentiation_49                                              |   4312|
+|415   |              i_modmult                                                                             |exponentiation_modmult_55                                      |   2700|
+|416   |            \generating[7].exp                                                                      |exponentiation_50                                              |   4571|
+|417   |              i_modmult                                                                             |exponentiation_modmult_54                                      |   2700|
+|418   |            \generating[8].exp                                                                      |exponentiation_51                                              |   4312|
+|419   |              i_modmult                                                                             |exponentiation_modmult_53                                      |   2700|
+|420   |            \generating[9].exp                                                                      |exponentiation_52                                              |   4312|
+|421   |              i_modmult                                                                             |exponentiation_modmult                                         |   2700|
+|422   |          u_rsa_msgin                                                                               |rsa_msgin                                                      |    280|
+|423   |          u_rsa_msgout                                                                              |rsa_msgout                                                     |    520|
+|424   |          u_rsa_regio                                                                               |rsa_regio                                                      |   1659|
+|425   |      rsa_dma                                                                                       |rsa_soc_rsa_dma_0                                              |   4162|
+|426   |        U0                                                                                          |axi_dma                                                        |   4162|
+|427   |          \INCLUDE_MM2S_SOF_EOF_GENERATOR.I_MM2S_DMA_MNGR                                           |axi_dma_mm2s_mngr                                              |     94|
+|428   |            \GEN_MM2S_DMA_CONTROL.GEN_SIMPLE_DMA_MODE.I_MM2S_SMPL_SM                                |axi_dma_smple_sm_32                                            |     74|
+|429   |            \GEN_MM2S_DMA_CONTROL.I_MM2S_CMDSTS                                                     |axi_dma_mm2s_cmdsts_if                                         |     14|
+|430   |            \GEN_MM2S_DMA_CONTROL.I_MM2S_STS_MNGR                                                   |axi_dma_mm2s_sts_mngr                                          |      5|
+|431   |          \INCLUDE_MM2S_SOF_EOF_GENERATOR.I_MM2S_SOFEOF_GEN                                         |axi_dma_sofeof_gen                                             |     12|
+|432   |          \INCLUDE_S2MM_SOF_EOF_GENERATOR.I_S2MM_DMA_MNGR                                           |axi_dma_s2mm_mngr                                              |    148|
+|433   |            \GEN_S2MM_DMA_CONTROL.GEN_SIMPLE_DMA_MODE.I_S2MM_SMPL_SM                                |axi_dma_smple_sm                                               |     74|
+|434   |            \GEN_S2MM_DMA_CONTROL.I_S2MM_CMDSTS                                                     |axi_dma_s2mm_cmdsts_if                                         |     68|
+|435   |            \GEN_S2MM_DMA_CONTROL.I_S2MM_STS_MNGR                                                   |axi_dma_s2mm_sts_mngr                                          |      5|
+|436   |          \INCLUDE_S2MM_SOF_EOF_GENERATOR.I_S2MM_SOFEOF_GEN                                         |axi_dma_sofeof_gen_0                                           |     12|
+|437   |          I_AXI_DMA_REG_MODULE                                                                      |axi_dma_reg_module                                             |    442|
+|438   |            \GEN_AXI_LITE_IF.AXI_LITE_IF_I                                                          |axi_dma_lite_if                                                |    223|
+|439   |            \GEN_MM2S_REGISTERS.I_MM2S_DMA_REGISTER                                                 |axi_dma_register                                               |    105|
+|440   |            \GEN_S2MM_REGISTERS.I_S2MM_DMA_REGISTER                                                 |axi_dma_register_s2mm                                          |    112|
+|441   |          I_PRMRY_DATAMOVER                                                                         |axi_datamover                                                  |   3386|
+|442   |            \GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER                                                      |axi_datamover_mm2s_full_wrap                                   |   1087|
+|443   |              \ENABLE_AXIS_SKID.I_MM2S_SKID_BUF                                                     |axi_datamover_skid_buf_13                                      |    128|
+|444   |              \GEN_INCLUDE_MM2S_SF.I_RD_SF                                                          |axi_datamover_rd_sf                                            |    255|
+|445   |                I_DATA_FIFO                                                                         |axi_datamover_sfifo_autord                                     |    231|
+|446   |                  \BLK_MEM.I_SYNC_FIFOGEN_FIFO                                                      |sync_fifo_fg                                                   |    231|
+|447   |                    \xpm_fifo_instance.xpm_fifo_sync_inst                                           |xpm_fifo_sync                                                  |    222|
+|448   |                      xpm_fifo_base_inst                                                            |xpm_fifo_base                                                  |    222|
+|449   |                        \gen_sdpram.xpm_memory_base_inst                                            |xpm_memory_base__parameterized11                               |      1|
+|450   |                        \gen_fwft.rdpp1_inst                                                        |xpm_counter_updn__parameterized1_24                            |      8|
+|451   |                        rdp_inst                                                                    |xpm_counter_updn__parameterized2_25                            |     50|
+|452   |                        rdpp1_inst                                                                  |xpm_counter_updn__parameterized3_26                            |     18|
+|453   |                        rst_d1_inst                                                                 |xpm_fifo_reg_bit_27                                            |     12|
+|454   |                        wrp_inst                                                                    |xpm_counter_updn__parameterized2_28                            |     26|
+|455   |                        wrpp1_inst                                                                  |xpm_counter_updn__parameterized3_29                            |     25|
+|456   |                        wrpp2_inst                                                                  |xpm_counter_updn__parameterized0_30                            |     19|
+|457   |                        xpm_fifo_rst_inst                                                           |xpm_fifo_rst_31                                                |     10|
+|458   |                \OMIT_DRE_CNTL.I_DRE_CNTL_FIFO                                                      |axi_datamover_fifo__parameterized3                             |     12|
+|459   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f__parameterized1                                     |      9|
+|460   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f__parameterized1                                 |      9|
+|461   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f_23                                       |      8|
+|462   |              I_ADDR_CNTL                                                                           |axi_datamover_addr_cntl                                        |    106|
+|463   |                \GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO                                                     |axi_datamover_fifo__parameterized1_18                          |     61|
+|464   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f_19                                                  |     52|
+|465   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f_20                                              |     52|
+|466   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f_21                                       |      9|
+|467   |                      DYNSHREG_F_I                                                                  |dynshreg_f_22                                                  |     41|
+|468   |              I_CMD_STATUS                                                                          |axi_datamover_cmd_status                                       |     79|
+|469   |                \GEN_INCLUDE_STATUS_FIFO.I_STS_FIFO                                                 |axi_datamover_fifo__parameterized0                             |     14|
+|470   |                I_CMD_FIFO                                                                          |axi_datamover_fifo_17                                          |     65|
+|471   |              I_MSTR_PCC                                                                            |axi_datamover_pcc                                              |    391|
+|472   |                I_STRT_STRB_GEN                                                                     |axi_datamover_strb_gen2_16                                     |      2|
+|473   |              I_RD_DATA_CNTL                                                                        |axi_datamover_rddata_cntl                                      |    115|
+|474   |                \GEN_DATA_CNTL_FIFO.I_DATA_CNTL_FIFO                                                |axi_datamover_fifo__parameterized2                             |     48|
+|475   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f__parameterized0                                     |     45|
+|476   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f__parameterized0                                 |     45|
+|477   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f_15                                       |     20|
+|478   |                      DYNSHREG_F_I                                                                  |dynshreg_f__parameterized0                                     |     23|
+|479   |              I_RD_STATUS_CNTLR                                                                     |axi_datamover_rd_status_cntl                                   |      8|
+|480   |              I_RESET                                                                               |axi_datamover_reset_14                                         |      5|
+|481   |            \GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER                                                      |axi_datamover_s2mm_full_wrap                                   |   2299|
+|482   |              \ENABLE_AXIS_SKID.I_S2MM_STRM_SKID_BUF                                                |axi_datamover_skid_buf                                         |    131|
+|483   |              \GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT                                                  |axi_datamover_indet_btt                                        |    580|
+|484   |                \ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF                                              |axi_datamover_skid_buf__parameterized0                         |    133|
+|485   |                I_DATA_FIFO                                                                         |axi_datamover_sfifo_autord__parameterized1                     |    228|
+|486   |                  \BLK_MEM.I_SYNC_FIFOGEN_FIFO                                                      |sync_fifo_fg__parameterized1                                   |    228|
+|487   |                    \xpm_fifo_instance.xpm_fifo_sync_inst                                           |xpm_fifo_sync__parameterized3                                  |    222|
+|488   |                      xpm_fifo_base_inst                                                            |xpm_fifo_base__parameterized1                                  |    222|
+|489   |                        \gen_sdpram.xpm_memory_base_inst                                            |xpm_memory_base__parameterized13                               |      1|
+|490   |                        \gen_fwft.rdpp1_inst                                                        |xpm_counter_updn__parameterized1_8                             |      8|
+|491   |                        rdp_inst                                                                    |xpm_counter_updn__parameterized2                               |     50|
+|492   |                        rdpp1_inst                                                                  |xpm_counter_updn__parameterized3                               |     18|
+|493   |                        rst_d1_inst                                                                 |xpm_fifo_reg_bit_9                                             |     12|
+|494   |                        wrp_inst                                                                    |xpm_counter_updn__parameterized2_10                            |     26|
+|495   |                        wrpp1_inst                                                                  |xpm_counter_updn__parameterized3_11                            |     25|
+|496   |                        wrpp2_inst                                                                  |xpm_counter_updn__parameterized0                               |     19|
+|497   |                        xpm_fifo_rst_inst                                                           |xpm_fifo_rst_12                                                |     10|
+|498   |                I_XD_FIFO                                                                           |axi_datamover_sfifo_autord__parameterized0                     |    190|
+|499   |                  \NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO                                                  |sync_fifo_fg__parameterized0                                   |    190|
+|500   |                    \xpm_fifo_instance.xpm_fifo_sync_inst                                           |xpm_fifo_sync__parameterized1                                  |    166|
+|501   |                      xpm_fifo_base_inst                                                            |xpm_fifo_base__parameterized0                                  |    166|
+|502   |                        \gen_sdpram.xpm_memory_base_inst                                            |xpm_memory_base__parameterized12                               |     20|
+|503   |                        \gen_fwft.rdpp1_inst                                                        |xpm_counter_updn__parameterized1                               |      9|
+|504   |                        rdp_inst                                                                    |xpm_counter_updn__parameterized6                               |     17|
+|505   |                        rdpp1_inst                                                                  |xpm_counter_updn__parameterized7                               |     10|
+|506   |                        rst_d1_inst                                                                 |xpm_fifo_reg_bit                                               |     13|
+|507   |                        wrp_inst                                                                    |xpm_counter_updn__parameterized6_6                             |     22|
+|508   |                        wrpp1_inst                                                                  |xpm_counter_updn__parameterized7_7                             |     12|
+|509   |                        wrpp2_inst                                                                  |xpm_counter_updn__parameterized5                               |     11|
+|510   |                        xpm_fifo_rst_inst                                                           |xpm_fifo_rst                                                   |     10|
+|511   |              \GEN_INCLUDE_IBTTCC.I_S2MM_MSTR_IBTTCC                                                |axi_datamover_ibttcc                                           |    476|
+|512   |              \GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER                                               |axi_datamover_s2mm_realign                                     |    454|
+|513   |                \GEN_INCLUDE_SCATTER.I_S2MM_SCATTER                                                 |axi_datamover_s2mm_scatter                                     |    393|
+|514   |                  I_MSSAI_SKID_BUF                                                                  |axi_datamover_mssai_skid_buf                                   |    146|
+|515   |                  I_TSTRB_FIFO                                                                      |axi_datamover_fifo__parameterized8                             |     38|
+|516   |                    \USE_SRL_FIFO.I_SYNC_FIFO                                                       |srl_fifo_f__parameterized5                                     |     32|
+|517   |                      I_SRL_FIFO_RBU_F                                                              |srl_fifo_rbu_f__parameterized5                                 |     32|
+|518   |                        CNTR_INCR_DECR_ADDN_F_I                                                     |cntr_incr_decr_addn_f__parameterized1                          |     15|
+|519   |                        DYNSHREG_F_I                                                                |dynshreg_f__parameterized5                                     |     16|
+|520   |                  SLICE_INSERTION                                                                   |axi_datamover_slice                                            |     53|
+|521   |                I_DRE_CNTL_FIFO                                                                     |axi_datamover_fifo__parameterized7                             |     54|
+|522   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f__parameterized4                                     |     46|
+|523   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f__parameterized4                                 |     46|
+|524   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f_5                                        |     11|
+|525   |                      DYNSHREG_F_I                                                                  |dynshreg_f__parameterized4                                     |     34|
+|526   |              I_ADDR_CNTL                                                                           |axi_datamover_addr_cntl__parameterized0                        |    101|
+|527   |                \GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO                                                     |axi_datamover_fifo__parameterized1                             |     55|
+|528   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f                                                     |     52|
+|529   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f                                                 |     52|
+|530   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f_4                                        |      9|
+|531   |                      DYNSHREG_F_I                                                                  |dynshreg_f                                                     |     42|
+|532   |              I_CMD_STATUS                                                                          |axi_datamover_cmd_status__parameterized0                       |    134|
+|533   |                \GEN_INCLUDE_STATUS_FIFO.I_STS_FIFO                                                 |axi_datamover_fifo__parameterized4                             |     68|
+|534   |                I_CMD_FIFO                                                                          |axi_datamover_fifo                                             |     66|
+|535   |              I_RESET                                                                               |axi_datamover_reset                                            |      6|
+|536   |              I_S2MM_MMAP_SKID_BUF                                                                  |axi_datamover_skid2mm_buf                                      |    113|
+|537   |              I_WR_DATA_CNTL                                                                        |axi_datamover_wrdata_cntl                                      |    172|
+|538   |                \GEN_DATA_CNTL_FIFO.I_DATA_CNTL_FIFO                                                |axi_datamover_fifo__parameterized9                             |     45|
+|539   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f__parameterized6                                     |     42|
+|540   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f__parameterized6                                 |     42|
+|541   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f                                          |     19|
+|542   |                      DYNSHREG_F_I                                                                  |dynshreg_f__parameterized6                                     |     22|
+|543   |                \GEN_INDET_BTT.I_STRT_STRB_GEN                                                      |axi_datamover_strb_gen2                                        |      1|
+|544   |              I_WR_STATUS_CNTLR                                                                     |axi_datamover_wr_status_cntl                                   |    132|
+|545   |                \GEN_ENABLE_INDET_BTT.I_SF_DATA_CNTL_STATUS_FIFO                                    |axi_datamover_fifo__parameterized6                             |     51|
+|546   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f__parameterized3                                     |     48|
+|547   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f__parameterized3                                 |     48|
+|548   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f__parameterized0_3                        |     15|
+|549   |                      DYNSHREG_F_I                                                                  |dynshreg_f__parameterized3                                     |     32|
+|550   |                I_WRESP_STATUS_FIFO                                                                 |axi_datamover_fifo__parameterized5                             |     32|
+|551   |                  \USE_SRL_FIFO.I_SYNC_FIFO                                                         |srl_fifo_f__parameterized2                                     |     22|
+|552   |                    I_SRL_FIFO_RBU_F                                                                |srl_fifo_rbu_f__parameterized2                                 |     22|
+|553   |                      CNTR_INCR_DECR_ADDN_F_I                                                       |cntr_incr_decr_addn_f__parameterized0                          |     11|
+|554   |                      DYNSHREG_F_I                                                                  |dynshreg_f__parameterized2                                     |      5|
+|555   |          I_RST_MODULE                                                                              |axi_dma_rst_module                                             |     68|
+|556   |            \GEN_RESET_FOR_MM2S.RESET_I                                                             |axi_dma_reset                                                  |     28|
+|557   |            \GEN_RESET_FOR_S2MM.RESET_I                                                             |axi_dma_reset_1                                                |     29|
+|558   |            REG_HRD_RST                                                                             |cdc_sync__parameterized0                                       |      4|
+|559   |            REG_HRD_RST_OUT                                                                         |cdc_sync__parameterized0_2                                     |      4|
 +------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------+-------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:54 ; elapsed = 00:04:25 . Memory (MB): peak = 2687.535 ; gain = 1083.887 ; free physical = 239 ; free virtual = 4249
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:29 ; elapsed = 00:03:57 . Memory (MB): peak = 2683.000 ; gain = 1079.348 ; free physical = 2036 ; free virtual = 5762
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 5189 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:26 ; elapsed = 00:03:57 . Memory (MB): peak = 2687.535 ; gain = 530.723 ; free physical = 287 ; free virtual = 4297
-Synthesis Optimization Complete : Time (s): cpu = 00:03:54 ; elapsed = 00:04:25 . Memory (MB): peak = 2687.543 ; gain = 1083.887 ; free physical = 300 ; free virtual = 4310
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:01 ; elapsed = 00:03:28 . Memory (MB): peak = 2683.000 ; gain = 530.723 ; free physical = 2095 ; free virtual = 5821
+Synthesis Optimization Complete : Time (s): cpu = 00:03:30 ; elapsed = 00:03:57 . Memory (MB): peak = 2683.008 ; gain = 1079.348 ; free physical = 2109 ; free virtual = 5835
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 3169 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 3325 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2687.543 ; gain = 0.000 ; free physical = 122 ; free virtual = 4132
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2683.008 ; gain = 0.000 ; free physical = 1936 ; free virtual = 5662
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 215 instances were transformed.
   FDR => FDRE: 20 instances
@@ -8757,11 +8755,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 993 Infos, 209 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:14 ; elapsed = 00:04:45 . Memory (MB): peak = 2687.543 ; gain = 1283.492 ; free physical = 477 ; free virtual = 4488
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2687.543 ; gain = 0.000 ; free physical = 477 ; free virtual = 4488
+synth_design: Time (s): cpu = 00:03:47 ; elapsed = 00:04:14 . Memory (MB): peak = 2683.008 ; gain = 1278.953 ; free physical = 2281 ; free virtual = 6008
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2683.008 ; gain = 0.000 ; free physical = 2282 ; free virtual = 6008
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_soc/RSA_soc/RSA_soc.runs/synth_1/RSA_soc_wrapper.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2711.547 ; gain = 24.004 ; free physical = 460 ; free virtual = 4485
+write_checkpoint: Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 2707.012 ; gain = 24.004 ; free physical = 2268 ; free virtual = 6008
 INFO: [runtcl-4] Executing : report_utilization -file RSA_soc_wrapper_utilization_synth.rpt -pb RSA_soc_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Nov 21 19:00:49 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 22 14:39:40 2019...

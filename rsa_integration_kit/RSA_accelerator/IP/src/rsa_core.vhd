@@ -23,7 +23,7 @@ entity rsa_core is
 	generic (
 		-- Users to add parameters here
 		C_BLOCK_SIZE          : integer := 256;
-		N_CORES               : integer := 22
+		N_CORES               : integer := 21
 	);
 	port (
 		-----------------------------------------------------------------------------

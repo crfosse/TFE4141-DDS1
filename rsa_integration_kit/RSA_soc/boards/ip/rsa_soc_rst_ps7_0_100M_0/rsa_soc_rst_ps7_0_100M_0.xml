@@ -30,7 +30,7 @@
           <spirit:name>FREQ_HZ</spirit:name>
           <spirit:displayName>Slowest Sync clock frequency</spirit:displayName>
           <spirit:description>Slowest Synchronous clock frequency</spirit:description>
-          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.CLOCK.FREQ_HZ">50000000</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.CLOCK.FREQ_HZ">55555557</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PHASE</spirit:name>
@@ -385,11 +385,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 21 17:55:31 UTC 2019</spirit:value>
+            <spirit:value>Fri Nov 22 13:34:53 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:29d08263</spirit:value>
+            <spirit:value>9:6f84556c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -403,11 +403,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 21 17:55:31 UTC 2019</spirit:value>
+            <spirit:value>Fri Nov 22 13:34:53 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:29d08263</spirit:value>
+            <spirit:value>9:6f84556c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -423,11 +423,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 21 17:55:31 UTC 2019</spirit:value>
+            <spirit:value>Fri Nov 22 13:34:53 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:29d08263</spirit:value>
+            <spirit:value>9:6f84556c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -446,11 +446,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 21 17:55:10 UTC 2019</spirit:value>
+            <spirit:value>Fri Nov 22 12:24:15 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4a58a89e</spirit:value>
+            <spirit:value>9:cf7674c5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -466,11 +466,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 21 17:55:31 UTC 2019</spirit:value>
+            <spirit:value>Fri Nov 22 13:34:53 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4a58a89e</spirit:value>
+            <spirit:value>9:cf7674c5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -484,11 +484,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 21 17:55:31 UTC 2019</spirit:value>
+            <spirit:value>Fri Nov 22 13:34:53 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:29d08263</spirit:value>
+            <spirit:value>9:6f84556c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>

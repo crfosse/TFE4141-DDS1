@@ -146,6 +146,24 @@
               "rsa_dma/M_AXIS_MM2S"
             ]
           },
+          "axi_dma_0_M_AXI_S2MM": {
+            "interface_ports": [
+              "M_AXI_S2MM",
+              "rsa_dma/M_AXI_S2MM"
+            ]
+          },
+          "rsa_accelerator_0_m00_axis": {
+            "interface_ports": [
+              "rsa_acc/m00_axis",
+              "rsa_dma/S_AXIS_S2MM"
+            ]
+          },
+          "S00_AXI_1": {
+            "interface_ports": [
+              "S00_AXI",
+              "rsa_acc/s00_axi"
+            ]
+          },
           "axi_dma_0_M_AXI_MM2S": {
             "interface_ports": [
               "M_AXI_MM2S",
@@ -156,24 +174,6 @@
             "interface_ports": [
               "S_AXI_LITE",
               "rsa_dma/S_AXI_LITE"
-            ]
-          },
-          "rsa_accelerator_0_m00_axis": {
-            "interface_ports": [
-              "rsa_acc/m00_axis",
-              "rsa_dma/S_AXIS_S2MM"
-            ]
-          },
-          "axi_dma_0_M_AXI_S2MM": {
-            "interface_ports": [
-              "M_AXI_S2MM",
-              "rsa_dma/M_AXI_S2MM"
-            ]
-          },
-          "S00_AXI_1": {
-            "interface_ports": [
-              "S00_AXI",
-              "rsa_acc/s00_axi"
             ]
           }
         },
@@ -251,7 +251,7 @@
             "value": "10"
           },
           "PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "50"
+            "value": "55"
           },
           "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "10"
@@ -341,7 +341,7 @@
             "value": "0"
           },
           "PCW_CLK0_FREQ": {
-            "value": "50000000"
+            "value": "55555557"
           },
           "PCW_CLK1_FREQ": {
             "value": "10000000"
@@ -641,7 +641,7 @@
             "value": "TRUE"
           },
           "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "50"
+            "value": "56"
           },
           "PCW_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "50"
@@ -1310,28 +1310,28 @@
             "value": "0"
           },
           "PCW_PACKAGE_DDR_BOARD_DELAY0": {
-            "value": "0"
+            "value": "0.223"
           },
           "PCW_PACKAGE_DDR_BOARD_DELAY1": {
-            "value": "0"
+            "value": "0.212"
           },
           "PCW_PACKAGE_DDR_BOARD_DELAY2": {
-            "value": "0"
+            "value": "0.085"
           },
           "PCW_PACKAGE_DDR_BOARD_DELAY3": {
-            "value": "0"
+            "value": "0.092"
           },
           "PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_0": {
-            "value": "0"
+            "value": "0.040"
           },
           "PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_1": {
-            "value": "0"
+            "value": "0.058"
           },
           "PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_2": {
-            "value": "-0"
+            "value": "-0.009"
           },
           "PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_3": {
-            "value": "-0"
+            "value": "-0.033"
           },
           "PCW_PACKAGE_NAME": {
             "value": "clg400"
@@ -1479,6 +1479,15 @@
           },
           "PCW_S_AXI_HP0_ID_WIDTH": {
             "value": "6"
+          },
+          "PCW_S_AXI_HP1_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP2_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP3_DATA_WIDTH": {
+            "value": "64"
           },
           "PCW_TPIU_PERIPHERAL_CLKSRC": {
             "value": "External"
@@ -2165,28 +2174,22 @@
           }
         },
         "interface_nets": {
+          "s00_couplers_to_xbar": {
+            "interface_ports": [
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
+            ]
+          },
           "ps7_0_axi_periph_to_s00_couplers": {
             "interface_ports": [
               "S00_AXI",
               "s00_couplers/S_AXI"
             ]
           },
-          "m00_couplers_to_ps7_0_axi_periph": {
-            "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
-            ]
-          },
           "m01_couplers_to_ps7_0_axi_periph": {
             "interface_ports": [
               "M01_AXI",
               "m01_couplers/M_AXI"
-            ]
-          },
-          "s00_couplers_to_xbar": {
-            "interface_ports": [
-              "s00_couplers/M_AXI",
-              "xbar/S00_AXI"
             ]
           },
           "xbar_to_m01_couplers": {
@@ -2199,6 +2202,12 @@
             "interface_ports": [
               "xbar/M00_AXI",
               "m00_couplers/S_AXI"
+            ]
+          },
+          "m00_couplers_to_ps7_0_axi_periph": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
             ]
           }
         },
@@ -2265,16 +2274,10 @@
       }
     },
     "interface_nets": {
-      "axi_dma_0_M_AXI_MM2S": {
+      "ps7_0_axi_periph_M00_AXI": {
         "interface_ports": [
-          "rsa/M_AXI_MM2S",
-          "axi_smc/S00_AXI"
-        ]
-      },
-      "processing_system7_0_M_AXI_GP0": {
-        "interface_ports": [
-          "processing_system7_0/M_AXI_GP0",
-          "ps7_0_axi_periph/S00_AXI"
+          "ps7_0_axi_periph/M00_AXI",
+          "rsa/S_AXI_LITE"
         ]
       },
       "processing_system7_0_DDR": {
@@ -2283,22 +2286,10 @@
           "processing_system7_0/DDR"
         ]
       },
-      "axi_dma_0_M_AXI_S2MM": {
+      "ps7_0_axi_periph_M01_AXI": {
         "interface_ports": [
-          "rsa/M_AXI_S2MM",
-          "axi_smc/S01_AXI"
-        ]
-      },
-      "ps7_0_axi_periph_M00_AXI": {
-        "interface_ports": [
-          "ps7_0_axi_periph/M00_AXI",
-          "rsa/S_AXI_LITE"
-        ]
-      },
-      "axi_smc_M00_AXI": {
-        "interface_ports": [
-          "axi_smc/M00_AXI",
-          "processing_system7_0/S_AXI_HP0"
+          "rsa/S00_AXI",
+          "ps7_0_axi_periph/M01_AXI"
         ]
       },
       "processing_system7_0_FIXED_IO": {
@@ -2307,10 +2298,28 @@
           "processing_system7_0/FIXED_IO"
         ]
       },
-      "ps7_0_axi_periph_M01_AXI": {
+      "axi_dma_0_M_AXI_MM2S": {
         "interface_ports": [
-          "rsa/S00_AXI",
-          "ps7_0_axi_periph/M01_AXI"
+          "rsa/M_AXI_MM2S",
+          "axi_smc/S00_AXI"
+        ]
+      },
+      "axi_dma_0_M_AXI_S2MM": {
+        "interface_ports": [
+          "rsa/M_AXI_S2MM",
+          "axi_smc/S01_AXI"
+        ]
+      },
+      "processing_system7_0_M_AXI_GP0": {
+        "interface_ports": [
+          "processing_system7_0/M_AXI_GP0",
+          "ps7_0_axi_periph/S00_AXI"
+        ]
+      },
+      "axi_smc_M00_AXI": {
+        "interface_ports": [
+          "axi_smc/M00_AXI",
+          "processing_system7_0/S_AXI_HP0"
         ]
       }
     },

@@ -67,27 +67,27 @@ if {![file exists [file normalize "$origin_dir/Reports"]]} {
 	file mkdir [file normalize "$origin_dir/Reports"]
 }
 #copy out bitfile
-if [file exists [file normalize "${origin_dir}/RSA_soc/rsa_soc/rsa_soc.runs/impl_1/rsa_soc_wrapper.bit"]] {
+if [file exists [file normalize "${origin_dir}/RSA_soc/RSA_soc/RSA_soc.runs/impl_1/RSA_soc_wrapper.bit"]] {
 	file copy -force \
-		[file normalize "${origin_dir}/RSA_soc/rsa_soc/rsa_soc.runs/impl_1/rsa_soc_wrapper.bit"]\
+		[file normalize "${origin_dir}/RSA_soc/rsa_soc/rsa_soc.runs/impl_1/RSA_soc_wrapper.bit"]\
 		[file normalize "${origin_dir}/Bitfiles/rsa_soc.bit"]
 }
 
 #copying/generating reports
 #RSA accelerator utilization
-set file [file normalize "${origin_dir}/RSA_soc/rsa_soc/rsa_soc.runs/rsa_soc_rsa_acc_0_synth_1/rsa_soc_rsa_acc_0_utilization_synth.rpt"]
+set file [file normalize "${origin_dir}/RSA_soc/RSA_soc/RSA_soc.runs/RSA_soc_rsa_acc_0_synth_1/rsa_soc_rsa_acc_0_utilization_synth.rpt"]
 if [file exists $file] {
 	file copy -force $file [file normalize "${origin_dir}/Reports/rsa_accelerator_utilization.txt"]
 }
 #full design utilization
-set file [file normalize "${origin_dir}/RSA_soc/rsa_soc/rsa_soc.runs/impl_1/rsa_soc_wrapper_utilization_placed.rpt"]
+set file [file normalize "${origin_dir}/RSA_soc/RSA_soc/RSA_soc.runs/impl_1/RSA_soc_wrapper_utilization_placed.rpt"]
 if [file exists $file] {
 	file copy -force $file [file normalize "${origin_dir}/Reports/placed_design_utilization.txt"]
 }
 open_run impl_1
 report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
 #full design timing summary
-set file [file normalize "${origin_dir}/RSA_soc/rsa_soc/rsa_soc.runs/impl_1/rsa_soc_wrapper_timing_summary_routed.rpt"]
+set file [file normalize "${origin_dir}/RSA_soc/RSA_soc/RSA_soc.runs/impl_1/RSA_soc_wrapper_timing_summary_routed.rpt"]
 if [file exists $file] {
 	file copy -force $file [file normalize "${origin_dir}/Reports/placed_design_timing_summary.txt"]
 }

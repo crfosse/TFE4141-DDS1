@@ -32,7 +32,7 @@ create_waiver -internal -scope -type CDC -id {CDC-1} -user "axi_dma" -tags "9601
 current_instance
 current_instance rsa_soc_i/processing_system7_0/inst
 set_property src_info {type:SCOPED_XDC file:2 line:21 export:INPUT save:INPUT read:READ} [current_design]
-set_input_jitter clk_fpga_0 0.6
+set_input_jitter clk_fpga_0 0.54
 set_property src_info {type:SCOPED_XDC file:2 line:31 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN "C11" [get_ports "MIO[53]"]
 set_property src_info {type:SCOPED_XDC file:2 line:38 export:INPUT save:INPUT read:READ} [current_design]

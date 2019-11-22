@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date         : Thu Nov 21 19:00:49 2019
+| Date         : Fri Nov 22 14:39:40 2019
 | Host         : VMac running 64-bit Ubuntu 18.04.3 LTS
 | Command      : report_utilization -file RSA_soc_wrapper_utilization_synth.rpt -pb RSA_soc_wrapper_utilization_synth.pb
 | Design       : rsa_soc_wrapper
@@ -30,16 +30,16 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                | 48368 |     0 |     53200 | 90.92 |
-|   LUT as Logic             | 47331 |     0 |     53200 | 88.97 |
+| Slice LUTs*                | 46260 |     0 |     53200 | 86.95 |
+|   LUT as Logic             | 45223 |     0 |     53200 | 85.01 |
 |   LUT as Memory            |  1037 |     0 |     17400 |  5.96 |
 |     LUT as Distributed RAM |   758 |     0 |           |       |
 |     LUT as Shift Register  |   279 |     0 |           |       |
-| Slice Registers            | 49397 |     0 |    106400 | 46.43 |
-|   Register as Flip Flop    | 49397 |     0 |    106400 | 46.43 |
+| Slice Registers            | 47550 |     0 |    106400 | 44.69 |
+|   Register as Flip Flop    | 47550 |     0 |    106400 | 44.69 |
 |   Register as Latch        |     0 |     0 |    106400 |  0.00 |
-| F7 Muxes                   |   647 |     0 |     26600 |  2.43 |
-| F8 Muxes                   |    33 |     0 |     13300 |  0.25 |
+| F7 Muxes                   |   644 |     0 |     26600 |  2.42 |
+| F8 Muxes                   |   290 |     0 |     13300 |  2.18 |
 +----------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 44    |          Yes |           - |          Set |
-| 41522 |          Yes |           - |        Reset |
+| 42    |          Yes |           - |          Set |
+| 39677 |          Yes |           - |        Reset |
 | 237   |          Yes |         Set |            - |
 | 7594  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -149,24 +149,24 @@ Table of Contents
 +----------+-------+----------------------+
 | Ref Name |  Used |  Functional Category |
 +----------+-------+----------------------+
-| FDCE     | 41522 |         Flop & Latch |
-| LUT4     | 17969 |                  LUT |
-| LUT6     | 14814 |                  LUT |
-| LUT3     | 13421 |                  LUT |
+| FDCE     | 39677 |         Flop & Latch |
+| LUT4     | 17199 |                  LUT |
+| LUT6     | 14310 |                  LUT |
+| LUT3     | 12882 |                  LUT |
 | FDRE     |  7594 |         Flop & Latch |
-| LUT5     |  6906 |                  LUT |
-| LUT2     |  6512 |                  LUT |
-| CARRY4   |  2272 |           CarryLogic |
+| LUT5     |  6357 |                  LUT |
+| LUT2     |  6231 |                  LUT |
+| CARRY4   |  2174 |           CarryLogic |
 | RAMD32   |  1130 |   Distributed Memory |
-| MUXF7    |   647 |                MuxFx |
-| LUT1     |   386 |                  LUT |
+| MUXF7    |   644 |                MuxFx |
+| LUT1     |   384 |                  LUT |
 | RAMS32   |   372 |   Distributed Memory |
+| MUXF8    |   290 |                MuxFx |
 | FDSE     |   237 |         Flop & Latch |
 | SRL16E   |   232 |   Distributed Memory |
 | BIBUF    |   130 |                   IO |
 | SRLC32E  |    47 |   Distributed Memory |
-| FDPE     |    44 |         Flop & Latch |
-| MUXF8    |    33 |                MuxFx |
+| FDPE     |    42 |         Flop & Latch |
 | RAMB36E1 |     2 |         Block Memory |
 | PS7      |     1 | Specialized Resource |
 | BUFG     |     1 |                Clock |
