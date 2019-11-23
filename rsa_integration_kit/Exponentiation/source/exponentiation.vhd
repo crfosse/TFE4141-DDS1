@@ -181,7 +181,7 @@ BEGIN
 
     -- Combinatorial process for calculations and operations. Determines calculations to be performed based
     -- the current state(PS).
-    comp_proc : PROCESS (PS, start, shift_counter, mult_finished, e_r, m_r, c_r, message, key, mult_out, clear)
+    comp_proc : PROCESS (PS, start, shift_counter, mult_finished, e_r, m_r, c_r, message, key, mult_out, flag_reg, clear)
     BEGIN
         done <= '0';
         mult_start <= '0';

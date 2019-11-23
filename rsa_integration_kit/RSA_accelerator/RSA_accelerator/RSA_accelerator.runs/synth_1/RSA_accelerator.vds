@@ -1,0 +1,570 @@
+#-----------------------------------------------------------
+# Vivado v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Sat Nov 23 11:15:18 2019
+# Process ID: 2448
+# Current directory: /home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/RSA_accelerator/RSA_accelerator.runs/synth_1
+# Command line: vivado -log RSA_accelerator.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RSA_accelerator.tcl
+# Log file: /home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/RSA_accelerator/RSA_accelerator.runs/synth_1/RSA_accelerator.vds
+# Journal file: /home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/RSA_accelerator/RSA_accelerator.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source RSA_accelerator.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/IP'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.1/data/ip'.
+Command: synth_design -top RSA_accelerator -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 2469 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1727.156 ; gain = 152.684 ; free physical = 4300 ; free virtual = 7733
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'rsa_accelerator' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_accelerator.vhd:84]
+	Parameter C_BLOCK_SIZE bound to: 256 - type: integer 
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter C_S00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M00_AXIS_START_COUNT bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'rsa_regio' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_regio.vhd:115]
+	Parameter C_BLOCK_SIZE bound to: 256 - type: integer 
+	Parameter C_register_count bound to: 33 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 8 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element slv_reg_reg[33] was removed.  [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_regio.vhd:245]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_regio.vhd:247]
+INFO: [Synth 8-256] done synthesizing module 'rsa_regio' (1#1520) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_regio.vhd:115]
+INFO: [Synth 8-638] synthesizing module 'rsa_msgin' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_msgin.vhd:69]
+	Parameter C_BLOCK_SIZE bound to: 256 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rsa_msgin' (2#1520) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_msgin.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'rsa_msgout' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_msgout.vhd:61]
+	Parameter C_BLOCK_SIZE bound to: 256 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_START_COUNT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rsa_msgout' (3#1520) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_msgout.vhd:61]
+INFO: [Synth 8-638] synthesizing module 'rsa_core' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_core.vhd:73]
+	Parameter C_BLOCK_SIZE bound to: 256 - type: integer 
+	Parameter N_CORES bound to: 21 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'exponentiation' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/Exponentiation/source/exponentiation.vhd:55]
+	Parameter C_block_size bound to: 256 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'exponentiation_modmult' [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/Exponentiation/source/exponentiation_modmult.vhd:42]
+	Parameter C_block_size bound to: 256 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/Exponentiation/source/exponentiation_modmult.vhd:72]
+INFO: [Synth 8-226] default block is never used [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/Exponentiation/source/exponentiation_modmult.vhd:135]
+INFO: [Synth 8-256] done synthesizing module 'exponentiation_modmult' (4#1520) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/Exponentiation/source/exponentiation_modmult.vhd:42]
+WARNING: [Synth 8-614] signal 'flag_reg' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/Exponentiation/source/exponentiation.vhd:184]
+WARNING: [Synth 8-614] signal 'flag_in' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/Exponentiation/source/exponentiation.vhd:184]
+INFO: [Synth 8-256] done synthesizing module 'exponentiation' (5#1520) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/Exponentiation/source/exponentiation.vhd:55]
+WARNING: [Synth 8-614] signal 'next_to_start' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_core.vhd:174]
+INFO: [Synth 8-226] default block is never used [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_core.vhd:237]
+WARNING: [Synth 8-614] signal 'core_data_out' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_core.vhd:228]
+WARNING: [Synth 8-614] signal 'core_flag_out' is read in the process but is not in the sensitivity list [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_core.vhd:228]
+INFO: [Synth 8-256] done synthesizing module 'rsa_core' (6#1520) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_core.vhd:73]
+INFO: [Synth 8-256] done synthesizing module 'rsa_accelerator' (7#1520) [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/source/rsa_accelerator.vhd:84]
+WARNING: [Synth 8-3331] design rsa_msgin has unconnected port S_AXIS_TSTRB[3]
+WARNING: [Synth 8-3331] design rsa_msgin has unconnected port S_AXIS_TSTRB[2]
+WARNING: [Synth 8-3331] design rsa_msgin has unconnected port S_AXIS_TSTRB[1]
+WARNING: [Synth 8-3331] design rsa_msgin has unconnected port S_AXIS_TSTRB[0]
+WARNING: [Synth 8-3331] design rsa_regio has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design rsa_regio has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design rsa_regio has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design rsa_regio has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design rsa_regio has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design rsa_regio has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1782.906 ; gain = 208.434 ; free physical = 4304 ; free virtual = 7740
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1798.750 ; gain = 224.277 ; free physical = 4306 ; free virtual = 7742
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1798.750 ; gain = 224.277 ; free physical = 4306 ; free virtual = 7742
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/Master_constraints/PYNQ-Z1_C.xdc]
+Finished Parsing XDC File [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/Master_constraints/PYNQ-Z1_C.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2055.227 ; gain = 0.000 ; free physical = 4041 ; free virtual = 7492
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.28 . Memory (MB): peak = 2058.195 ; gain = 2.969 ; free physical = 4040 ; free virtual = 7491
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2058.195 ; gain = 483.723 ; free physical = 4245 ; free virtual = 7697
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2058.195 ; gain = 483.723 ; free physical = 4245 ; free virtual = 7697
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2058.195 ; gain = 483.723 ; free physical = 4245 ; free virtual = 7697
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/Exponentiation/source/exponentiation_modmult.vhd:135]
+INFO: [Synth 8-802] inferred FSM for state register 'PS_reg' in module 'exponentiation_modmult'
+INFO: [Synth 8-802] inferred FSM for state register 'PS_reg' in module 'exponentiation'
+INFO: [Synth 8-802] inferred FSM for state register 'Input_State_reg' in module 'rsa_core'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    init |                               00 |                               00
+                 modcalc |                               01 |                               01
+                 modcomp |                               10 |                               10
+                  modfin |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'PS_reg' using encoding 'sequential' in module 'exponentiation_modmult'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                          0000001 |                              000
+                 check_e |                          0000010 |                              001
+                 load_cc |                          0000100 |                              010
+                 comp_cc |                          0001000 |                              011
+                 load_cm |                          0010000 |                              100
+                 comp_cm |                          0100000 |                              101
+            check_finish |                          1000000 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'PS_reg' using encoding 'one-hot' in module 'exponentiation'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 |                               00
+             check_cores |                               01 |                               01
+     wait_for_core_start |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'Input_State_reg' using encoding 'sequential' in module 'rsa_core'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2058.195 ; gain = 483.723 ; free physical = 4231 ; free virtual = 7683
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |exponentiation       |          21|     15710|
+|2     |rsa_core__GC0        |           1|      7105|
+|3     |rsa_accelerator__GC0 |           1|      6889|
++------+---------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input    259 Bit       Adders := 21    
+	   2 Input      8 Bit       Adders := 42    
+	   2 Input      5 Bit       Adders := 2     
++---Registers : 
+	              259 Bit    Registers := 21    
+	              257 Bit    Registers := 21    
+	              256 Bit    Registers := 108   
+	               32 Bit    Registers := 42    
+	               21 Bit    Registers := 2     
+	                8 Bit    Registers := 47    
+	                5 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 29    
++---Muxes : 
+	   4 Input    259 Bit        Muxes := 63    
+	   4 Input    257 Bit        Muxes := 21    
+	   4 Input    256 Bit        Muxes := 22    
+	   2 Input    256 Bit        Muxes := 23    
+	   7 Input    256 Bit        Muxes := 84    
+	   2 Input     32 Bit        Muxes := 33    
+	   2 Input     21 Bit        Muxes := 3     
+	   3 Input     21 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 24    
+	   7 Input      8 Bit        Muxes := 21    
+	   2 Input      8 Bit        Muxes := 160   
+	   7 Input      7 Bit        Muxes := 21    
+	   2 Input      7 Bit        Muxes := 126   
+	   2 Input      5 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 21    
+	   2 Input      2 Bit        Muxes := 65    
+	   3 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 129   
+	   2 Input      1 Bit        Muxes := 30    
+	   7 Input      1 Bit        Muxes := 168   
+	   3 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module exponentiation_modmult 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input    259 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	              259 Bit    Registers := 1     
+	              257 Bit    Registers := 1     
+	              256 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   4 Input    259 Bit        Muxes := 3     
+	   4 Input    257 Bit        Muxes := 1     
+	   4 Input    256 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 6     
+Module exponentiation 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	              256 Bit    Registers := 3     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input    256 Bit        Muxes := 1     
+	   7 Input    256 Bit        Muxes := 4     
+	   7 Input      8 Bit        Muxes := 1     
+	   7 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 8     
+Module rsa_core 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 2     
++---Registers : 
+	              256 Bit    Registers := 2     
+	               21 Bit    Registers := 2     
+	                5 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input    256 Bit        Muxes := 2     
+	   2 Input     21 Bit        Muxes := 3     
+	   3 Input     21 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+Module rsa_regio 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 34    
+	                8 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 33    
+	   2 Input      8 Bit        Muxes := 160   
+	   2 Input      1 Bit        Muxes := 5     
+Module rsa_msgin 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 8     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      8 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 2     
+Module rsa_msgout 
+Detailed RTL Component Info : 
++---Registers : 
+	              256 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
++---Muxes : 
+	   4 Input    256 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/u_rsa_regio/aw_en_reg)
+INFO: [Synth 8-3886] merging instance 'i_0/u_rsa_regio/axi_rresp_reg[0]' (FDRE) to 'i_0/u_rsa_regio/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/u_rsa_regio/axi_bresp_reg[0]' (FDRE) to 'i_0/u_rsa_regio/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\axi_bresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/u_rsa_regio/\slv_reg_reg[32][31] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2058.195 ; gain = 483.723 ; free physical = 4197 ; free virtual = 7661
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |exponentiation       |          21|      8609|
+|2     |rsa_core__GC0        |           1|      6195|
+|3     |rsa_accelerator__GC0 |           1|      3114|
++------+---------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 2058.195 ; gain = 483.723 ; free physical = 4072 ; free virtual = 7543
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 2058.195 ; gain = 483.723 ; free physical = 4072 ; free virtual = 7543
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |exponentiation       |          21|      8609|
+|2     |rsa_core__GC0        |           1|      6195|
+|3     |rsa_accelerator__GC0 |           1|      3114|
++------+---------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:48 ; elapsed = 00:00:53 . Memory (MB): peak = 2084.477 ; gain = 510.004 ; free physical = 4009 ; free virtual = 7480
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 2084.477 ; gain = 510.004 ; free physical = 3997 ; free virtual = 7468
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 2084.477 ; gain = 510.004 ; free physical = 3997 ; free virtual = 7468
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:00 ; elapsed = 00:01:05 . Memory (MB): peak = 2084.477 ; gain = 510.004 ; free physical = 3990 ; free virtual = 7461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:00 ; elapsed = 00:01:05 . Memory (MB): peak = 2084.477 ; gain = 510.004 ; free physical = 3990 ; free virtual = 7461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:04 ; elapsed = 00:01:09 . Memory (MB): peak = 2084.477 ; gain = 510.004 ; free physical = 3990 ; free virtual = 7461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:04 ; elapsed = 00:01:09 . Memory (MB): peak = 2084.477 ; gain = 510.004 ; free physical = 3990 ; free virtual = 7461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |  2058|
+|3     |LUT1   |    43|
+|4     |LUT2   |  5791|
+|5     |LUT3   | 11267|
+|6     |LUT4   | 16380|
+|7     |LUT5   |  5628|
+|8     |LUT6   | 13223|
+|9     |MUXF7  |   644|
+|10    |MUXF8  |   290|
+|11    |FDCE   | 39677|
+|12    |FDPE   |    42|
+|13    |FDRE   |  1067|
+|14    |FDSE   |     8|
+|15    |IBUF   |    90|
+|16    |OBUF   |    80|
++------+-------+------+
+
+Report Instance Areas: 
++------+-------------------------+--------------------------+------+
+|      |Instance                 |Module                    |Cells |
++------+-------------------------+--------------------------+------+
+|1     |top                      |                          | 96289|
+|2     |  u_rsa_core             |rsa_core                  | 93659|
+|3     |    \generating[0].exp   |exponentiation            |  4332|
+|4     |      i_modmult          |exponentiation_modmult_39 |  2719|
+|5     |    \generating[10].exp  |exponentiation_0          |  4312|
+|6     |      i_modmult          |exponentiation_modmult_38 |  2700|
+|7     |    \generating[11].exp  |exponentiation_1          |  4829|
+|8     |      i_modmult          |exponentiation_modmult_37 |  2700|
+|9     |    \generating[12].exp  |exponentiation_2          |  4312|
+|10    |      i_modmult          |exponentiation_modmult_36 |  2700|
+|11    |    \generating[13].exp  |exponentiation_3          |  4312|
+|12    |      i_modmult          |exponentiation_modmult_35 |  2700|
+|13    |    \generating[14].exp  |exponentiation_4          |  4312|
+|14    |      i_modmult          |exponentiation_modmult_34 |  2700|
+|15    |    \generating[15].exp  |exponentiation_5          |  4593|
+|16    |      i_modmult          |exponentiation_modmult_33 |  2700|
+|17    |    \generating[16].exp  |exponentiation_6          |  4312|
+|18    |      i_modmult          |exponentiation_modmult_32 |  2700|
+|19    |    \generating[17].exp  |exponentiation_7          |  4312|
+|20    |      i_modmult          |exponentiation_modmult_31 |  2700|
+|21    |    \generating[18].exp  |exponentiation_8          |  4313|
+|22    |      i_modmult          |exponentiation_modmult_30 |  2700|
+|23    |    \generating[19].exp  |exponentiation_9          |  4588|
+|24    |      i_modmult          |exponentiation_modmult_29 |  2718|
+|25    |    \generating[1].exp   |exponentiation_10         |  4326|
+|26    |      i_modmult          |exponentiation_modmult_28 |  2718|
+|27    |    \generating[20].exp  |exponentiation_11         |  4323|
+|28    |      i_modmult          |exponentiation_modmult_27 |  2718|
+|29    |    \generating[2].exp   |exponentiation_12         |  4330|
+|30    |      i_modmult          |exponentiation_modmult_26 |  2718|
+|31    |    \generating[3].exp   |exponentiation_13         |  5378|
+|32    |      i_modmult          |exponentiation_modmult_25 |  2700|
+|33    |    \generating[4].exp   |exponentiation_14         |  4312|
+|34    |      i_modmult          |exponentiation_modmult_24 |  2700|
+|35    |    \generating[5].exp   |exponentiation_15         |  4312|
+|36    |      i_modmult          |exponentiation_modmult_23 |  2700|
+|37    |    \generating[6].exp   |exponentiation_16         |  4312|
+|38    |      i_modmult          |exponentiation_modmult_22 |  2700|
+|39    |    \generating[7].exp   |exponentiation_17         |  4571|
+|40    |      i_modmult          |exponentiation_modmult_21 |  2700|
+|41    |    \generating[8].exp   |exponentiation_18         |  4312|
+|42    |      i_modmult          |exponentiation_modmult_20 |  2700|
+|43    |    \generating[9].exp   |exponentiation_19         |  4312|
+|44    |      i_modmult          |exponentiation_modmult    |  2700|
+|45    |  u_rsa_msgin            |rsa_msgin                 |   280|
+|46    |  u_rsa_msgout           |rsa_msgout                |   520|
+|47    |  u_rsa_regio            |rsa_regio                 |  1659|
++------+-------------------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:04 ; elapsed = 00:01:09 . Memory (MB): peak = 2084.477 ; gain = 510.004 ; free physical = 3990 ; free virtual = 7461
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:58 ; elapsed = 00:01:03 . Memory (MB): peak = 2084.477 ; gain = 250.559 ; free physical = 4043 ; free virtual = 7514
+Synthesis Optimization Complete : Time (s): cpu = 00:01:04 ; elapsed = 00:01:09 . Memory (MB): peak = 2084.484 ; gain = 510.004 ; free physical = 4058 ; free virtual = 7529
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 2992 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2118.539 ; gain = 0.000 ; free physical = 3905 ; free virtual = 7377
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+75 Infos, 18 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:19 ; elapsed = 00:01:24 . Memory (MB): peak = 2118.539 ; gain = 714.484 ; free physical = 4065 ; free virtual = 7537
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2118.539 ; gain = 0.000 ; free physical = 4065 ; free virtual = 7537
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/crfosse/dds1/TFE4141-DDS1/rsa_integration_kit/RSA_accelerator/RSA_accelerator/RSA_accelerator.runs/synth_1/RSA_accelerator.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 2142.551 ; gain = 24.012 ; free physical = 4056 ; free virtual = 7538
+INFO: [runtcl-4] Executing : report_utilization -file RSA_accelerator_utilization_synth.rpt -pb RSA_accelerator_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 23 11:17:04 2019...
